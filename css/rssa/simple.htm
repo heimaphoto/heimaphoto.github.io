@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>simple</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="application/javascript" src="http://live.simplepie.org/app/0.5/base.js"></script>
+</head>
+
+<body>
+<script type="application/javascript">
+
+var feed = new SimplePie(Array(
+'http://feeds.feedburner.com/rssa'
+
+), {
+ 
+	// Set one configuration option
+	enableOrderByDate: true,
+	setTimeout: 30,
+ 
+	// Set up a handler for a successful response
+	onSuccess: function(feed) {
+		
+		document.write(feed.items[0].title+"<br />");
+		document.write(feed.items[1].title+"<br />");
+		document.write(feed.items[2].title+"<br />");
+		document.write(feed.items[3].title+"<br />");
+		document.write(feed.items[4].title+"<br />");
+	},
+ 
+	// Do this if we encounter an error
+	onFailure: function(feed) {
+		alert(feed.error);
+	}
+});
+
+
+</script>
+
+</body>
+</html>

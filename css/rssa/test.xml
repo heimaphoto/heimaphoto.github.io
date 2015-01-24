@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+    <head>
+        <title>RSSA成员 的订阅列表</title>
+    </head>
+    <body>
+        <outline title="rssa" text="rssa">
+            <outline text="niallkennedy" title="niallkennedy"
+                type="rss" xmlUrl="http://www.niallkennedy.com/blog/index.atom" htmlUrl="http://www.niallkennedy.com/blog"/>
+            
+        </outline>
+      </body>
+</opml>

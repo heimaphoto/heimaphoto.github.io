@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>403 Forbidden</title>
+<meta http-equiv='Content-Type' content='text/html; charset=gb2312'>
+<link rel='stylesheet' type='text/css' id='css' href='http://www.meyu.net/directadmin/images/style.css'>
+<LINK href='http://www.meyu.net/directadmin/images/page.css' type=text/css rel=stylesheet>
+</head>
+<body id="meyu.net">
+<table class=table border=0 cellpadding=0 cellspacing=0 align=center>
+  <tr>
+    <td width=14 bgcolor=#BDBDBD valign=top>
+      <table width=100% border=0 cellpadding=0 cellspacing=0 align=center>
+        <tr style="height: 150">
+          <td bgcolor=#BDBDBD></td>
+        </tr>
+      </table>
+    </td>
+    <td width=1 bgcolor=#FFFFFF></td>
+   <td width=184 bgcolor=#F1F1F1 valign=top>
+      <table width=100% border=0 cellpadding=2 cellspacing=0 align=center>
+        <tr height=22>
+          <td bgcolor=#E5E5E5><img src=1.gif style="width:3px;height:0px;border:0px"><img src=http://www.meyu.net/images/arrow001.jpg border=0 align=absmiddle>&nbsp;<a><b><font color=#0074BC>常见错误知识解答</font></b></a></td>
+        </tr>
+        <tr style="height: 3px">
+          <td></td>
+        </tr>
+      </table>
+      <table width=98% border=0 cellpadding=2 cellspacing=0 align=center>
+<script language="JavaScript" src="http://www.meyu.net/directadmin/squid.js"></script>
+      </table>
+    </td>
+    
+    <td width=1 bgcolor=#FFFFFF></td>
+    <td width=579 bgcolor=#F1F1F1 valign=top>
+      <table width=100% border=0 cellpadding=1 cellspacing=0 align=center>
+        <tr height=22>
+          <td bgcolor=#E5E5E5><img src=1.gif style="width:3px;height:0px;border:0px"><img src=http://www.meyu.net/images/dot003.jpg border=0 align=absmiddle>&nbsp;&nbsp;<a ><b><font color=#0074BC>403 Forbidden</font></b></a></td>
+        <tr style="height: 6px">
+          <td colspan=2></td>
+        </tr>
+      </table>
+      <table width=572 border=0 cellpadding=2 cellspacing=0 align=center>
+      <div class="conbox">
+<div class="conPage">
+<ul>
+<H1>Forbidden</H1>
+You don't have permission to access <!--#echo var="REQUEST_URI" --> on this server.
+<HR>
+<br />
+<li>您可能没有权限访问本文件<br />
+<li>某些页面您无法直接访问,例如引用页<br />
+<li>使用的程序对代理过于敏感，请设定降低防CC级别数<br />
+<li>文件档案需要密码，请输入密码或返回上一层页面<br />
+<li>单击<a href="javascript:history.back(1)" style="font-size:12px; line-height:110%;text-align: center;font-family: Verdana, Arial, Helvetica, sans-serif;">后退</a>按钮,尝试其他链接。<br /><br /><br /><br />
+请返回站点查找相关信息：<a href="http://<!--#echo var="HTTP_HOST" -->">http://<!--#echo var="HTTP_HOST" --><br />
+</ul>
+
+</div></div>
+      </table>   
+    </td>   
+    <td width=1 bgcolor=#FFFFFF></td>
+    <td bgcolor=#E0E0E0><img src=1.gif style="width:1px;height:0px;border:0px"></td>
+  </tr>
+</table>
+<table class=table cellSpacing=0 cellPadding=0 align=center border=0>
+<TBODY>
+<TR>
+<TD vAlign=top width=14 bgColor=#bdbdbd>
+<table cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+<TBODY>
+<TR style="HEIGHT: 23px">
+<TD bgColor=#bdbdbd><IMG height=0 src="1.gif" width=14 border=0></TD></TR></TBODY></table></TD>
+<TD width=1 bgColor=#ffffff></TD>
+<TD width=184 bgColor=#f1f1f1><IMG style="BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; WIDTH: 184px; BORDER-BOTTOM: 0px; HEIGHT: 0px" src="1.gif"></TD>
+<TD width=1 bgColor=#ffffff></TD>
+<TD vAlign=top bgColor=#e0e0e0>
+<table cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+<TBODY>
+<TR height=1>
+<TD bgColor=#ffffff></TD></TR>
+<TR style="HEIGHT: 22px">
+<TD>
+<table cellSpacing=0 cellPadding=0 width="90%" align=center border=0>
+<TBODY>
+<TR>
+<TD><IMG height=4 src="1.gif" width=0 border=0><SPAN style="FONT-FAMILY: Arial"><!--#config timefmt="内容访问时间: %Y年%m月%d日 %H:%M"--><!--#echo var="DATE_LOCAL"--></SPAN></TD></TR></TBODY></table></TD></TR></TBODY></table></TD></TR></TBODY></table>
+</body>
+</html>

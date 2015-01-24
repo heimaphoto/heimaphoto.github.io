@@ -1,0 +1,5 @@
+User-Agent: *
+Disallow: /blog/wp-
+Disallow: /blog/feed/
+Disallow: /blog/comments/feed
+Disallow: /blog/trackback/
