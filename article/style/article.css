@@ -1,6 +1,30 @@
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, nav {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
 body {
     	font-family:"Arial", "sans-serif", "Times New Roman", "Microsoft Sans Serif", "Comic Sans MS", "MS Sans Serif", "Geneva";
     background-color:#cccccc;
+    font-size: 1em;
+}
+
+#container {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1;
 }
 
 a,a:link {
