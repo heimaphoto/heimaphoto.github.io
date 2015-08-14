@@ -1,4 +1,4 @@
-[img-S]../../img/photo/.jpg
+[img-H]../../images/post-image/12-TheArtOfSeeing.jpg
 20080404
 看的艺术
 
