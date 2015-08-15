@@ -47,6 +47,11 @@ text-decoration:none;
 	color: #333333;
 }
 
+.normal a,a:link {
+color:#333333;
+text-decoration:none;
+}
+
 .small {
 	font-family:"Times New Roman", "Arial", "Microsoft Sans Serif", "Comic Sans MS", "MS Sans Serif";
 	font-size: 14px;
@@ -81,6 +86,7 @@ text-decoration:none;
     vertical-align: baseline;
     background-color: none;
     line-height: 120%;
+    color: #333333;
 }
 
 .indextitle {
