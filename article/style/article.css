@@ -27,8 +27,12 @@ body {
     line-height: 1;
 }
 
+li {
+    line-height: 1.6em;
+}
+
 a,a:link {
-color:#333333;
+color:#666666;
 text-decoration:none; 
 }
 
