@@ -65,3 +65,9 @@ text-decoration:none;
 .fr-link a:hover {
         color: #555;
 }
+
+.sm {
+    font-family: "Microsoft YaHei", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #666;
+}
