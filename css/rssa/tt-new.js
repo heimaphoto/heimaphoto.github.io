@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.writeln("<br />");
 document.writeln("<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"6\">");
 document.writeln("  <tr> ");
@@ -65,4 +66,73 @@ document.writeln("<br /><a href=\"http://www.hui-wang.info\" target=\"_blank\">�
 document.writeln("<br /><a href=\"http://www.linuxbyte.org\" target=\"_blank\">Linuxbyte</a>");
 document.writeln("</p></td>");
 document.writeln("</tr>");
+=======
+document.writeln("<br />");
+document.writeln("<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"6\">");
+document.writeln("  <tr> ");
+document.writeln("    <td><div align=\"left\"><a href=\"http://site.douban.com/110638/\" target=\"_blank\">RssBus博客圈主站</a></div></td>");
+document.writeln("  </tr>");
+document.writeln("  <tr> ");
+document.writeln("    <td> <div align=\"left\"> ");
+document.writeln("        <p>RssBus博客圈订阅列表opml文件已更新至V46.<a href=\"http://heimaphoto.com/css/rssa/rssa-list-v46.rar\">下载此opml文件</a></p>");
+document.writeln("      </div></td>");
+document.writeln("  </tr>");
+document.writeln("</table>");
+document.writeln("<table width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"6\">");
+document.writeln("  <tr>");
+document.writeln("    <td width=\"33%\"><p><a href=\"http://heimaphoto.com/blog\" target=\"_blank\">Day After ");
+document.writeln("      Day</a>");
+document.writeln("<br /><a href=\"http://shafeng.cn\" target=\"_blank\">沙风</a>");
+document.writeln("<br /><a href=\"http://blog.xingfudajie.com\" target=\"_blank\">Dony`s Blog</a>");
+document.writeln("<br> <a href=\"http://www.leesum.com/blog\" target=\"_blank\">金枫网络</a>");
+document.writeln("<br /><a href=\"http://oogami.name\" target=\"_blank\">小野大神 Blog</a><br>");
+document.writeln("<a href=\"http://pejag.cn/\" target=\"_blank\">打篮球的手</a><br> <a href=\"http://www.wodidai.com/\" target=\"_blank\">花果山寨</a><br> ");
+document.writeln("<a href=\"http://blog.licess.cn\" target=\"_blank\">Licess's Blog</a>");
+document.writeln("<br /><a href=\"http://www.zijile.com/\" target=\"_blank\">自己乐</a>");
+document.writeln("<br /><a href=\"http://twetw.com/blog\" target=\"_blank\">Aisin Von</a>");
+document.writeln("<br /><a href=\"http://www.QmediaQ.com\" target=\"_blank\">QmediaQ</a>");
+document.writeln("<br /><a href=\"http://magicshui.cn\" target=\"_blank\">矿泉水</a>");
+document.writeln("<br /><a href=\"http://www.ibeijie.cn\" target=\"_blank\">北街博客</a>");
+document.writeln("<br /><a href=\"http://diedtree.com\" target=\"_blank\">树说</a>");
+document.writeln("<br /><a href=\"http://aimbu.com\" target=\"_blank\">AimBu.Com</a>");
+document.writeln("<br /><a href=\"http://sorry.im/blog\" target=\"_blank\">LuoboTixS</a>");
+document.writeln("</p></td>");
+
+document.writeln("<td width=\"33%\"><p><a href=\"http://ozzy.net.ru\" target=\"_blank\">Ozzy's Blog</a><br> ");
+document.writeln("<a href=\"http://www.kokwind.com/\" target=\"_blank\">CorNer</a><br> ");
+document.writeln("<a href=\"http://shuapin.com\" target=\"_blank\">耍贫</a><br>");
+document.writeln("<a href=\"http://juan5.cn/\" target=\"_blank\">Maius的简单生活</a><br> ");
+document.writeln("<a href=\"http://www.versky.com\" target=\"_blank\">静水流渊</a><br>");
+document.writeln("<a href=\"http://marslau.com/\" target=\"_blank\">MarsLau's Blog</a>");
+document.writeln("<br /><a href=\"http://www.aoogo.cn\" target=\"_blank\">AOOGO</a>");
+document.writeln("<br /><a href=\"http://www.nsbase.org\" target=\"_blank\">基地BLOG</a>");
+document.writeln("<br /><a href=\"http://niuhuifei.com\" target=\"_blank\">niuhuifei's blog</a>");
+document.writeln("<br /><a href=\"http://www.ao.cx/\" target=\"_blank\">懒</a>");
+document.writeln("<br /><a href=\"http://www.yangtienan.net\" target=\"_blank\">咋滴？</a>");
+document.writeln("<br /><a href=\"http://blog.sosohehe.com\" target=\"_blank\">甲 </a>");
+document.writeln("<br /><a href=\"http://www.chinatoby.cn\" target=\"_blank\">托比天空</a>");
+document.writeln("<br /><a href=\"http://www.49cn.cn\" target=\"_blank\">闫小彬博客</a>");
+document.writeln("<br /><a href=\"http://zhaole.info\" target=\"_blank\">找乐</a>");
+document.writeln("</p></td>");
+
+document.writeln("<td width=\"34%\"><p>");
+document.writeln("<a href=\"http://blog.cnabu.com\" target=\"_blank\">阿不@小人物</a><br> ");
+document.writeln("<a href=\"http://rodney.net.cn\" target=\"_blank\">rodney's");
+document.writeln("blog</a><br>");
+document.writeln("<a href=\"http://www.songruihua.com\" target=\"_blank\">宋瑞华</a>");
+document.writeln("<br /><a href=\"http://www.showfom.com/\" target=\"_blank\">峰回路转</a>");
+document.writeln("<br /><a href=\"http://www.txbin.net\" target=\"_blank\">寻找自己</a>");
+document.writeln("<br /><a href=\"http://www.worthit.com.cn/\" target=\"_blank\">卧思堂</a>");
+document.writeln("<br /><a href=\"http://ouhappy.com\" target=\"_blank\">回首往事</a>");
+document.writeln("<br /><a href=\"http://www.3dian9.com\" target=\"_blank\">三点九</a>");
+document.writeln("<br /><a href=\"http://leeiio.me\" target=\"_blank\">Leeiio Chaos Made</a>");
+document.writeln("<br /><a href=\"http://lbicc.com\" target=\"_blank\">左岸印象</a>");
+document.writeln("<br /><a href=\"http://shilaoren.net\" target=\"_blank\">诗意地栖息在大地上</a>");
+document.writeln("<br /><a href=\"http://jkbb.org\" target=\"_blank\">健康播报</a>");
+document.writeln("<br /><a href=\"http://lifesay.org\" target=\"_blank\">LifeSay.org</a>");
+document.writeln("<br /><a href=\"http://www.hui-wang.info\" target=\"_blank\">王辉的博客</a>");
+document.writeln("<br /><a href=\"http://www.linuxbyte.org\" target=\"_blank\">Linuxbyte</a>");
+document.writeln("</p></td>");
+document.writeln("</tr>");
+>>>>>>> 5972d3f97e67f84883bfbf97fc911834308604fa
 document.writeln("</table>");

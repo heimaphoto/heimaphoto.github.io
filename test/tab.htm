@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -115,3 +116,122 @@ clear:left;
 </div>		
 </body>
 </html>
+=======
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>TAB标签页的CSS代码示例</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#first #first_nav li a').click(function(){
+		$('#first > div').hide().filter(this.hash).fadeIn();
+		$('#first #first_nav li a').removeClass('selected');
+		$(this).addClass('selected');
+		return false;
+	}).filter(':first').click();
+});
+</script>
+<style type="text/css">
+<!--
+body {
+text-align: center;
+}
+
+#container {
+width: 500px;
+margin-left: auto;
+margin-right: auto;
+text-align: left;
+}
+
+#first {
+margin-top: 2em;
+position: relative;
+}
+
+#first #first_nav {
+min-height: 24px;
+list-style-type: none;
+background: transparent url(nav_bg.gif) repeat-x bottom;
+}
+
+#first #first_nav li {
+display: inline;
+list-style-type: none;
+}
+
+#first #first_nav li a:hover,
+#first #first_nav li a:active {
+background: #fff;
+border-bottom: 2px solid #fff;
+}
+
+#first #first_nav li a:link,
+#first #first_nav li a:visited {
+float: left;
+margin-left: 10px;
+display: block;
+color: #2a3548;
+letter-spacing: 1px;
+text-decoration: none;
+padding: 5px;
+font: bold 12px Arial, Helvetica, sans-serif;
+border: 1px solid #999;
+border-width: 1px;
+background: #f0f4f5;
+white-space: nowrap;
+}
+
+#first #first_nav li a.selected {
+background: #fff;
+border-bottom: 2px solid #fff;
+}
+
+#first #commend,
+#first #popular,
+#first #rssa {
+padding: 1em;
+border: 1px solid #999;
+border-width: 0 1px 1px 1px;
+text-align: left;
+line-height: 1.2em;
+clear:left;
+}
+-->
+</style>
+</head>
+
+<body>
+<div id="container">
+    <div id="first">
+
+			<ul id="first_nav">
+              <li><a href="#commend" title="推荐阅读" class="selected">推荐阅读</a></li>
+              <li><a href="#popular" title="最流行文章">最流行文章</a></li>
+              <li><a href="#rssa" title="博客圈">博客圈</a></li>
+			</ul>
+			<div id="commend">
+				<ul>
+                这里是推荐阅读的内容
+				</ul>
+			</div>
+
+			<div id="popular">
+                <ul>
+                这里是最流行文章的内容
+                </ul>
+			</div>
+			
+			<div id="rssa">
+				
+      <ul>
+        这里是博客圈的内容 
+      </ul>
+			</div>
+
+    </div>
+</div>		
+</body>
+</html>
+>>>>>>> 5972d3f97e67f84883bfbf97fc911834308604fa

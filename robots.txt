@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 User-Agent: *
 Disallow: /blog/wp-
 Disallow: /blog/feed/
 Disallow: /blog/comments/feed
+=======
+User-Agent: *
+Disallow: /blog/wp-
+Disallow: /blog/feed/
+Disallow: /blog/comments/feed
+>>>>>>> 5972d3f97e67f84883bfbf97fc911834308604fa
 Disallow: /blog/trackback/
