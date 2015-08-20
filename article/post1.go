@@ -78,7 +78,7 @@ func readmode() {
 }
 
 func readtext() {
-    textFile := "./post.md"
+    textFile := "post.md"
     fin,err := os.Open(textFile)
     defer fin.Close()
     if err != nil {
