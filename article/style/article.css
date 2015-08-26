@@ -221,6 +221,14 @@ p {
     padding: 5px;
 }
 
+.photoinfo {
+    font-size: 14px;
+    color: #666;
+    float: left;
+    text-align: justify;
+    padding: 5px;
+}
+
 #css-f {
     /*文章页脚设置*/
     height: 50px;
