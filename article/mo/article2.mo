@@ -11,6 +11,7 @@
         <meta name="robots" content="all" />
         <title>[title]</title>
         <link rel=stylesheet href="../style/article.css" type="text/css" />
+        <script src="../../tongji"></script>
     </head>
 
     <body>
