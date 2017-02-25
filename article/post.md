@@ -1,6 +1,6 @@
-[img-S]../../images/myphoto/rain-at-all-times-1.jpg
-20160703
+[img-S]../../images/myphoto/lixixiyuan01.jpg
+20170121
 散文
 
-## 雨一直下 
+## CANON EF 50mmF/1.8STM定焦试镜 
 
