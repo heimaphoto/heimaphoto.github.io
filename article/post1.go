@@ -92,8 +92,8 @@ func readtext() {
             if 0 == n { break }
             alltext = alltext + string(buf[:n])
      }
-            sp := strings.Split(alltext,"\r\n\r\n")
-            sp2 := strings.Split(sp[0],"\r\n")
+            sp := strings.Split(alltext,"\n\n")
+            sp2 := strings.Split(sp[0],"\n")
             if strings.Contains(sp2[0],"[img-H]") {
                 img = strings.Replace(sp2[0],"[img-H]","",-1)
                 modeFile = "./mo/article.mo"
@@ -104,7 +104,7 @@ func readtext() {
             }
             time = sp2[1]
             tag = sp2[2]
-            temp := sp[0]+"\r\n\r\n"+sp[1]+"\r\n\r\n"
+            temp := sp[0]+"\n\n"+sp[1]+"\n\n"
             text = strings.Replace(alltext,temp,"",1)
             title = strings.Replace(sp[1],"## ","",1)
             fmt.Printf("tag: %s\n",tag)
@@ -199,8 +199,8 @@ func writefile() {
 }
 
 func bodytext() {
-    body = "<p>"+strings.Replace(text,"\r\n\r\n","</p>\r\n<p>",-1)+"</p>\r\n"
-    body = strings.Replace(body," \r\n","<br />\r\n",-1)
+    body = "<p>"+strings.Replace(text,"\n\n","</p>\n<p>",-1)+"</p>\n"
+    body = strings.Replace(body," \n","<br />\n",-1)
     reg := regexp.MustCompile(`\+ +|- +`)
     list := reg.FindAllString(body,-1)
     st2 := ""
@@ -215,7 +215,7 @@ func bodytext() {
                 default:
                 if len(reg2.FindAllString(v,-1)) > 0 {
                     if strings.Contains(v,"\r\n") {
-                        reg3 := regexp.MustCompile(`\r\n\+ +|\r\n- +`)
+                        reg3 := regexp.MustCompile(`\n\+ +|\n- +`)
                         st3 = strings.Replace(v,reg3.FindAllString(v,-1)[0],"</li><li>",-1)
                         st = strings.Replace(st3,reg2.FindAllString(v,-1)[0],"<p><li>",1)
                         st2 = st2 + st + "</li></p>"
