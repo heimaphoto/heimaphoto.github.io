@@ -9,7 +9,5 @@
 #   *.[oa]
 
 *.sw*
-post1
-tag
-tag.exe
-resetindex.exe
+*.out
+*.exe

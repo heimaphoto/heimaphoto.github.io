@@ -5,7 +5,6 @@ import (
         "strings"
         "strconv"
         "regexp"
-        "io/ioutil"
 )
 
 var i int64=0
@@ -15,12 +14,11 @@ var lastname string
 var mode string=""
 var modeFile string=""
 var text string
-var IMGNAME string
-var Title string=""
-var Content string=""
+var img string
+var title string
 var wri string=""
 var post string
-var Time string=""
+var time string=""
 var tag string=""
 var tagurl string=""
 var tagurlpre string=""
@@ -80,39 +78,20 @@ func readmode() {
 }
 
 func readtext() {
-    inputFile := "post.md"
-    buf, err := ioutil.ReadFile(inputFile)
+    textFile := "post.md"
+    fin,err := os.Open(textFile)
+    defer fin.Close()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "File Error: %s\n", err)
-        // panic(err.Error())
-        }
-    alltext := string(buf)
-    reg1 := regexp.MustCompile(`\[Title\]\n(.+)\n\[/Title\]`)
-    s1 := reg1.FindString(alltext)
-    s2 := "$1"
-    Title = reg1.ReplaceAllString(s1,s2)
-    fmt.Printf("标题是：%s\n",Title)
-    reg2 := regexp.MustCompile(`\[MoBan\]\n(.+)\n\[/MoBan\]`)
-    s3 := reg2.FindString(alltext)
-    s4 := "$1"
-    MoBan := reg2.ReplaceAllString(s3,s4)
-    fmt.Printf("使用模板：%s\n",MoBan)
-    reg3 := regexp.MustCompile(`\[Time\]\n(.+)\n\[/Time\]`)
-    s5 := reg3.FindString(alltext)
-    s6 := "$1"
-    Time = reg3.ReplaceAllString(s5,s6)
-    fmt.Printf("发表日期：%s\n",Time)
-    reg4 := regexp.MustCompile(`\[TAG\]\n(.+)\n\[/TAG\]`)
-    s7 := reg4.FindString(alltext)
-    s8 := "$1"
-    tag = reg4.ReplaceAllString(s7,s8)
-    fmt.Printf("TAG：%s\n",tag)
-    reg5 := regexp.MustCompile(`\[Content\]\n([\s\S]+)\n\[/Content\]`)
-    s9 := reg5.FindString(alltext)
-    s10 := "$1"
-    Content = reg5.ReplaceAllString(s9,s10)
-    fmt.Printf("文章内容：%s\n",Content)
-
+             fmt.Println(textFile,err)
+             return
+     }
+     buf := make([]byte, 1024)
+     alltext := ""
+     for{
+            n, _ := fin.Read(buf)
+            if 0 == n { break }
+            alltext = alltext + string(buf[:n])
+     }
             sp := strings.Split(alltext,"\n\n")
             sp2 := strings.Split(sp[0],"\n")
             if strings.Contains(sp2[0],"[img-H]") {
