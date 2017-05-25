@@ -14,11 +14,15 @@ var newname string
 var lastname string
 var modeFile string=""
 var IMGNAME string=""
+var MoBan string=""
 var Title string=""
 var Content string=""
 var mode string=""
+var IMG1 string=""
 var wri string=""
-var post string
+var post string=""
+var meta string=""
+var message string=""
 var Time string=""
 var tag string=""
 var tagurl string=""
@@ -31,7 +35,6 @@ func main() {
     newfilename()
     fmt.Printf("%s\n",newname)
     readmode()
-    bodytext()
     texttohtml()
     writefile()
 }
@@ -85,7 +88,7 @@ func readtext() {
     reg2 := regexp.MustCompile(`\[MoBan\]\n(.+)\n\[/MoBan\]`)
     s3 := reg2.FindString(alltext)
     s4 := "$1"
-    MoBan := reg2.ReplaceAllString(s3,s4)
+    MoBan = reg2.ReplaceAllString(s3,s4)
     fmt.Printf("使用模板：%s\n",MoBan)
     reg3 := regexp.MustCompile(`\[Time\]\n(.+)\n\[/Time\]`)
     s5 := reg3.FindString(alltext)
@@ -116,13 +119,6 @@ func readtext() {
     if MoBan == "3" {
         modeFile = "./mo/article3.mo"
     }
-    if MoBan == "1" || MoBan == "2" {
-        if strings.Contains(IMGNAME,"\n") {
-            IMGNAME = strings.Split(IMGNAME,"\n")[0]
-        }
-    } else {
-    }
-
 }
 
 func creattagurl() {
@@ -145,9 +141,30 @@ func creattagurl() {
 }
 
 func texttohtml() {
-    meta := "</div><div class=\"meta\">Written on " + Time + " | Tag: <a href=\"../archive/" + tagurl + "1.htm\">" + tag + "</a>"
-    message := "</div><div class=\"mess\"><a href=\"http://www.douban.com/group/heimaphoto/\" target=\"_blank\">留言或讨论请点击这里</a>"
-    post = "<h2>" + Title + "</h2>" + Content + meta + message
+    meta = "<div class=\"meta\">Written on " + Time + " | Tag: <a href=\"../archive/" + tagurl + "1.htm\">" + tag + "</a></div>"
+    message = "<div class=\"mess\"><a href=\"http://www.douban.com/group/heimaphoto/\" target=\"_blank\">留言或讨论请点击这里</a></div>"
+    IMGNAME = strings.Replace(IMGNAME," ","",0)
+    if MoBan == "1" || MoBan == "2" {
+        post = ""
+        if strings.Contains(IMGNAME,"\n") {
+            IMG1 = strings.Split(IMGNAME,"\n")[0]
+        } else {
+            IMG1 = IMGNAME
+        }
+    } else {
+        IMG2 := strings.Split(IMGNAME,"\n")
+        IMG1 = IMG2[0]
+        XunHuan := ""
+        for u := 1; u < len(IMG2); u++ {
+            XunHuan = "<tr><td>\n"
+            XunHuan = XunHuan + "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"10\">\n"
+            XunHuan = XunHuan + "<tr><td><img src=\"../../images/myphoto/" + IMG2[u] + "\"></td></tr>\n"
+            XunHuan = XunHuan + "<tr><td><div class=\"photoinfo\"></div></td></tr></table>\n"
+            XunHuan = XunHuan + "</td></tr>\n\n"
+            post = post + XunHuan
+            XunHuan = ""
+        }
+    }
     if i == 0 {
         nav = ""
     } else {
@@ -164,8 +181,11 @@ func writefile() {
             return
     }
     wri = strings.Replace(mode,"[title]",Title,1)
-    wri = strings.Replace(wri,"[img]","../../images/myphoto"+IMGNAME,1)
+    wri = strings.Replace(wri,"[img]",IMG1,1)
+    wri = strings.Replace(wri,"[Content]",Content,1)
     wri = strings.Replace(wri,"[post]",post,1)
+    wri = strings.Replace(wri,"[meta]",meta,1)
+    wri = strings.Replace(wri,"[message]",message,1)
     wri = strings.Replace(wri,"[nav]",nav,1)
     fout.WriteString(wri)
     if i != 0 {

@@ -28,14 +28,25 @@
                     <tr><td>
                     <table border="0" cellpadding="0" cellspacing="0" width="10">
                     <tr><td>
-                    <img src="[img]">
+                    <img src="../../images/myphoto/[img]">
                     </td></tr>
                     <tr><td>
                     <div class="photoinfo"></div>
                     </td></tr>
                     </table>
                     </td></tr>
-                    <tr><td><div class="bd2">[post]</div></td></tr>                   <tr height="40"><td></td></tr> 
+                    <tr><td>
+                        <div class="bd2">
+                            <h2>[title]</h2>
+                            [Content]
+                        </div>
+                    </td></tr>  
+                    [post]    
+                    <tr><td>
+                    [meta]
+                    [message]
+                    </td></tr>             
+                    <tr height="40"><td></td></tr> 
                     <tr height="5" align="right"><td><a href="../index.html">索引页</a> | [nav]</td></tr>
                 </table>            
             </div>
