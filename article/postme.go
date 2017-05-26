@@ -37,6 +37,8 @@ func main() {
     readmode()
     texttohtml()
     writefile()
+    articleindex()
+    tagindex()
 }
 
 func newfilename() {
@@ -143,7 +145,7 @@ func creattagurl() {
 func texttohtml() {
     meta = "<div class=\"meta\">Written on " + Time + " | Tag: <a href=\"../archive/" + tagurl + "1.htm\">" + tag + "</a></div>"
     message = "<div class=\"mess\"><a href=\"http://www.douban.com/group/heimaphoto/\" target=\"_blank\">留言或讨论请点击这里</a></div>"
-    IMGNAME = strings.Replace(IMGNAME," ","",0)
+    IMGNAME = strings.Replace(IMGNAME," ","",-1)
     if MoBan == "1" || MoBan == "2" {
         post = ""
         if strings.Contains(IMGNAME,"\n") {
@@ -180,7 +182,7 @@ func writefile() {
             fmt.Println(wFile,err)
             return
     }
-    wri = strings.Replace(mode,"[title]",Title,1)
+    wri = strings.Replace(mode,"[title]",Title,-1)
     wri = strings.Replace(wri,"[img]",IMG1,1)
     wri = strings.Replace(wri,"[Content]",Content,1)
     wri = strings.Replace(wri,"[post]",post,1)
@@ -202,7 +204,7 @@ func writefile() {
                 oldtext := "索引页</a> | "
                 replacetext := oldtext + "<a href=\"./" + newname + "\">下一篇</a>"
                 alltext = strings.Replace(alltext,oldtext,replacetext,1)
-                fin2, err := os.OpenFile(preFile,os.O_RDWR | os.O_TRUNC,0644)
+                fin2, _ := os.OpenFile(preFile,os.O_RDWR | os.O_TRUNC,0644)
                 defer fin2.Close()
                 fin2.WriteString(alltext)
                 fin2.Close()
@@ -210,11 +212,46 @@ func writefile() {
                 oldtext := "上一篇</a>"
                 replacetext := oldtext + " | <a href=\"./" + newname + "\">下一篇</a>"
                 alltext = strings.Replace(alltext,oldtext,replacetext,1)
-                fin2, err := os.OpenFile(preFile,os.O_RDWR | os.O_TRUNC,0644)
+                fin2, _ := os.OpenFile(preFile,os.O_RDWR | os.O_TRUNC,0644)
                 defer fin2.Close()
                 fin2.WriteString(alltext)
                 fin2.Close()
             }
         }
     }
+}
+
+func articleindex() {
+    buf, err := ioutil.ReadFile("index.html")
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "File Error: %s\n", err)
+        // panic(err.Error())
+    }
+    alltext := string(buf)
+    oldtext := "<tr><td height=\"20\"></td><td></td><td></td><td></td></tr>\n"
+    insert := "<tr><td width=\"50\"></td>\n<td width=\"200\"><div class=\"indextext\"><a href=\"./post/" + newname + "\">" + Time + "--" + tag + "</a></div></td>\n<td><div class=\"indextitle\"><a href=\"./post/" + newname + "\">" + Title + "</a></div></td>\n<td width=\"50\"></td></tr>\n\n"
+    replacetext := oldtext + insert
+    alltext = strings.Replace(alltext,oldtext,replacetext,1)
+    fin2, _ := os.OpenFile("index.html",os.O_RDWR | os.O_TRUNC,0644)
+    defer fin2.Close()
+    fin2.WriteString(alltext)
+    fin2.Close()
+}
+
+func tagindex() {
+    inputFile := "./archive/" + tagurl + "1.htm"
+    buf, err := ioutil.ReadFile(inputFile)
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "File Error: %s\n", err)
+        // panic(err.Error())
+    }
+    alltext := string(buf)
+    oldtext := "</font></h2>"
+    insert := "\n<p><a href=\"../post/" + newname + "\" target=\"_blank\">" + Time + "--" + Title + "</a></p>\n"
+    replacetext := oldtext + insert
+    alltext = strings.Replace(alltext,oldtext,replacetext,1)
+    fin2, _ := os.OpenFile(inputFile,os.O_RDWR | os.O_TRUNC,0644)
+    defer fin2.Close()
+    fin2.WriteString(alltext)
+    fin2.Close()
 }
