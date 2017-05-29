@@ -1,0 +1,17 @@
+这是一个模板文件，用于黑马摄影作品集的发布。请按格式填写。
+
+//照片名称，必须一行，照片必须预先存入 "/img/photo/" 文件夹内。
+[PhotoName]
+
+[/PhotoName]
+
+//主题分两行，第一行中文，第二行英文。
+[Title]
+中文
+English
+[/Title]
+
+//照片信息，按以下示例填写。
+[PhotoInfo]
+
+[/PhotoInfo]
