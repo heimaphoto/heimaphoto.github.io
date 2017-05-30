@@ -118,7 +118,7 @@
         </tr>
         <tr>
           <td><!-- InstanceBeginEditable name="EditRegion11" -->
-            <div align="right" class="small"><a href="/doc/[lastname]">上一张</a> 
+            <div align="right" class="small"><a href="[lastname]">上一张</a> 
               | <a href="#">下一张</a></div>
             <!-- InstanceEndEditable --></td>
         </tr>
