@@ -3,16 +3,20 @@
 //照片名称，必须一行，照片必须预先存入 "/img/photo/" 文件夹内。
 //照片索引图必须预告存入 "/img/logo/" 文件夹内，格式示例为：wangbin010-logo.jpg
 [PhotoName]
-
+water-droplets.jpg
 [/PhotoName]
 
 //主题分两行，第一行中文，第二行英文。
 [Title]
-中文
-English
+水滴
+water-droplets
 [/Title]
 
 //照片信息，按以下示例填写。
 [PhotoInfo]
-
+TIME: 2017. <br />
+BODY: CONTAX RTS2 <br />
+LENS: CONTAX T*50mm f/1.4 <br />
+PLACE: 无锡市西门 <br />
+(West Wuxi, Jiangsu, China) <br />
 [/PhotoInfo]
