@@ -14,9 +14,9 @@ water-droplets
 
 //照片信息，按以下示例填写。
 [PhotoInfo]
-TIME: 2017. <br />
-BODY: CONTAX RTS2 <br />
-LENS: CONTAX T*50mm f/1.4 <br />
-PLACE: 无锡市西门 <br />
-(West Wuxi, Jiangsu, China) <br />
+TIME: 2017. 
+BODY: CONTAX RTS2 
+LENS: CONTAX T*50mm f/1.4 
+PLACE: 无锡市西门 
+(West Wuxi, Jiangsu, China) 
 [/PhotoInfo]
