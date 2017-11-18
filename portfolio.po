@@ -3,21 +3,21 @@
 //照片名称，必须一行，照片必须预先存入 "/img/photo/" 文件夹内。
 //照片索引图必须预告存入 "/img/logo/" 文件夹内，格式示例为：wangbin010-logo.jpg
 [PhotoName]
-firewood.jpg
+Pavilion-Bridge.jpg
 [/PhotoName]
 
 //主题分两行，第一行中文，第二行英文。
 [Title]
-柴禾
-Firewood
+亭子桥
+Pavilion Bridge
 [/Title]
 
 //照片信息，按以下示例填写。
 [PhotoInfo]
-TIME: 2017.02.19 
+TIME: 2017.05.04 
 BODY: CONTAX RTS2 
 LENS: CONTAX T*50mm f/1.4 
-FILM: AGFA CT100
-PLACE: 无锡市许舍村 
-(Xu She Village Wuxi, Jiangsu, China) 
+FILM: KODAK 200
+PLACE: 无锡市亭子桥 
+(Pavilion Bridge, Wuxi, Jiangsu, China) 
 [/PhotoInfo]
