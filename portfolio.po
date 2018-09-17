@@ -3,21 +3,20 @@
 //照片名称，必须一行，照片必须预先存入 "/img/photo/" 文件夹内。
 //照片索引图必须预先存入 "/img/logo/" 文件夹内，格式示例为：wangbin010-logo.jpg
 [PhotoName]
-happy-working.jpg
+girl-playing-lute.jpg
 [/PhotoName]
 
 //主题分两行，第一行中文，第二行英文。
 [Title]
-快乐工作
-Happy Working.
+弹琵琶的女孩
+Girl playing lute.
 [/Title]
 
 //照片信息，按以下示例填写。
 [PhotoInfo]
-TIME: 2017.01.07 
-BODY: CONTAX RTS2
-LENS: CONTAX T*50mm f/1.4 
-FILM: Agfa CT 100
-PLACE: 无锡西门 
-(West Door, Wuxi, Jiangsu, China) 
+TIME: 2018.09.16 
+BODY: CANON EOS 5D
+LENS: EF 50mm f/1.8 STM 
+PLACE: 无锡江南府 
+(Jiangnan Mansion, Wuxi, Jiangsu, China) 
 [/PhotoInfo]
