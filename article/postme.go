@@ -136,8 +136,8 @@ func creattagurl() {
     if tag == "看的艺术" {
         tagurl = "TheArtOfSeeing"
     }
-    if tag == "论坛" {
-        tagurl = "discuss"
+    if tag == "资料" {
+        tagurl = "data"
     }
 
 }
