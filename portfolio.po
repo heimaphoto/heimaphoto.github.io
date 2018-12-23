@@ -3,20 +3,20 @@
 //照片名称，必须一行，照片必须预先存入 "/img/photo/" 文件夹内。
 //照片索引图必须预先存入 "/img/logo/" 文件夹内，格式示例为：wangbin010-logo.jpg
 [PhotoName]
-Throw.jpg
+Park-evening.jpg
 [/PhotoName]
 
 //主题分两行，第一行中文，第二行英文。
 [Title]
-投掷
-Throw.
+公园傍晚
+Park evening
 [/Title]
 
 //照片信息，按以下示例填写。
 [PhotoInfo]
-TIME: 2018.08 
+TIME: 2018.11.10 
 BODY: CONTAX RTS2
 LENS: CONTAX T*50mmf/1.4  
-PLACE: 马山十八湾湿地
-(Eighteen Bay Wetland,Mashan,Wuxi,Jiangsu,China)
+PLACE: 无锡仙蠡墩公园
+(Xian Li Dun Park,Wuxi,Jiangsu,China)
 [/PhotoInfo]
