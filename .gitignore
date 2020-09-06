@@ -11,3 +11,4 @@
 *.sw*
 *.out
 *.exe
+.DS_Store
