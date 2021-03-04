@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>黑马摄影</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Keywords" content="摄影, 博客, 写真, 女性人像, 人像与时尚, 静物与产品, 人文与活动, 风景与建筑, photography,
+                                                               photo, blog, girl, portrait, landscape, image, female">
+<meta name="Description" content="黑马摄影是一个专业的视觉时尚网站。">
+ <link rel=stylesheet href="./css/quanju.css" type="text/css">
+ <script src="tongji"></script>
+</head>
+
+<body bgcolor="#CCCCCC">
+<table width="1000px" height="650" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="30%" valign="top">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="150"></td>
+        </tr>
+        <tr>
+          <td height="320"><table width="70%" height="345" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr> 
+                <td height="25" class="normal"><a href="about.htm">关于(About)</a></td>
+              </tr>
+              <tr> 
+                <td height="25" class="normal"><a href="contact.htm">联系(Contact)</a></td>
+              </tr>
+              <tr> 
+                <td height="25" class="normal"><a href="portfolio.htm">作品集(Portfolio)</a></td>
+              </tr>
+              <tr> 
+                <td height="25" class="normal"><a href="./article/index.html">文章(Article)</a></td>
+              </tr>
+              <tr> 
+                <td height="25" class="normal">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td height="135" class="heima">黑马摄影</td>
+              </tr>
+              <tr> 
+                <td height="20" class="small">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td height="20" class="small">Email: wbwuxi@gmail.com</td>
+              </tr>
+              <tr> 
+                <td height="20" class="small"></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="40"><table width="70%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr> 
+                <td class="ssmall"></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+      </table> 
+    </td>
+    <td width="70%"><div align="center"><img src="./img/photo/highway.jpg"></div></td>
+</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+    <td height="100"></td>
+</tr>
+<tr>
+        <td align="center" class="fr-link">
+            <a href="http://www.moxuezhang.com" target="_blank">张默雪</a> |
+            <a href="http://wangbinweb.github.io/index.html" target="_blank">WangBin</a> |
+             &gt; <a href="article/post/60-data.htm" target="_blank">Last Article: 摄影的秘密系列话题--怎样设置光圈？</a>
+        </td>
+</tr>
+</table>
+</body>
+</html>
