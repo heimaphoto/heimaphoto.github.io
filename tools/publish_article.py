@@ -275,6 +275,15 @@ def render_post_card(article):
 
 def render_index(articles):
     latest = "\n\n".join(render_post_card(a) for a in articles[:5])
+    hero = preserve_block(
+        ROOT / "index.html",
+        "<!-- MANUAL-HERO:START -->",
+        "<!-- MANUAL-HERO:END -->",
+        """<!-- MANUAL-HERO:START -->
+      <img src="img/photo/Milk-Tea.jpg" alt="Heima Photo featured photograph">
+      <figcaption>Latest light, quiet frame.</figcaption>
+      <!-- MANUAL-HERO:END -->""",
+    )
     recommendations = preserve_block(
         ROOT / "index.html",
         "<!-- MANUAL-RECOMMENDATIONS:START -->",
@@ -304,8 +313,7 @@ def render_index(articles):
       <p class="intro">这里保存一些照片、文字、器材折腾，以及我对日常生活的观察。摄影是入口，文字是线索，最后留下来的大概是一个人的观看方式。</p>
     </div>
     <figure class="hero-image">
-      <img src="img/photo/Milk-Tea.jpg" alt="Heima Photo featured photograph">
-      <figcaption>Latest light, quiet frame.</figcaption>
+{hero}
     </figure>
   </section>
 
