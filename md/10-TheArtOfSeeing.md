@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--意识1
 date: 2008-03-27
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 因为单纯的意识来源于实践，因此，我们所需要的是更多的实践，而不仅仅是看。但就摄影而言，你看得越多，你能拍的也就越多。所以，你的首要目标就是更多地认识周围的事物。留意观察事物，即使是微小的事物-……
 thumbnail: ../img/photo/Daffodils.jpg

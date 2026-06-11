@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–观察5
 date: 2008-07-10
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 视点 你站在那里对被摄对象进行观察或者拍摄的地方，就叫做视点。视点有两个作用：它能从一个不寻常的角度来揭示被摄体的几乎不为人所知的侧面，从而表现主题；它还能把各个物体间的自然联系组织起来。 无……
 thumbnail: ../images/post-image/27-TheArtOfSeeing-1.jpg

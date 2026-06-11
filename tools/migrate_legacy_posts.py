@@ -105,9 +105,9 @@ def extract_meta(text):
 def category_for(path, tag):
     name = path.name
     if "TheArtOfSeeing" in name or "TheArtOfSeeing" in tag or "看的艺术" in tag:
-        return "摄影/看的艺术", "TheArtOfSeeing"
+        return "看的艺术", "TheArtOfSeeing"
     if "-data" in name or tag == "资料":
-        return "摄影/技术", "technology"
+        return "摄影技术", "technology"
     if "-prose" in name or tag == "散文":
         return "散文", "prose"
     return "摄影", "photography"

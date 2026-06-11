@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--照相机，镜头，胶片之八
 date: 2008-12-09
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 黑白胶片对蓝光和紫外线比肉眼更敏感。由于天空是蓝光和紫外线的最明显的来源，如果不用滤光镜片的话，它们的影调就会过亮。但是如果采用了8号黄色滤光镜片的话，天空的影调看上去就会显得正常了。而21号……
 thumbnail: ../images/post-image/41-TheArtOfSeeing.jpg

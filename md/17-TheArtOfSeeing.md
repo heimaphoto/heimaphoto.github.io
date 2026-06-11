@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–景物的要素2
 date: 2008-04-28
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 形状 我们把一条闭合的、形成物体轮廓的线条称为形状。形状的空间是二维的。它只能在纵横两个座标上显示，无法表现深度或体积。眼睛通过对形状的识别可以迅速地分辨许多物体。有时即使只给出猫、房子或人脸……
 thumbnail: ../images/post-image/17-TheArtOfSeeing-1.jpg

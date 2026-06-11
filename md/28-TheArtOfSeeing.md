@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–主题的处理1
 date: 2008-07-18
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 听吧，请听主题那无声的故事，一个人从未说过的故事。听吧，请听一只苹果在春天的阳光下萌育的故事，听它成熟、落地、果肉消亡进而又获光荣的再生的故事。请听波涛从大洋深处涌出时的快乐，听它跃向太阳、扑……
 thumbnail: ../images/post-image/28-TheArtOfSeeing-1.jpg

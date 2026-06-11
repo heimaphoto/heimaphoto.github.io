@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--后记
 date: 2008-12-12
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 前两天我去理发时，跟我的理发师聊了会儿天，理发师告诉我过段时间他可能要去上海深造一下，回来后他的个人理发价格可能会有点小涨，我问他，去深造是否就是在理发技术上再培训一下，他笑着说其实象他们这样……
 thumbnail: ../img/photo/road.jpg

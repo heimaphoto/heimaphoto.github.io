@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–景物的要素5
 date: 2008-05-27
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 调和的色彩 调和的色彩就是相近的色彩，就象“调和”这个字眼所包含的意思那样，一组相近的色彩能引起愉悦感。桔黄色和红色；蓝色和紫色；绿色和灰色，这些都是调和的组合。尽管它们是容易发现的，许多人还……
 thumbnail: ../images/post-image/20-TheArtOfSeeing-1.jpg

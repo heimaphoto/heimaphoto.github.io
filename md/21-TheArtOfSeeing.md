@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–景物的要素6
 date: 2008-05-29
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 景深 三维空间中，前两维是高度和宽度，第三维便是景深。对一个物体来说，景深被看做为结构，但是在这里我们所谈论的景深不是一个物体的景深，而是一幅全景的景深。在一张照片上，景物的三维空间表现得越充……
 thumbnail: ../images/post-image/21-TheArtOfSeeing.jpg

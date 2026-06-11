@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--照相机，镜头，胶片之四
 date: 2008-10-17
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 何时按下快门 何时按下快门--一件食指一缩便能做成的简单事，按快门的时间相对静止的事物来说无所谓，对运动的物体来说则变得十分重要。按照惯例，拍摄者在按下快门前总是需要等待。等什么呢？等待变化中……
 thumbnail: ../images/post-image/37-TheArtOfSeeing-1.jpg

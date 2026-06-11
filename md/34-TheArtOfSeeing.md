@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--照相机，镜头，胶片之一
 date: 2008-09-23
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 因为你是用照相机，镜头和胶片来摄影的，就必须知道它们是以与你不同的方式来观察世界的，还应该知道这些不同是如果影响你的摄影的。这些不同方式有：照相机会不加选择地把进入视野的任何一件东西都摄入镜头……
 thumbnail: ../images/post-image/34-TheArtOfSeeing.jpg

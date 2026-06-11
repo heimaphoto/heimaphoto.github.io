@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–景物的要素1
 date: 2008-04-23
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 在你找东西前，必须先明白你要找的是什么。为诊断病情，医生寻找的是一些特定的症状：如，变色的指甲，胳膊肘上的皮疹，等等。在训练时，高尔夫球教练注意的是学生的姿势：伸直的左臂，重心的移动，击球的轨……
 thumbnail: ../images/post-image/16-TheArtOfSeeing-1.jpg

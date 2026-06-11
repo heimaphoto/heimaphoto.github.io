@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–观察2
 date: 2008-06-17
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 寻找画面 虽然变换观察事物的方式是很重要的，但它并不是观察最主要的内容。观察最主要的内容，或许也是摄影最主要的内容，就是寻找的艺术。这一点很少为人所赏识，几乎不为人所注意。也就是说，寻找的艺术……
 thumbnail: ../images/post-image/24-TheArtOfSeeing-1.jpg

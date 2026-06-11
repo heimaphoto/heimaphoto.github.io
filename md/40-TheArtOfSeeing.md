@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--照相机，镜头，胶片之七
 date: 2008-11-25
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 景深 许多照片是用中等大小的光圈拍摄的（诸如f/8）。用这样的光圈能够良好地表现从清晰到模糊的渐变。但是用f/读数的两个极端光圈来拍摄的话，就缺乏这种渐变，而且这种渐变的缺乏是很明显的。 最大……
 thumbnail: ../images/post-image/40-TheArtOfSeeing-1.jpg

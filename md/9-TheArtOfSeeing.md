@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--先入之见5
 date: 2008-03-25
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 规则 有些先入之见是我们身不由己地遵从规则而导致的。从产房到坟墓，我们一直被灌输遵守各种规则--成文的或不成文的。诸如，在柜台付款；在公路上靠右行驶；不要盯着人看，等等。 摄影也无例外地存在着……
 thumbnail: ../img/photo/Smokers-Old-Teahouse.jpg

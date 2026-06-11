@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--照相机，镜头，胶片之六
 date: 2008-11-13
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 广角镜头 在拍摄距离较近的主体时，用广角镜头能增加物体间的空间感和距离感。焦距越短，空间夸张得越厉害。它能使近距离主体以及中距离主体明显地改变透视图像。 当远处的主体很小时，近处的主体就会在尺……
 thumbnail: ../images/post-image/39-TheArtOfSeeing-1.jpg

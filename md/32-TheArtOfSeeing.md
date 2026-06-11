@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–主题的处理5
 date: 2008-09-03
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 顺应自然 不要强使主题屈从你的思想方式--你不可能把一架钢琴从窗户里推出去。顺应自然吧；应该灵活些，适应环境吧。你将会在观赏你的照片时发现，景物是不会来适应你的。 事物是什么样就是什么样。只能……
 thumbnail: ../images/post-image/32-TheArtOfSeeing-1.jpg

@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--先入之见3
 date: 2008-03-21
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 主题就该象个主题吗？ 语言有时亦影响到我们的思维，因此也影响到我们的摄影，这种影响是难以衡量、难以理解的。例如，就摄影而言，我们反复使用了“主题”这一术语。在英语或摄影语言中，我们通常把“主题……
 thumbnail: ../img/photo/Sparkling.jpg

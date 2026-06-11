@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–观察1
 date: 2008-06-10
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 观察越多，发现越多。 在观察某一景观时，你或许会觉得只要看着它就行了。但是事情并不那么简单。人们可以用许多方式来观察一个景物。如果你只以一种方式去看它的话，你就会漏掉许多东西。通过对观察事物的……
 thumbnail: ../images/post-image/23-TheArtOfSeeing-1.jpg

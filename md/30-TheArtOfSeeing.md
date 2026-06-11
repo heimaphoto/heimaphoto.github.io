@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–主题的处理3
 date: 2008-08-08
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 找岔子 通过观察和分析，通过提高认识，通过灵感和苦苦的追索，你找到了一个主题。现在一切就绪，你打算把它拍摄下来。你激动，你得意，你神采飞扬。种种形象在你的心中飞舞，你会显得迫不及待，想尽快把它……
 thumbnail: ../images/post-image/30-TheArtOfSeeing-1.jpg

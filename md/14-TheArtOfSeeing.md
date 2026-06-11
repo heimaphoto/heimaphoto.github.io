@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--绚丽的光与影3
 date: 2008-04-13
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 情调 比构图更重要，比结构和形状更起作用，有时甚至比物体本身还有意义的是，光能建立起某种情调。为什么能呢？记录在胶片上的不就是光吗？ 凶兆、紧张、忧愁、高兴、悲伤，这些光的情调均能在画面上表现……
 thumbnail: ../images/post-image/14-TheArtOfSeeing.jpg

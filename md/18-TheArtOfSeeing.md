@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–景物的要素3
 date: 2008-05-04
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 质感 作为结构的兄弟，质感通常以光润和粗糙的程度来表现一个面的三维空间。突出质感也能象突出结构一样直接表现主题，使主题变得十分可信。 质感是通过人们摇晃或触摸物体而感受到的。前一种诉诸视觉，后……
 thumbnail: ../images/post-image/18-TheArtOfSeeing.jpg

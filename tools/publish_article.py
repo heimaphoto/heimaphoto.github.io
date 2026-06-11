@@ -17,8 +17,8 @@ DESCRIPTION = "Heima Photo：摄影、文字、器材与一些安静的好奇心
 CATEGORY_SLUGS = {
     "散文": "prose",
     "摄影": "photography",
-    "摄影/看的艺术": "TheArtOfSeeing",
-    "摄影/技术": "technology",
+    "看的艺术": "TheArtOfSeeing",
+    "摄影技术": "technology",
     "器材": "gear",
     "建站": "website",
     "生活": "life",
@@ -26,13 +26,13 @@ CATEGORY_SLUGS = {
 CATEGORY_EN = {
     "散文": "Prose",
     "摄影": "Photography",
-    "摄影/看的艺术": "The Art Of Seeing",
-    "摄影/技术": "Technology",
+    "看的艺术": "The Art Of Seeing",
+    "摄影技术": "Technology",
     "器材": "Gear",
     "建站": "Website",
     "生活": "Life",
 }
-DEFAULT_CATEGORIES = ["散文", "摄影/看的艺术", "摄影/技术"]
+DEFAULT_CATEGORIES = ["散文", "看的艺术", "摄影技术"]
 
 
 def esc(value):
@@ -472,7 +472,7 @@ def render_the_art_archive():
     body = f"""<main>
   <section class="narrow page-title">
     <p class="eyebrow">Category</p>
-    <h1>摄影/看的艺术</h1>
+    <h1>看的艺术</h1>
   </section>
   <section class="narrow single-column-page">
     <div class="article-body legacy-archive">
@@ -480,7 +480,7 @@ def render_the_art_archive():
     </div>
   </section>
 </main>"""
-    return page("摄影/看的艺术 — Heima Photo", body, depth=1, description="Heima Photo 看的艺术分类文章。")
+    return page("看的艺术 — Heima Photo", body, depth=1, description="Heima Photo 看的艺术分类文章。")
 
 
 def render_article(article, prev_article, next_article):
@@ -616,7 +616,7 @@ def main():
     for article in articles:
         by_category[article["category"]].append(article)
     for category in categories:
-        if category == "摄影/看的艺术":
+        if category == "看的艺术":
             html_text = render_the_art_archive()
         else:
             html_text = render_category_page(category, by_category.get(category, []))

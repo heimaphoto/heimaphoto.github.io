@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–景物的要素7
 date: 2008-06-03
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 景深的几种表现形式 在摄影中，表现三维空间的极端手段便是立体摄影----用一架带有两个镜头的相机，对同一物体拍摄视角不同的两张照片。当一个人用一架体视镜看这两张视角不同的照片时，便可看到一幅三……
 thumbnail: ../images/post-image/22-TheArtOfSeeing-1.jpg

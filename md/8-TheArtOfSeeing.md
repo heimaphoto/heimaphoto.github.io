@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--先入之见4
 date: 2008-03-23
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 怎样观看事物 我们懂得怎样观看事物，或者说我们自己认为自己懂得。想象一下树木、鲜花或汽车的形象吧。同一类事物在我们内心的形象是十分相似的，这可追溯到我们生活的早期。那时母亲把我们抱在膝上，指点……
 thumbnail: ../img/photo/Tree-leaf.jpg

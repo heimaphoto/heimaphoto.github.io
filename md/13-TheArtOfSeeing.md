@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--绚丽的光与影2
 date: 2008-04-09
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 阴影 有光即有影。最大的阴影就是夜晚。这时地球的这一半被另一半所遮蔽。就摄影而言，我们所处理的是小阴影--如，一片云遮住了一片苹果园；一只苹果遮住了桌面的一小块面积；鼻子在面颊上形成的阴影。 ……
 thumbnail: ../images/post-image/13-TheArtOfSeeing.jpg

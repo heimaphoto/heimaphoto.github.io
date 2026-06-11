@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--照相机，镜头，胶片之五
 date: 2008-11-04
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 镜头 镜头有许多种，但最普通的莫过于具有四种功能的17毫米的镜头，该镜头能自动聚集、自动调节光圈（从f/3到f/12），其垂直视角达到140度，水平视角达到180度，并且带有镜间快门和内部色彩……
 thumbnail: ../images/post-image/38-TheArtOfSeeing-1.jpg

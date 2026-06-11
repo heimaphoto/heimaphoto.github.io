@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–景物的要素4
 date: 2008-05-16
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 醒目和鲜艳的色彩 醒目和鲜艳的色彩是那么地显眼，那么地光彩夺目，使人眼花缭乱。如果一个物体起初并不是你所打算用的拍摄对象，但它拥有醒目和鲜艳的色彩，这将很快使你改变初衷，它将推翻结构，废黜线条……
 thumbnail: ../images/post-image/19-TheArtOfSeeing-1.jpg

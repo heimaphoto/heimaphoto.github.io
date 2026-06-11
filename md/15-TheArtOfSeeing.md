@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--绚丽的光与影4
 date: 2008-04-15
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 光的基本知识 光能使人们见到物体。因此，摄影者必须掌握光影响物体视觉效果的三个重要特性。这些特性便是光的方向、品质和色彩。 光的方向 事实上光可以来自任何方向，而每一个方向都影响到景物在三维空……
 thumbnail: ../images/post-image/15-TheArtOfSeeing.jpg

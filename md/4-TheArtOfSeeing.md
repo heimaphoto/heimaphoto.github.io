@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--先入之见1
 date: 2008-03-17
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 不管承认与否，你有先入之见。我们都有先入之见。先入之见是不可避免的。它们在人们的心灵深处游荡，隐藏在黑暗中不为人所见，在寂静中不为人所闻，但时刻伺候在人们的身旁。在你一见到一朵鲜花，一张脸，或……
 thumbnail: ../img/photo/city-morning.jpg

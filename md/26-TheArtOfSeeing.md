@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–观察4
 date: 2008-07-01
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 场景 一棵盛开的樱桃树。一棵在果园里盛开的樱桃树。一棵在错层式小屋前盛开的樱桃树。一棵在露天停车场中盛开的樱桃树。 每一件东西都有它自己的归宿，通常通过表现它们所处的场所，你可以更好地揭示主题……
 thumbnail: ../images/post-image/26-TheArtOfSeeing-1.jpg

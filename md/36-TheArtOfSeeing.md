@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--照相机，镜头，胶片之三
 date: 2008-10-07
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 快门和动作 快门能捕捉到的动作，眼睛却不一定能看到。一个人所具有的与快门相接近的东西是眼睑。眼睑的眨动仅仅起了个擦玻璃窗的作用。其实眼睑与快门很相似，快门能够使运动凝住，也可以使动作显得模糊，……
 thumbnail: ../images/post-image/36-TheArtOfSeeing-1.jpg

@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--先入之见2
 date: 2008-03-20
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 什么是主题 用最简单的话来说，所谓主题就是你所拍摄的东西。换句话说，主题可以是任何东西。任何东西都能作主题。但却很少有摄影家这么看。他们对所谓适合于摄影的主题加上了某些限制。从他们的书本和杂志……
 thumbnail: ../img/photo/umbrella.jpg

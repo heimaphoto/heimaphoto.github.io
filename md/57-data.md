@@ -1,7 +1,7 @@
 ---
 title: C-41 冲洗中各种药液的配制
 date: 2018-11-17
-category: 摄影/技术
+category: 摄影技术
 category_slug: technology
 summary: 彩色显影液。 按柯达说明是这样配制的： 补充液配制：纯净水（13-30°C）8L + 彩显浓缩液 A（800ml） + 彩显浓缩液 B（213ml） + 彩显浓缩液 C（112ml） + 纯净……
 ---

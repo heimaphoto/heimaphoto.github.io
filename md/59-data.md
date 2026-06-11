@@ -1,7 +1,7 @@
 ---
 title: 摄影的秘密系列话题--如何设置ISO感光度？
 date: 2008-06-11
-category: 摄影/技术
+category: 摄影技术
 category_slug: technology
 summary: 如何设置快门、光圈和ISO感光度是一个极其重要的问题。在这里我会告诉你一些一般规则，也会告诉你一些必要的知识，当你这样设置时会发生什么？但要记住，当你对摄影越是深入，对某些问题就越是难以给出确……
 thumbnail: ../images/myphoto/shanghai-night-07.jpg

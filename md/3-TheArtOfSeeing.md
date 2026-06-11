@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--内容提要&前言
 date: 2008-03-14
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 柯达摄影丛书 浙江摄影出版社 看的艺术 [美]德里克·多伊芬格 著 谷峰 译 ========================================= 内容提要 你曾在寻找拍摄素材方……
 thumbnail: ../img/photo/Train.jpg

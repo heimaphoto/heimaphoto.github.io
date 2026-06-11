@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–主题的处理2
 date: 2008-07-24
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 联想 头脑能进行类推，能作出比喻，能进行各种联想。人的头脑里充满了各种符号，这些符号急待发送出去。一只鞋子进入头脑，就会联想到鞋匠；一只十字架进入头脑，就会联想到宗教。几乎没有一种物体能够进入……
 thumbnail: ../images/post-image/29-TheArtOfSeeing-1.jpg

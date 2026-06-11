@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–观察3
 date: 2008-06-24
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 局部 当你在观察某一景物时，你可以把被摄主体看作是景物的一部分，或者看作是景物中某一物体的一部分。在这几页里，我们要讨论一下从局部到整体的视野变化所产生的效果，并揭示其间的奇特的联系。 我们每……
 thumbnail: ../images/post-image/25-TheArtOfSeeing-1.jpg

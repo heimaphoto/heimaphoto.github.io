@@ -1,7 +1,7 @@
 ---
 title: 看的艺术–主题的处理6
 date: 2008-09-17
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 构图 构图伴随着艺术而来，它的历史也许还要长一些。当一个史前人把一张猛犸皮横挂于洞穴，嘴里咕哝着：“这样不是更好吗？”的时候，就有构图了。 我们的这位猛犸皮装饰者所提出的问题其实不是一个问题，……
 thumbnail: ../images/post-image/33-TheArtOfSeeing-1.jpg

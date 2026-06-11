@@ -1,7 +1,7 @@
 ---
 title: 摄影的秘密系列话题--相机是怎样控制光线的？
 date: 2008-06-06
-category: 摄影/技术
+category: 摄影技术
 category_slug: technology
 summary: 这篇文章主要涉及三个方面，快门、光圈和ISO感光度。 如果你是一个摄影初学者或者习惯于依赖相机的自动曝光进行拍照的摄影爱好者，或许对快门和光圈以及ISO感光度的原理并不是很明白。本来我觉得这些……
 thumbnail: ../img/photo/i-stand-in-the-shadow.jpg

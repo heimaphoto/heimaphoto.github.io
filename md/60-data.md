@@ -1,7 +1,7 @@
 ---
 title: 摄影的秘密系列话题--怎样设置光圈？
 date: 2008-06-19
-category: 摄影/技术
+category: 摄影技术
 category_slug: technology
 summary: 基本上光圈是我们在摄影时会手动调节最多的一个技术参数，至少对我是这样的。 谈论光圈免不了要涉及“景深”。何谓景深？简单的说就是“聚焦点前后清晰的范围”，换句话说，景深是“一段距离”， 在这段距……
 thumbnail: ../img/photo/cold-xiao.jpg

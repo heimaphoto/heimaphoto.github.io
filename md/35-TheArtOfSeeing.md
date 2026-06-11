@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--照相机，镜头，胶片之二
 date: 2008-10-01
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 边框 如果你能保持眼球完全静止，当然这太不自然了，你就会发现人类的眼睛也是有边框的--有一个为眼框所定下的大致呈椭圆形的边界。但是在一般情况下，你总要对景物眨动眼睛的，所以事实上眼睛的视域是无……
 thumbnail: ../images/post-image/35-TheArtOfSeeing-1.jpg

@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--写在前面
 date: 2008-03-14
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 很早以前，我在新华书店的一个角落里买到了这本当时就挺破旧的摄影丛书。名字叫“看的艺术(The Art Of Seeing)”，虽然这本书印刷的质量一般，但其中的文字对我来说如若至宝。这是柯达摄……
 thumbnail: ../img/photo/i-stand-in-the-shadow.jpg

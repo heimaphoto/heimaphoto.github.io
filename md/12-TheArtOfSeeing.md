@@ -1,7 +1,7 @@
 ---
 title: 看的艺术--绚丽的光与影1
 date: 2008-04-04
-category: 摄影/看的艺术
+category: 看的艺术
 category_slug: TheArtOfSeeing
 summary: 作为质感的梳理者，形式的铸造者，色彩的承载者，遐想的触发者，光造就了摄影。拥抱光吧，赞美它，热爱它。但是，还有更重要的--研究它。它，带着绚丽的色彩穿过遮住太阳的云朵撒向大地，以其优美的韵律穿……
 thumbnail: ../images/post-image/12-TheArtOfSeeing.jpg
