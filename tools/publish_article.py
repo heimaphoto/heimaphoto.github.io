@@ -121,6 +121,23 @@ def markdown_to_html(markdown, title):
             flush()
             blocks.append(stripped)
             continue
+        inline_image = re.match(r"^\{\{\s*image:\s*(.+?)\s*\}\}$", stripped)
+        if inline_image:
+            flush()
+            raw = inline_image.group(1).strip()
+            if "|" in raw:
+                src, caption = [part.strip() for part in raw.split("|", 1)]
+            else:
+                src, caption = raw, ""
+            if caption:
+                blocks.append(
+                    '<figure><img src="{src}" alt="{caption}"><figcaption>{caption}</figcaption></figure>'.format(
+                        src=esc(src), caption=esc(caption)
+                    )
+                )
+            else:
+                blocks.append(f'<figure><img src="{esc(src)}" alt=""></figure>')
+            continue
         image = re.match(r"!\[(.*?)\]\((.*?)\)", stripped)
         if image:
             flush()
