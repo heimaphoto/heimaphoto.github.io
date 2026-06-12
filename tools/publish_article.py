@@ -39,6 +39,18 @@ def esc(value):
     return html.escape(str(value or ""), quote=True)
 
 
+def render_inline(text):
+    parts = []
+    pos = 0
+    for match in re.finditer(r"\[([^\]]+)\]\(([^)\s]+)\)", text):
+        parts.append(esc(text[pos : match.start()]))
+        label, href = match.groups()
+        parts.append(f'<a href="{esc(href)}">{esc(label)}</a>')
+        pos = match.end()
+    parts.append(esc(text[pos:]))
+    return "".join(parts)
+
+
 def slugify(value):
     known = CATEGORY_SLUGS.get(value)
     if known:
@@ -104,13 +116,24 @@ def markdown_to_html(markdown, title):
         return markdown.strip()
     blocks = []
     paragraph = []
+    quote = []
     lines = markdown.splitlines()
 
-    def flush():
+    def flush_paragraph():
         nonlocal paragraph
         if paragraph:
-            blocks.append("<p>" + "<br>\n".join(esc(x) for x in paragraph) + "</p>")
+            blocks.append("<p>" + "<br>\n".join(render_inline(x) for x in paragraph) + "</p>")
             paragraph = []
+
+    def flush_quote():
+        nonlocal quote
+        if quote:
+            blocks.append("<blockquote><p>" + "<br>\n".join(render_inline(x) for x in quote) + "</p></blockquote>")
+            quote = []
+
+    def flush():
+        flush_paragraph()
+        flush_quote()
 
     for line in lines:
         stripped = line.strip()
@@ -148,6 +171,11 @@ def markdown_to_html(markdown, title):
                 )
             )
             continue
+        blockquote = re.match(r"^>\s?(.*)$", stripped)
+        if blockquote:
+            flush_paragraph()
+            quote.append(blockquote.group(1))
+            continue
         heading = re.match(r"^(#{2,4})\s+(.+)$", stripped)
         if heading:
             flush()
@@ -155,8 +183,9 @@ def markdown_to_html(markdown, title):
             text = heading.group(2).strip()
             if not blocks and text == title:
                 continue
-            blocks.append(f"<h{level}>{esc(text)}</h{level}>")
+            blocks.append(f"<h{level}>{render_inline(text)}</h{level}>")
             continue
+        flush_quote()
         paragraph.append(stripped)
     flush()
     return "\n".join(blocks)
