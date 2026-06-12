@@ -21,6 +21,7 @@ CATEGORY_SLUGS = {
     "摄影技术": "technology",
     "器材": "gear",
     "建站": "website",
+    "建站记录": "site",
     "生活": "life",
 }
 CATEGORY_EN = {
@@ -30,6 +31,7 @@ CATEGORY_EN = {
     "摄影技术": "Technology",
     "器材": "Gear",
     "建站": "Website",
+    "建站记录": "Site",
     "生活": "Life",
 }
 DEFAULT_CATEGORIES = ["散文", "看的艺术", "摄影技术"]
