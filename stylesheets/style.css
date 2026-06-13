@@ -7,6 +7,7 @@
   --line: #ded6c8;
   --soft: #eee5d7;
   --accent: #6f4e37;
+  --link: #8a3f1d;
   --max: 1080px;
   --content: 760px;
 }
@@ -426,6 +427,19 @@ a:hover { color: var(--accent); }
 
 .article-body p {
   margin: 0 0 1.25em;
+}
+
+.article-body a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: rgba(138, 63, 29, .38);
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+}
+
+.article-body a:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
 }
 
 .article-body h2 {
