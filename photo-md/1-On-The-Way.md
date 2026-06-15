@@ -4,8 +4,8 @@ title: 在路上的夜色中
 date: 2025-12-31
 type: photo
 image: ../images/photo/On-The-Way.jpg
-camera: IPhone 14 Pro
-location: Wuxi,JiangSu,China
+camera: iPhone 14 Pro
+location: Wuxi, JiangSu, China
 description: 在迷离的夜灯下，长路漫漫，拥挤而孤独。
 ---
 > 夜色中迷离昏黄的灯光

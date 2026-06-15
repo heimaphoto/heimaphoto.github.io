@@ -378,10 +378,10 @@ def render_index(articles):
         "<!-- MANUAL-FEATURED-PHOTOS:START -->",
         "<!-- MANUAL-FEATURED-PHOTOS:END -->",
         """<!-- MANUAL-FEATURED-PHOTOS:START -->
-      <a class="lightbox-trigger" href="img/photo/Milk-Tea.jpg" data-caption="Milk Tea"><img src="img/photo/Milk-Tea.jpg" alt="Milk Tea"></a>
-      <a class="lightbox-trigger" href="img/photo/By-the-park-lake.jpg" data-caption="By the park lake"><img src="img/photo/By-the-park-lake.jpg" alt="By the park lake"></a>
-      <a class="lightbox-trigger" href="img/photo/On-a-rainy-road.jpg" data-caption="On a rainy road"><img src="img/photo/On-a-rainy-road.jpg" alt="On a rainy road"></a>
-      <a class="lightbox-trigger" href="img/photo/shanghai-night.jpg" data-caption="Shanghai night"><img src="img/photo/shanghai-night.jpg" alt="Shanghai night"></a>
+      <a href="portfolio/index.html"><img src="img/photo/Milk-Tea.jpg" alt="Milk Tea"></a>
+      <a href="portfolio/index.html"><img src="img/photo/By-the-park-lake.jpg" alt="By the park lake"></a>
+      <a href="portfolio/index.html"><img src="img/photo/On-a-rainy-road.jpg" alt="On a rainy road"></a>
+      <a href="portfolio/index.html"><img src="img/photo/shanghai-night.jpg" alt="Shanghai night"></a>
       <!-- MANUAL-FEATURED-PHOTOS:END -->""",
     )
     body = f"""<main>
@@ -435,52 +435,7 @@ def render_index(articles):
     <p>A personal archive of photographs, notes and curiosities.</p>
   </section>
 </main>
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="关闭">×</button>
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-  <div class="lightbox-caption"></div>
-</div>
-<script>
-(function () {{
-  var blankImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
-  var box = document.getElementById("lightbox");
-  if (!box) return;
-
-  var image = box.getElementsByTagName("img")[0];
-  var caption = box.getElementsByClassName("lightbox-caption")[0];
-  var closeButton = box.getElementsByClassName("lightbox-close")[0];
-  var links = document.querySelectorAll(".lightbox-trigger");
-
-  function openLightbox(link) {{
-    image.src = link.getAttribute("href");
-    image.alt = link.getElementsByTagName("img")[0].alt || "";
-    caption.textContent = link.getAttribute("data-caption") || image.alt || "";
-    box.className = "lightbox is-open";
-    box.setAttribute("aria-hidden", "false");
-  }}
-
-  function closeLightbox() {{
-    box.className = "lightbox";
-    box.setAttribute("aria-hidden", "true");
-    image.src = blankImage;
-  }}
-
-  for (var i = 0; i < links.length; i += 1) {{
-    links[i].addEventListener("click", function (event) {{
-      event.preventDefault();
-      openLightbox(this);
-    }});
-  }}
-
-  closeButton.addEventListener("click", closeLightbox);
-  box.addEventListener("click", function (event) {{
-    if (event.target === box) closeLightbox();
-  }});
-  document.addEventListener("keydown", function (event) {{
-    if (event.key === "Escape" || event.keyCode === 27) closeLightbox();
-  }});
-}}());
-</script>"""
+"""
     return page(f"{SITE_TITLE} — Photographs, Notes and Quiet Experiments", body, "index")
 
 
@@ -550,8 +505,8 @@ def render_archive(articles, categories, photo_works=None):
     body = f"""<main>
   <section class="wrap page-title">
     <p class="eyebrow">Archive</p>
-    <h1>文章归档</h1>
-    <p>所有文字内容都放在这里。首页只放最近几篇，归档负责长期保存。</p>
+    <h1>归档</h1>
+    <p>文章与作品都放在这里。首页只放最近几篇，归档负责长期保存。</p>
   </section>
   <section class="wrap main-layout">
     <div class="compact-list">
@@ -567,7 +522,7 @@ def render_archive(articles, categories, photo_works=None):
     </aside>
   </section>
 </main>"""
-    return page(f"文章归档 — {SITE_TITLE}", body, "archive")
+    return page(f"归档 — {SITE_TITLE}", body, "archive")
 
 
 def render_category_page(category, articles):
@@ -771,8 +726,8 @@ def render_photo_detail(work):
       </div>
 """ if work.get("detail") else ""
     nav = """      <nav class="article-nav photo-nav">
-        <a href="../portfolio/index.html">返回 Portfolio</a>
-        <a href="../archive.html">返回归档</a>
+        <a href="../portfolio/index.html">← Portfolio</a>
+        <a href="../archive.html">Archive →</a>
       </nav>
 """
     kicker = f"{esc(work['type'].title())} · {work['date'].year}"

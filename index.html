@@ -104,10 +104,10 @@
     </div>
     <div class="photo-grid">
 <!-- MANUAL-FEATURED-PHOTOS:START -->
-      <a class="lightbox-trigger" href="img/photo/Milk-Tea.jpg" data-caption="Milk Tea"><img src="img/photo/Milk-Tea.jpg" alt="Milk Tea"></a>
-      <a class="lightbox-trigger" href="img/photo/By-the-park-lake.jpg" data-caption="By the park lake"><img src="img/photo/By-the-park-lake.jpg" alt="By the park lake"></a>
-      <a class="lightbox-trigger" href="img/photo/On-a-rainy-road.jpg" data-caption="On a rainy road"><img src="img/photo/On-a-rainy-road.jpg" alt="On a rainy road"></a>
-      <a class="lightbox-trigger" href="img/photo/shanghai-night.jpg" data-caption="Shanghai night"><img src="img/photo/shanghai-night.jpg" alt="Shanghai night"></a>
+      <a href="portfolio/index.html"><img src="img/photo/Milk-Tea.jpg" alt="Milk Tea"></a>
+      <a href="portfolio/index.html"><img src="img/photo/By-the-park-lake.jpg" alt="By the park lake"></a>
+      <a href="portfolio/index.html"><img src="img/photo/On-a-rainy-road.jpg" alt="On a rainy road"></a>
+      <a href="portfolio/index.html"><img src="img/photo/shanghai-night.jpg" alt="Shanghai night"></a>
       <!-- MANUAL-FEATURED-PHOTOS:END -->
     </div>
   </section>
@@ -116,52 +116,7 @@
     <p>A personal archive of photographs, notes and curiosities.</p>
   </section>
 </main>
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="关闭">×</button>
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="">
-  <div class="lightbox-caption"></div>
-</div>
-<script>
-(function () {
-  var blankImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
-  var box = document.getElementById("lightbox");
-  if (!box) return;
 
-  var image = box.getElementsByTagName("img")[0];
-  var caption = box.getElementsByClassName("lightbox-caption")[0];
-  var closeButton = box.getElementsByClassName("lightbox-close")[0];
-  var links = document.querySelectorAll(".lightbox-trigger");
-
-  function openLightbox(link) {
-    image.src = link.getAttribute("href");
-    image.alt = link.getElementsByTagName("img")[0].alt || "";
-    caption.textContent = link.getAttribute("data-caption") || image.alt || "";
-    box.className = "lightbox is-open";
-    box.setAttribute("aria-hidden", "false");
-  }
-
-  function closeLightbox() {
-    box.className = "lightbox";
-    box.setAttribute("aria-hidden", "true");
-    image.src = blankImage;
-  }
-
-  for (var i = 0; i < links.length; i += 1) {
-    links[i].addEventListener("click", function (event) {
-      event.preventDefault();
-      openLightbox(this);
-    });
-  }
-
-  closeButton.addEventListener("click", closeLightbox);
-  box.addEventListener("click", function (event) {
-    if (event.target === box) closeLightbox();
-  });
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" || event.keyCode === 27) closeLightbox();
-  });
-}());
-</script>
 <footer class="site-footer">
   <div class="wrap">
     <p>© 2026 Heima Photo. Built quietly with static HTML.</p>

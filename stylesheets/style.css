@@ -325,57 +325,6 @@ a:hover { color: var(--accent); }
   background: var(--soft);
 }
 
-.lightbox-trigger {
-  cursor: zoom-in;
-}
-
-.lightbox {
-  align-items: center;
-  background: rgba(18, 16, 13, .88);
-  display: none;
-  inset: 0;
-  justify-content: center;
-  padding: 24px;
-  position: fixed;
-  z-index: 100;
-}
-
-.lightbox.is-open {
-  display: flex;
-}
-
-.lightbox img {
-  background: #111;
-  box-shadow: 0 22px 70px rgba(0, 0, 0, .45);
-  max-height: calc(100vh - 96px);
-  max-width: min(1120px, calc(100vw - 48px));
-  object-fit: contain;
-}
-
-.lightbox-close {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, .55);
-  color: #fff;
-  cursor: pointer;
-  font-size: 24px;
-  height: 42px;
-  line-height: 1;
-  position: fixed;
-  right: 22px;
-  top: 18px;
-  width: 42px;
-}
-
-.lightbox-caption {
-  bottom: 18px;
-  color: rgba(255, 255, 255, .78);
-  font-size: 13px;
-  left: 24px;
-  position: fixed;
-  right: 24px;
-  text-align: center;
-}
-
 .page-title {
   padding: 72px 0 34px;
   border-bottom: 1px solid var(--line);
@@ -442,11 +391,15 @@ a:hover { color: var(--accent); }
 }
 
 .article-header {
-  padding: 64px 0 28px;
+  padding: 64px 0 46px;
 }
 
 .article-header h1 {
   font-size: clamp(38px, 5vw, 62px);
+}
+
+.article-header .meta {
+  margin: 14px 0 0;
 }
 
 .article-lead {
@@ -458,6 +411,10 @@ a:hover { color: var(--accent); }
 .article-body {
   background: var(--paper);
   border: 1px solid var(--line);
+  color: #4a4a4a;
+  font-family: Verdana, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 18px;
+  line-height: 2;
   padding: 42px;
 }
 
@@ -743,14 +700,6 @@ a:hover { color: var(--accent); }
     padding: 28px;
   }
 
-  .lightbox {
-    padding: 14px;
-  }
-
-  .lightbox img {
-    max-height: calc(100vh - 86px);
-    max-width: calc(100vw - 28px);
-  }
 }
 
 @media (max-width: 560px) {
