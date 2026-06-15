@@ -9,8 +9,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MD_DIR = ROOT / "md"
+PHOTO_MD_DIR = ROOT / "photo-md"
 ARTICLE_DIR = ROOT / "article"
 CATEGORY_DIR = ROOT / "category"
+PHOTO_DIR = ROOT / "photo"
 
 SITE_TITLE = "Heima Photo"
 DESCRIPTION = "Heima Photo：摄影、文字、器材与一些安静的好奇心。"
@@ -217,6 +219,52 @@ def parse_article(path):
         "gallery": data.get("gallery", []),
         "related": data.get("related", []),
         "body": markdown_to_html(body, data["title"]),
+    }
+
+
+def photo_image_path(path):
+    if not path:
+        return ""
+    if path.startswith("../") or path.startswith("http://") or path.startswith("https://"):
+        return path
+    if path.startswith("images/") or path.startswith("img/"):
+        return "../" + path
+    return path
+
+
+def parse_photo_work(path):
+    data, body = read_front_matter(path)
+    for field in ("title", "date", "type"):
+        if not data.get(field):
+            raise ValueError(f"{path} 缺少必填字段 {field}")
+    slug = data.get("slug") or path.stem
+    date = datetime.strptime(data["date"], "%Y-%m-%d")
+    work_type = data["type"].lower()
+    if work_type not in ("photo", "series"):
+        raise ValueError(f"{path} type 必须是 photo 或 series")
+    images = data.get("images") or data.get("source_images") or []
+    image = data.get("image") or data.get("source_image") or ""
+    if image and image not in images:
+        images = [image] + images
+    images = [photo_image_path(item) for item in images if item]
+    if not images:
+        raise ValueError(f"{path} 至少需要 image/source_image 或 images/source_images")
+    detail = markdown_to_html(body, data["title"]) if body.strip() else ""
+    return {
+        "source": path,
+        "slug": slug,
+        "url": f"photo/{slug}.html",
+        "photo_href": f"{slug}.html",
+        "title": data["title"],
+        "date": date,
+        "type": work_type,
+        "image": images[0],
+        "images": images,
+        "camera": data.get("camera", ""),
+        "lens": data.get("lens", ""),
+        "location": data.get("location", ""),
+        "description": data.get("description", ""),
+        "detail": detail,
     }
 
 
@@ -443,6 +491,34 @@ def grouped(articles):
     return dict(sorted(years.items(), reverse=True))
 
 
+def archive_entries(articles, photo_works):
+    entries = []
+    for article in articles:
+        entries.append(
+            {
+                "date": article["date"],
+                "title": article["title"],
+                "url": article["url"],
+                "label": article["category"],
+                "label_url": f"category/{article['category_slug']}.html",
+                "kind": "article",
+            }
+        )
+    for work in photo_works:
+        entries.append(
+            {
+                "date": work["date"],
+                "title": work["title"],
+                "url": work["url"],
+                "label": "Portfolio",
+                "label_url": "",
+                "kind": "portfolio",
+            }
+        )
+    entries.sort(key=lambda item: item["date"], reverse=True)
+    return entries
+
+
 def render_category_sidebar(categories):
     rows = []
     for cat in categories:
@@ -452,16 +528,22 @@ def render_category_sidebar(categories):
     return "\n".join(rows)
 
 
-def render_archive(articles, categories):
+def render_archive(articles, categories, photo_works=None):
+    photo_works = photo_works or []
     sections = []
-    for year, rows in grouped(articles).items():
+    for year, rows in grouped(archive_entries(articles, photo_works)).items():
         items = []
         for a in rows:
+            label = (
+                f'<a class="item-category" href="{a["label_url"]}">{esc(a["label"])}</a>'
+                if a.get("label_url")
+                else f'<span class="item-category">{esc(a["label"])}</span>'
+            )
             items.append(
                 f"""        <li>
           <time>{a['date'].strftime('%m.%d')}</time>
           <a href="{a['url']}">{esc(a['title'])}</a>
-          <a class="item-category" href="category/{a['category_slug']}.html">{esc(a['category'])}</a>
+          {label}
         </li>"""
             )
         sections.append(f"      <h2>{year}</h2>\n      <ul>\n{chr(10).join(items)}\n      </ul>")
@@ -623,8 +705,10 @@ def render_about(categories):
     return page(f"关于 — {SITE_TITLE}", body, "about")
 
 
-def render_portfolio_entry():
-    body = """<main>
+def render_portfolio_entry(photo_works=None):
+    photo_works = photo_works or []
+    if not photo_works:
+        body = """<main>
   <section class="wrap page-title">
     <p class="eyebrow">Portfolio</p>
     <h1>摄影作品集</h1>
@@ -636,19 +720,100 @@ def render_portfolio_entry():
     </div>
   </section>
 </main>"""
+        return page(f"Portfolio — {SITE_TITLE}", body, "portfolio", depth=1)
+    cards = []
+    for work in photo_works:
+        cards.append(
+            f"""      <a class="portfolio-work" href="../{work['url']}">
+        <img src="{esc(work['image'])}" alt="{esc(work['title'])}">
+        <span>{esc(work['title'])}</span>
+      </a>"""
+        )
+    works_html = f"""    <div class="portfolio-grid">
+{chr(10).join(cards)}
+    </div>"""
+    body = f"""<main>
+  <section class="wrap page-title">
+    <p class="eyebrow">Portfolio</p>
+    <h1>摄影作品集</h1>
+    <p>新的 Portfolio 用来保存近期整理出的摄影作品。旧作品集仍作为历史档案保留。</p>
+  </section>
+  <section class="wrap portfolio-page">
+{works_html}
+    <p class="old-portfolio-link"><a href="../portfolio.htm">旧版作品入口 / Old Portfolio</a></p>
+  </section>
+</main>"""
     return page(f"Portfolio — {SITE_TITLE}", body, "portfolio", depth=1)
 
 
-def main():
-    target = Path(sys.argv[1]) if len(sys.argv) > 1 else None
+def render_photo_detail(work):
+    meta = [("Date", work["date"].strftime("%Y.%m.%d"))]
+    if work.get("camera"):
+        meta.append(("Camera", work["camera"]))
+    if work.get("lens"):
+        meta.append(("Lens", work["lens"]))
+    if work.get("location"):
+        meta.append(("Location", work["location"]))
+    rows = "\n".join(f"        <div><dt>{esc(label)}</dt><dd>{esc(value)}</dd></div>" for label, value in meta)
+    meta_html = f"""      <dl class="photo-meta">
+{rows}
+      </dl>
+"""
+    subtitle = f'      <p class="photo-subtitle">{esc(work["description"])}</p>\n' if work.get("description") else ""
+    figures = []
+    for index, src in enumerate(work["images"], 1):
+        figure_class = "photo-hero" if index == 1 else "photo-frame"
+        suffix = f" {index}" if work["type"] == "series" else ""
+        figures.append(f'    <figure class="{figure_class}"><img src="{esc(src)}" alt="{esc(work["title"])}{suffix}"></figure>')
+    images = "\n".join(figures)
+    detail = f"""      <div class="photo-description">
+{work['detail']}
+      </div>
+""" if work.get("detail") else ""
+    nav = """      <nav class="article-nav photo-nav">
+        <a href="../portfolio/index.html">返回 Portfolio</a>
+        <a href="../archive.html">返回归档</a>
+      </nav>
+"""
+    kicker = f"{esc(work['type'].title())} · {work['date'].year}"
+    if work["type"] == "series":
+        body = f"""<main>
+  <article class="wrap photo-page">
+    <section class="photo-info photo-info-top">
+      <p class="photo-kicker">{kicker}</p>
+      <h1>{esc(work['title'])}</h1>
+{subtitle}    </section>
+{images}
+    <section class="photo-info">
+{meta_html}{detail}{nav}    </section>
+  </article>
+</main>"""
+    else:
+        body = f"""<main>
+  <article class="wrap photo-page">
+{images}
+    <section class="photo-info">
+      <p class="photo-kicker">{kicker}</p>
+      <h1>{esc(work['title'])}</h1>
+{subtitle}{meta_html}{detail}{nav}    </section>
+  </article>
+</main>"""
+    return page(f"{work['title']} — {SITE_TITLE}", body, depth=1, description=work.get("description") or DESCRIPTION)
+
+
+def publish(target=None):
     if target and not target.is_absolute():
         target = (ROOT / target).resolve()
     ARTICLE_DIR.mkdir(exist_ok=True)
+    PHOTO_DIR.mkdir(exist_ok=True)
     CATEGORY_DIR.mkdir(exist_ok=True)
     articles = [parse_article(path) for path in sorted(MD_DIR.glob("*.md")) if not path.name.startswith("_")]
-    if target and target not in [a["source"].resolve() for a in articles]:
-        raise SystemExit(f"没有在 md/ 中找到 {target}")
+    photo_works = [parse_photo_work(path) for path in sorted(PHOTO_MD_DIR.glob("*.md")) if not path.name.startswith("_")]
+    known_sources = [a["source"].resolve() for a in articles] + [p["source"].resolve() for p in photo_works]
+    if target and target not in known_sources:
+        raise SystemExit(f"没有在 md/ 或 photo-md/ 中找到 {target}")
     articles.sort(key=lambda a: (a["date"], a["slug"]), reverse=True)
+    photo_works.sort(key=lambda item: (item["date"], item["slug"]), reverse=True)
     chronological = list(reversed(articles))
     positions = {a["slug"]: i for i, a in enumerate(chronological)}
     categories = list(DEFAULT_CATEGORIES)
@@ -657,9 +822,9 @@ def main():
             categories.append(a["category"])
 
     (ROOT / "index.html").write_text(render_index(articles), encoding="utf-8")
-    (ROOT / "archive.html").write_text(render_archive(articles, categories), encoding="utf-8")
+    (ROOT / "archive.html").write_text(render_archive(articles, categories, photo_works), encoding="utf-8")
     (ROOT / "about.html").write_text(render_about(categories), encoding="utf-8")
-    (ROOT / "portfolio" / "index.html").write_text(render_portfolio_entry(), encoding="utf-8")
+    (ROOT / "portfolio" / "index.html").write_text(render_portfolio_entry(photo_works), encoding="utf-8")
 
     for article in articles:
         pos = positions[article["slug"]]
@@ -677,7 +842,14 @@ def main():
         else:
             html_text = render_category_page(category, by_category.get(category, []))
         (CATEGORY_DIR / f"{slugify(category)}.html").write_text(html_text, encoding="utf-8")
-    print(f"Published {len(articles)} article(s).")
+    for work in photo_works:
+        (PHOTO_DIR / f"{work['slug']}.html").write_text(render_photo_detail(work), encoding="utf-8")
+    print(f"Published {len(articles)} article(s), {len(photo_works)} photo work(s).")
+
+
+def main():
+    target = Path(sys.argv[1]) if len(sys.argv) > 1 else None
+    publish(target)
 
 
 if __name__ == "__main__":
