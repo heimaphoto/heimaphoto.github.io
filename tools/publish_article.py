@@ -30,7 +30,7 @@ CATEGORY_SLUGS = {
 CATEGORY_EN = {
     "散文": "Prose",
     "摄影": "Photography",
-    "摄影笔记": "Photography Notes",
+    "摄影笔记": "Photography",
     "看的艺术": "The Art Of Seeing",
     "摄影技术": "Technology",
     "器材": "Gear",
