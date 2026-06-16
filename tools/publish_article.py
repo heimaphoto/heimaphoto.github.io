@@ -57,6 +57,34 @@ def render_inline(text):
     return "".join(parts)
 
 
+def is_external_href(href):
+    if href.startswith("//"):
+        return True
+    match = re.match(r"^https?://([^/#?:]+)", href, re.I)
+    if not match:
+        return False
+    return match.group(1).lower() not in {"heimaphoto.com", "www.heimaphoto.com"}
+
+
+def prepare_article_body_links(body):
+    def replace(match):
+        attrs = match.group(1)
+        href_match = re.search(r'\shref=(["\'])(.*?)\1', attrs, re.I)
+        if not href_match or not is_external_href(href_match.group(2)):
+            return match.group(0)
+        if re.search(r"\starget=", attrs, re.I):
+            updated = re.sub(r'\starget=(["\']).*?\1', ' target="_blank"', attrs, count=1, flags=re.I)
+        else:
+            updated = attrs + ' target="_blank"'
+        if re.search(r"\srel=", updated, re.I):
+            updated = re.sub(r'\srel=(["\']).*?\1', ' rel="noopener noreferrer"', updated, count=1, flags=re.I)
+        else:
+            updated += ' rel="noopener noreferrer"'
+        return f"<a{updated}>"
+
+    return re.sub(r"<a\b([^>]*)>", replace, body, flags=re.I)
+
+
 def slugify(value):
     known = CATEGORY_SLUGS.get(value)
     if known:
@@ -220,7 +248,7 @@ def parse_article(path):
         "thumbnail": data.get("thumbnail", ""),
         "gallery": data.get("gallery", []),
         "related": data.get("related", []),
-        "body": markdown_to_html(body, data["title"]),
+        "body": prepare_article_body_links(markdown_to_html(body, data["title"])),
     }
 
 
@@ -412,8 +440,9 @@ def render_index(articles):
     <aside class="sidebar">
       <section class="side-card">
         <h2>关于这里</h2>
-        <p>Heima Photo 是王斌的个人档案馆：照片、文字、设备、建站记录，以及一些不太重要但我偏要记下来的东西。</p>
-        <a class="text-link" href="about.html">更多关于我 →</a>
+        <p>一个缓慢更新的个人档案馆。</p>
+        <p>保存照片、文字与时间留下的痕迹。</p>
+        <a class="text-link" href="about.html">更多关于这里 →</a>
       </section>
       <section class="side-card">
         <h2>推荐文章</h2>
@@ -607,8 +636,8 @@ def render_article(article, prev_article, next_article):
         </ul>
       </section>
 """
-    prev_link = f'<a href="{prev_article["article_href"]}">上一篇：{esc(prev_article["title"])}</a>' if prev_article else "<span></span>"
-    next_link = f'<a href="{next_article["article_href"]}">下一篇：{esc(next_article["title"])}</a>' if next_article else "<span></span>"
+    prev_link = f'<a class="nav-prev" href="{prev_article["article_href"]}">{esc(prev_article["title"])}</a>' if prev_article else '<span class="nav-prev"></span>'
+    next_link = f'<a class="nav-next" href="{next_article["article_href"]}">{esc(next_article["title"])}</a>' if next_article else '<span class="nav-next"></span>'
     body = f"""<main>
   <article class="narrow single-column-page">
     <header class="article-header">
@@ -618,9 +647,9 @@ def render_article(article, prev_article, next_article):
 {lead}    </header>
     <div class="article-body">
 {article['body']}
-{gallery}{related}      <nav class="article-nav">
+{gallery}{related}      <nav class="article-nav article-page-nav">
         {prev_link}
-        <a href="../archive.html">返回归档</a>
+        <a class="nav-archive" href="../archive.html">Archive</a>
         {next_link}
       </nav>
     </div>
@@ -630,38 +659,71 @@ def render_article(article, prev_article, next_article):
 
 
 def render_about(categories):
-    rows = "\n".join(f'        <li><a href="category/{slugify(c)}.html">{esc(c)}</a></li>' for c in categories)
     body = f"""<main>
   <section class="wrap page-title">
-    <p class="eyebrow">About</p>
-    <h1>关于 Heima Photo</h1>
-    <p>这里不是商业摄影官网，也不是内容农场。它更像一个长期保留的个人档案馆。</p>
+    <p class="eyebrow">ABOUT</p>
+    <h1>关于</h1>
+    <p>一个存在了很多年的个人网站。记录摄影、文字，以及时间留下的痕迹。</p>
   </section>
-  <section class="wrap about-grid">
-    <div class="about-main">
-      <h2>王斌</h2>
-      <p>我拍照片，也写一点文字。喜欢简单、可靠、能长期保存的东西。所以这个网站仍然使用纯静态 HTML。</p>
-      <p>这里会有摄影作品、器材记录、建站笔记、生活片段。摄影是入口，但我更希望它最终呈现的是一个人的观看方式。</p>
-      <h2>关于这个网站</h2>
-      <p>Portfolio 页面保留原来的作品集形式，像一个旧档案柜。首页作为主要入口；文章页和分类页采用单栏，以减少发布时需要同步修改的内容。</p>
+  <section class="narrow about-page">
+    <div class="about-story about-story-start">
+      <p>这个网站最早建立于很多年前。</p>
+      <p>这些年里，我见过太多网站诞生，<br>也见过太多网站消失。</p>
+      <p>有些网站关闭了，有些账号停止更新了，<br>而这个网站却意外地保留了下来。</p>
     </div>
-    <aside class="about-side">
-      <h2>网站结构</h2>
-      <ul>
-        <li>首页：最新文章 + 精选照片 + 推荐文章</li>
-        <li>文章页：单栏，文字与照片混排</li>
-        <li>归档页：全部文章索引 + 分类入口</li>
-        <li>分类页：单栏，日期与标题列表</li>
-        <li>Portfolio：原作品集保留</li>
-      </ul>
-      <h2>类别</h2>
-      <ul>
-{rows}
-      </ul>
-    </aside>
+
+    <div class="about-map" aria-label="网站结构">
+      <div>
+        <h2>Portfolio</h2>
+        <p>记录照片</p>
+      </div>
+      <div>
+        <h2>Archive</h2>
+        <p>保存文章</p>
+      </div>
+      <div>
+        <h2>About</h2>
+        <p>记录网站本身</p>
+      </div>
+    </div>
+
+    <div class="about-story about-story-end">
+      <p>最初它只是一个放照片的地方。</p>
+      <p>后来，我开始记录一些文字。</p>
+      <p>关于摄影，<br>关于器材，<br>关于建站，<br>关于那些偶然想到的事情。</p>
+      <p>内容并不系统，<br>也没有明确规划。</p>
+      <p>更像是一份持续积累的个人档案。</p>
+      <p>这里没有算法推荐。<br>也没有流量目标。</p>
+      <p>我更愿意把它理解为一个长期保存的空间。</p>
+      <p>而时间把它们慢慢连接起来。</p>
+      <p>如果多年以后我再次打开这个网站，希望仍然能够通过这些照片和文字，想起当时为什么按下快门，又为什么写下这些内容。</p>
+      <p>也许这就是 Heimaphoto 一直保留下来的原因。</p>
+    </div>
+
+    <div class="about-timeline">
+      <h2>Timeline</h2>
+      <dl>
+        <div>
+          <dt>2013</dt>
+          <dd>网站建立</dd>
+        </div>
+        <div>
+          <dt>2017</dt>
+          <dd>开始留下照片与文字</dd>
+        </div>
+        <div>
+          <dt>2025</dt>
+          <dd>重新整理旧档案</dd>
+        </div>
+        <div>
+          <dt>2026</dt>
+          <dd>新作品系统上线</dd>
+        </div>
+      </dl>
+    </div>
   </section>
 </main>"""
-    return page(f"关于 — {SITE_TITLE}", body, "about")
+    return page(f"关于 — {SITE_TITLE}", body, "about", description="Heima Photo：个人摄影与文字档案馆。")
 
 
 def render_portfolio_entry(photo_works=None):
