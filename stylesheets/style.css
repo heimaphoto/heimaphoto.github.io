@@ -610,34 +610,97 @@ a:hover { color: var(--accent); }
   margin-right: auto;
 }
 
-.about-grid {
+.about-page {
+  padding: 8px 0 76px;
+}
+
+.about-story {
+  color: #4a4a4a;
+  font-family: Verdana, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.about-story-start {
+  padding-top: 56px;
+}
+
+.about-story p {
+  margin: 0 0 1.25em;
+}
+
+.about-story p:last-child {
+  margin-bottom: 0;
+}
+
+.about-story-end {
+  margin-top: 48px;
+}
+
+.about-map {
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
   display: grid;
-  grid-template-columns: 1fr 330px;
-  gap: 44px;
-  padding: 54px 0 74px;
+  gap: 34px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 46px 0 0;
+  padding: 30px 0;
 }
 
-.about-main,
-.about-side {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  padding: 34px;
+.about-map h2 {
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 8px;
 }
 
-.about-main h2,
-.about-side h2 {
-  margin-top: 0;
-}
-
-.about-main p,
-.about-side p,
-.about-side li {
+.about-map p {
   color: var(--muted);
+  margin: 0;
 }
 
-.about-side ul {
-  margin: 0 0 26px;
-  padding-left: 1.2em;
+.about-timeline {
+  border-top: 1px solid var(--line);
+  margin-top: 48px;
+  padding-top: 30px;
+}
+
+.about-timeline h2 {
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 0 0 18px;
+}
+
+.about-timeline dl {
+  margin: 0;
+}
+
+.about-timeline div {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 92px minmax(0, 1fr);
+  padding: 9px 0;
+}
+
+.about-timeline div:first-child {
+  border-top: 0;
+}
+
+.about-timeline dt,
+.about-timeline dd {
+  margin: 0;
+}
+
+.about-timeline dt {
+  color: var(--light);
+  font-size: 14px;
+}
+
+.about-timeline dd {
+  color: var(--muted);
 }
 
 .closing-note {
@@ -674,7 +737,6 @@ a:hover { color: var(--accent); }
 
   .hero,
   .main-layout,
-  .about-grid,
   .post-card.with-image {
     grid-template-columns: 1fr;
   }
@@ -723,10 +785,18 @@ a:hover { color: var(--accent); }
 
   .post-card,
   .side-card,
-  .about-main,
-  .about-side,
   .compact-list {
     padding: 20px;
+  }
+
+  .about-map {
+    gap: 22px;
+    grid-template-columns: 1fr;
+  }
+
+  .about-timeline div {
+    gap: 8px;
+    grid-template-columns: 64px minmax(0, 1fr);
   }
 
   .section-heading {
