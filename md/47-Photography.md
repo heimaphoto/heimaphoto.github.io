@@ -1,8 +1,8 @@
 ---
 title: 美丽花季，你在哪儿
 date: 2016-03-12
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 美丽花季，你在哪儿。
 thumbnail: ../images/myphoto/Beautiful-bloom-1.jpg
 gallery:

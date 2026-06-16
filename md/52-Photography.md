@@ -1,8 +1,8 @@
 ---
 title: 无锡夹城里2017年2月
 date: 2017-03-02
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 星期天，送完孩子去上奥数课后，有些空余时间，就去了夹城里。以前有亲戚曾住在那里，小时候去玩过几次，但因来往不多，其实我对夹城里也并不熟悉。许多年前就听说那里要拆迁，但至今未果，那些旧屋和老街仍……
 thumbnail: ../images/myphoto/jiachengli01.jpg
 gallery:

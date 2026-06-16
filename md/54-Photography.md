@@ -1,8 +1,8 @@
 ---
 title: 无锡寨门村2017年3月
 date: 2017-04-04
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 无锡寨门村2017年3月。
 thumbnail: ../images/myphoto/zhaimencun01.jpg
 gallery:

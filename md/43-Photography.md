@@ -1,8 +1,8 @@
 ---
 title: 阳春巷人像速拍
 date: 2015-08-26
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 那天我赶到阳春巷的时候，另外两位摄影师已经拍得告一段落了。正与模特们坐在河边闲聊。 太阳淡淡的照射下来，感觉光硬度正适合，虽然还是夏天，但倒也不算闷热。 最近我看过一本叫“荒木经惟的天才写真术……
 thumbnail: ../images/myphoto/yang-chun-lane-1.jpg
 gallery:

@@ -1,8 +1,8 @@
 ---
 title: 无锡鼋头渚长春桥畔的樱花
 date: 2017-04-15
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 无锡鼋头渚长春桥畔的樱花。
 thumbnail: ../images/myphoto/yinghua01.jpg
 gallery:

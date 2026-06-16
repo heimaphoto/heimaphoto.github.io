@@ -1,8 +1,8 @@
 ---
 title: 小奉
 date: 2015-09-05
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 9月4日正是假期里，那天太阳透过厚厚的云层，光线显得有气无力，俗称淡水太阳。 可这样的光线也挺适合拍摄人像。拍摄前几天就查询过天气预报，本以为会是完全的阴天，再凉爽一点就完美了，但那天的太阳还……
 thumbnail: ../img/photo/Girl-sitting-under-the-tree.jpg
 gallery:

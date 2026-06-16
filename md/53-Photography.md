@@ -1,8 +1,8 @@
 ---
 title: 东亭老街2017年2月
 date: 2017-02-26
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 周日，与朋友约好各带着孩子一起去东亭老街转转。说好在阿桂馄饨烧卖店碰头，据说这家店现在很有名气，馄饨烧卖特别好吃，其中最具特色的当属烧卖的馅是用全肉做的，一般烧卖的馅都是用大多糯米，夹杂少许豆……
 thumbnail: ../images/myphoto/20170226dongtinglaojie-1.jpg
 gallery:

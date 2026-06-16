@@ -1,8 +1,8 @@
 ---
 title: 徐舍2017年2月
 date: 2017-02-25
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 许舍村去过多次，前前后后这许多年，经过时间的培育，对村子似乎也生出了感情。那天百无聊赖之际，就想到去许舍村走一走。 还是那个义良生面店，破车旧房，小河村道，一切依旧，只是感觉更苍凉荒芜了，有些……
 thumbnail: ../images/myphoto/20170219-xushe-01.jpg
 gallery:

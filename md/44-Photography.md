@@ -1,32 +1,18 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>棚拍日记 — Heima Photo</title>
-  <meta name="description" content="当我停好车后，走向南禅寺的ACG工作室时，空气中的热浪一阵阵袭来，8月正是锡城最热的时候，走在路上就象蒸桑拿。虽然只要走过一条街，仅几分钟的路程，但也让我出了一身汗。 去之前一天，我就把纽摄教……">
-  <link rel="stylesheet" href="../stylesheets/style.css">
-</head>
-<body>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="site-title" href="../index.html">HEIMA PHOTO</a>
-    <nav class="site-nav" aria-label="主导航">
-      <a href="../index.html">首页</a>
-      <a href="../archive.html">归档</a>
-      <a href="../portfolio/index.html">Portfolio</a>
-      <a href="../about.html">关于</a>
-    </nav>
-  </div>
-</header>
-<main>
-  <article class="narrow single-column-page">
-    <header class="article-header">
-      <p class="eyebrow">散文</p>
-      <h1>棚拍日记</h1>
-      <p class="meta">2015.08.29 · 散文</p>
-    </header>
-    <div class="article-body">
+---
+title: 棚拍日记
+date: 2015-08-29
+category: 摄影笔记
+category_slug: Photography
+summary: 当我停好车后，走向南禅寺的ACG工作室时，空气中的热浪一阵阵袭来，8月正是锡城最热的时候，走在路上就象蒸桑拿。虽然只要走过一条街，仅几分钟的路程，但也让我出了一身汗。 去之前一天，我就把纽摄教……
+thumbnail: ../images/myphoto/studio-shot-1.jpg
+gallery:
+  - ../images/myphoto/studio-shot-1.jpg
+  - ../images/myphoto/studio-shot-2.jpg
+  - ../images/myphoto/studio-shot-3.jpg
+  - ../images/myphoto/studio-shot-4.jpg
+  - ../images/myphoto/studio-shot-5.jpg
+---
+
 <p>当我停好车后，走向南禅寺的ACG工作室时，空气中的热浪一阵阵袭来，8月正是锡城最热的时候，走在路上就象蒸桑拿。虽然只要走过一条街，仅几分钟的路程，但也让我出了一身汗。</p>
 <p>去之前一天，我就把纽摄教材找出来翻了下关于室内摄影灯光调整的部分。我很少参加棚拍活动，一般都是自然光拍摄比较多。碰到这种没有把握的时候翻一下书本还是有必要的，纽摄教材就象一本摄影百科全书，基本上涵盖了我们所需要了解的所有问题。买一套放在家里备着作为工具书随时翻阅还是很有用的。</p>
 <p>正因为很少有机会参加棚拍，所以我想在室内灯光拍摄方面积累些经验，这也是我答应群里小伙伴们棚拍邀请的原因。</p>
@@ -40,26 +26,3 @@
 <p>好了，一切都已准备好，来吧，让我们开始拍摄吧。
 </p>
 <p>（模特：禾颜）</p>
-      <section class="article-gallery">
-        <h2>图片</h2>
-        <img src="../images/myphoto/studio-shot-1.jpg" alt="">
-        <img src="../images/myphoto/studio-shot-2.jpg" alt="">
-        <img src="../images/myphoto/studio-shot-3.jpg" alt="">
-        <img src="../images/myphoto/studio-shot-4.jpg" alt="">
-        <img src="../images/myphoto/studio-shot-5.jpg" alt="">
-      </section>
-      <nav class="article-nav">
-        <a href="43-prose.html">上一篇：阳春巷人像速拍</a>
-        <a href="../archive.html">返回归档</a>
-        <a href="45-prose.html">下一篇：小奉</a>
-      </nav>
-    </div>
-  </article>
-</main>
-<footer class="site-footer">
-  <div class="wrap">
-    <p>© 2026 Heima Photo. Built quietly with static HTML.</p>
-  </div>
-</footer>
-</body>
-</html>

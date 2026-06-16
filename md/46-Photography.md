@@ -1,8 +1,8 @@
 ---
 title: 2015年的最后一次外拍
 date: 2016-02-10
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 回到无锡，吃完晚饭，走出饭店时，外面已是一片雪白景像。夜色中我们仍然发烧不减，我用手机狂拍了一通才算最终踏上了归程。
 thumbnail: ../img/photo/having-fish.jpg
 gallery:

@@ -1,8 +1,8 @@
 ---
 title: CANON EF 50mmF/1.8STM定焦试镜
 date: 2017-02-25
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 以前我曾有过一个佳能的EF50标准镜头，后来不经意地卖掉了。可自从有了数码单反后，一直使用转接环装着蔡司镜头拍照，蔡司虽好，但老镜头抗眩光能力不尽如人意，可能更适合胶片吧，另外操作也比正常手动……
 thumbnail: ../images/myphoto/lixixiyuan01.jpg
 gallery:

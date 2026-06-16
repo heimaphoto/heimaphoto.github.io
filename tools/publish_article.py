@@ -19,6 +19,7 @@ DESCRIPTION = "Heima Photo：摄影、文字、器材与一些安静的好奇心
 CATEGORY_SLUGS = {
     "散文": "prose",
     "摄影": "photography",
+    "摄影笔记": "Photography",
     "看的艺术": "TheArtOfSeeing",
     "摄影技术": "technology",
     "器材": "gear",
@@ -29,6 +30,7 @@ CATEGORY_SLUGS = {
 CATEGORY_EN = {
     "散文": "Prose",
     "摄影": "Photography",
+    "摄影笔记": "Photography Notes",
     "看的艺术": "The Art Of Seeing",
     "摄影技术": "Technology",
     "器材": "Gear",

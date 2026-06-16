@@ -1,8 +1,8 @@
 ---
 title: 雨一直下
 date: 2016-07-03
-category: 散文
-category_slug: prose
+category: 摄影笔记
+category_slug: Photography
 summary: 雨一直下。
 thumbnail: ../images/myphoto/rain-at-all-times-1.jpg
 gallery:
