@@ -257,6 +257,7 @@ def parse_photo_work(path):
         "photo_href": f"{slug}.html",
         "title": data["title"],
         "date": date,
+        "date_display": data.get("date_display", ""),
         "type": work_type,
         "image": images[0],
         "images": images,
@@ -463,6 +464,7 @@ def archive_entries(articles, photo_works):
         entries.append(
             {
                 "date": work["date"],
+                "display_date": work.get("date_display", ""),
                 "title": work["title"],
                 "url": work["url"],
                 "label": "Portfolio",
@@ -496,7 +498,7 @@ def render_archive(articles, categories, photo_works=None):
             )
             items.append(
                 f"""        <li>
-          <time>{a['date'].strftime('%m.%d')}</time>
+          <time>{esc(a.get('display_date') or a['date'].strftime('%m.%d'))}</time>
           <a href="{a['url']}">{esc(a['title'])}</a>
           {label}
         </li>"""
@@ -702,7 +704,7 @@ def render_portfolio_entry(photo_works=None):
 
 
 def render_photo_detail(work):
-    meta = [("Date", work["date"].strftime("%Y.%m.%d"))]
+    meta = [("Date", work.get("date_display") or work["date"].strftime("%Y.%m.%d"))]
     if work.get("camera"):
         meta.append(("Camera", work["camera"]))
     if work.get("lens"):
