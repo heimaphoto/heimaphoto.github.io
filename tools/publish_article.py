@@ -630,14 +630,12 @@ def render_article(article, prev_article, next_article):
         for item in article["related"]:
             rows.append(f'        <li><a href="{esc(item.get("url", "#"))}">{esc(item.get("title", ""))}</a></li>')
         related = f"""      <section class="related-records">
-        <h2>相关记录</h2>
+        <h2>Related</h2>
         <ul>
 {chr(10).join(rows)}
         </ul>
       </section>
 """
-    prev_link = f'<a class="nav-prev" href="{prev_article["article_href"]}">{esc(prev_article["title"])}</a>' if prev_article else '<span class="nav-prev"></span>'
-    next_link = f'<a class="nav-next" href="{next_article["article_href"]}">{esc(next_article["title"])}</a>' if next_article else '<span class="nav-next"></span>'
     body = f"""<main>
   <article class="narrow single-column-page">
     <header class="article-header">
@@ -648,9 +646,8 @@ def render_article(article, prev_article, next_article):
     <div class="article-body">
 {article['body']}
 {gallery}{related}      <nav class="article-nav article-page-nav">
-        {prev_link}
         <a class="nav-archive" href="../archive.html">Archive</a>
-        {next_link}
+        <a class="nav-forum" href="https://www.douban.com/group/514220/" target="_blank" rel="noopener noreferrer">Forum</a>
       </nav>
     </div>
   </article>

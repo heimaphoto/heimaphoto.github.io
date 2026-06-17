@@ -528,8 +528,10 @@ a:hover { color: var(--accent); }
 
 .article-page-nav {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
 }
 
 .article-page-nav a,
@@ -542,12 +544,14 @@ a:hover { color: var(--accent); }
 }
 
 .article-page-nav .nav-archive {
-  text-align: center;
+  justify-self: start;
   white-space: nowrap;
 }
 
-.article-page-nav .nav-next {
+.article-page-nav .nav-forum {
+  justify-self: end;
   text-align: right;
+  white-space: nowrap;
 }
 
 .photo-page {
@@ -873,7 +877,9 @@ a:hover { color: var(--accent); }
 
   .article-page-nav {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) auto;
+    justify-content: space-between;
+    gap: 20px;
   }
 
   .article-page-nav a {
