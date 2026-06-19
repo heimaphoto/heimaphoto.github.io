@@ -313,6 +313,88 @@ a:hover { color: var(--accent); }
   padding-top: 18px;
 }
 
+.gear-page {
+  padding-bottom: 76px;
+}
+
+.gear-intro {
+  width: min(1040px, calc(100% - 40px));
+  padding: 72px 0 34px;
+  border-bottom: 1px solid var(--line);
+}
+
+.gear-intro h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+
+.gear-intro p:last-child {
+  color: var(--muted);
+  font-size: 19px;
+  margin: 14px 0 0;
+}
+
+.gear-stage {
+  width: min(1040px, calc(100% - 40px));
+  padding: 46px 0 0;
+}
+
+.gear-wall {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin-left: auto;
+  width: calc(100% * 10 / 13);
+}
+
+.gear-item {
+  background: var(--soft);
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.gear-item img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+}
+
+.gear-caption {
+  align-items: flex-start;
+  background: linear-gradient(to top, rgba(0, 0, 0, .68), rgba(0, 0, 0, .12) 68%, rgba(0, 0, 0, 0));
+  color: #fffdf8;
+  display: flex;
+  flex-direction: column;
+  inset: 0;
+  justify-content: flex-end;
+  opacity: 0;
+  padding: 18px;
+  position: absolute;
+  transition: opacity .22s ease;
+}
+
+.gear-item:hover .gear-caption,
+.gear-item:focus-visible .gear-caption {
+  opacity: 1;
+}
+
+.gear-caption strong {
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.gear-caption em {
+  color: rgba(255, 253, 248, .78);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -806,6 +888,10 @@ a:hover { color: var(--accent); }
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .gear-wall {
+    width: 100%;
+  }
+
   .article-body {
     padding: 28px;
   }
@@ -888,6 +974,18 @@ a:hover { color: var(--accent); }
 
   .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gear-intro {
+    padding-top: 52px;
+  }
+
+  .gear-wall {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gear-caption {
+    padding: 14px;
   }
 
   .photo-meta div {

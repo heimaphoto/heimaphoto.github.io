@@ -23,6 +23,7 @@ CATEGORY_SLUGS = {
     "看的艺术": "TheArtOfSeeing",
     "摄影技术": "technology",
     "器材": "gear",
+    "工具": "gear",
     "建站": "website",
     "建站记录": "site",
     "生活": "life",
@@ -34,6 +35,7 @@ CATEGORY_EN = {
     "看的艺术": "The Art Of Seeing",
     "摄影技术": "Technology",
     "器材": "Gear",
+    "工具": "Gear",
     "建站": "Website",
     "建站记录": "Site",
     "生活": "Life",
@@ -246,6 +248,7 @@ def parse_article(path):
         "location": data.get("location", ""),
         "camera": data.get("camera", ""),
         "thumbnail": data.get("thumbnail", ""),
+        "gear_note": data.get("gear_note", ""),
         "gallery": data.get("gallery", []),
         "related": data.get("related", []),
         "body": prepare_article_body_links(markdown_to_html(body, data["title"])),
@@ -309,6 +312,7 @@ def header(active="", depth=0):
         ("index.html", "首页", "index"),
         ("archive.html", "归档", "archive"),
         ("portfolio/index.html", "Portfolio", "portfolio"),
+        ("gear.html", "工具", "gear"),
         ("about.html", "关于", "about"),
     ]
     links = []
@@ -723,6 +727,92 @@ def render_about(categories):
     return page(f"关于 — {SITE_TITLE}", body, "about", description="Heima Photo：个人摄影与文字档案馆。")
 
 
+def render_gear_item(article):
+    note = article.get("gear_note") or article["summary"]
+    return f"""      <a class="gear-item" href="{article['url']}">
+        <img src="{esc(root_image_path(article['thumbnail']))}" alt="{esc(article['title'])}">
+        <span class="gear-caption">
+          <strong>{esc(article['title'])}</strong>
+          <em>{esc(note)}</em>
+        </span>
+      </a>"""
+
+
+def render_gear(articles):
+    gear_articles = [
+        article
+        for article in articles
+        if article["category_slug"] == "gear" and article.get("thumbnail")
+    ]
+    if gear_articles:
+        items = "\n".join(render_gear_item(article) for article in gear_articles)
+    else:
+        items = """      <!-- Gear item template:
+      <a class="gear-item" href="article/example.html">
+        <img src="images/gear/example.jpg" alt="Example title">
+        <span class="gear-caption">
+          <strong>Example title</strong>
+          <em>Optional short note.</em>
+        </span>
+      </a>
+      -->
+      <a class="gear-item" href="#">
+        <img src="img/photo/coffee-time.jpg" alt="Leica M262">
+        <span class="gear-caption">
+          <strong>Leica M262</strong>
+          <em>待替换</em>
+        </span>
+      </a>
+      <a class="gear-item" href="#">
+        <img src="img/photo/recorder.jpg" alt="Voigtlander 40mm F1.4">
+        <span class="gear-caption">
+          <strong>Voigtlander 40mm F1.4</strong>
+          <em>待替换</em>
+        </span>
+      </a>
+      <a class="gear-item" href="#">
+        <img src="img/photo/Office-building.jpg" alt="MacBook Air">
+        <span class="gear-caption">
+          <strong>MacBook Air</strong>
+          <em>待替换</em>
+        </span>
+      </a>
+      <a class="gear-item" href="#">
+        <img src="img/photo/sisyphe-bookstore-cafe.jpg" alt="iPad Pro">
+        <span class="gear-caption">
+          <strong>iPad Pro</strong>
+          <em>待替换</em>
+        </span>
+      </a>
+      <a class="gear-item" href="#">
+        <img src="img/photo/recorder.jpg" alt="Mechanical Keyboard">
+        <span class="gear-caption">
+          <strong>Mechanical Keyboard</strong>
+          <em>待替换</em>
+        </span>
+      </a>
+      <a class="gear-item" href="#">
+        <img src="img/photo/Office-building.jpg" alt="Software Tools">
+        <span class="gear-caption">
+          <strong>Software Tools</strong>
+          <em>待替换</em>
+        </span>
+      </a>"""
+    body = f"""<main class="gear-page">
+  <section class="wrap gear-intro">
+    <p class="eyebrow">Gear</p>
+    <h1>工具</h1>
+    <p>Things I Use and Keep.</p>
+  </section>
+  <section class="gear-stage wrap" aria-label="工具照片墙">
+    <div class="gear-wall">
+{items}
+    </div>
+  </section>
+</main>"""
+    return page("工具 — Heima Photo", body, "gear", description="Heima Photo 工具页：相机、镜头、电脑、键盘与软件工具的个人长期使用记录。")
+
+
 def render_portfolio_entry(photo_works=None):
     photo_works = photo_works or []
     if not photo_works:
@@ -842,6 +932,7 @@ def publish(target=None):
     (ROOT / "index.html").write_text(render_index(articles), encoding="utf-8")
     (ROOT / "archive.html").write_text(render_archive(articles, categories, photo_works), encoding="utf-8")
     (ROOT / "about.html").write_text(render_about(categories), encoding="utf-8")
+    (ROOT / "gear.html").write_text(render_gear(articles), encoding="utf-8")
     (ROOT / "portfolio" / "index.html").write_text(render_portfolio_entry(photo_works), encoding="utf-8")
 
     for article in articles:
