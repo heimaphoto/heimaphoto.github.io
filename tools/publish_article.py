@@ -485,13 +485,14 @@ def grouped(articles):
 def archive_entries(articles, photo_works):
     entries = []
     for article in articles:
+        label_url = "gear.html" if article["category_slug"] == "gear" else f"category/{article['category_slug']}.html"
         entries.append(
             {
                 "date": article["date"],
                 "title": article["title"],
                 "url": article["url"],
                 "label": article["category"],
-                "label_url": f"category/{article['category_slug']}.html",
+                "label_url": label_url,
                 "kind": "article",
             }
         )
@@ -514,8 +515,9 @@ def archive_entries(articles, photo_works):
 def render_category_sidebar(categories):
     rows = []
     for cat in categories:
+        href = "gear.html" if slugify(cat) == "gear" else f"category/{slugify(cat)}.html"
         rows.append(
-            f'      <li><a href="category/{slugify(cat)}.html">{esc(cat)}</a><span>{esc(CATEGORY_EN.get(cat, slugify(cat)))}</span></li>'
+            f'      <li><a href="{href}">{esc(cat)}</a><span>{esc(CATEGORY_EN.get(cat, slugify(cat)))}</span></li>'
         )
     return "\n".join(rows)
 
@@ -951,6 +953,8 @@ def publish(target=None):
     for article in articles:
         by_category[article["category"]].append(article)
     for category in categories:
+        if slugify(category) == "gear":
+            continue
         if category == "看的艺术":
             html_text = render_the_art_archive()
         else:
