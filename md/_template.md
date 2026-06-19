@@ -63,4 +63,12 @@ gear_note: A quiet daily camera.
 
 发布 Gear 文章后，`gear.html` 的照片墙会自动读取真实 Gear 文章的链接、标题和 `thumbnail`。只要存在至少一篇真实 Gear 文章，照片墙就不再显示占位符。hover 第二行优先使用 `gear_note`；如果没有写 `gear_note`，就使用 `summary`。
 
+## 文章图片尺寸建议
+
+普通文章正文图片：长边约 1600px。横图可用 1600px 宽，竖图可用 1200-1400px 高。
+
+Gear 缩略图建议用 1200 × 1200px，放在 `../images/gear/xxx.jpg`。这张图会用于首页文章卡片和 Gear 照片墙，主体尽量居中。
+
+JPG 导出质量 80-85 通常够用。
+
 也可以写普通 HTML；以 `<` 开头的行会原样输出。

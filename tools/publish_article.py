@@ -935,7 +935,12 @@ def publish(target=None):
     (ROOT / "gear.html").write_text(render_gear(articles), encoding="utf-8")
     (ROOT / "portfolio" / "index.html").write_text(render_portfolio_entry(photo_works), encoding="utf-8")
 
-    for article in articles:
+    if target:
+        articles_to_write = [article for article in articles if article["source"].resolve() == target]
+    else:
+        articles_to_write = articles
+
+    for article in articles_to_write:
         pos = positions[article["slug"]]
         prev_article = chronological[pos - 1] if pos > 0 else None
         next_article = chronological[pos + 1] if pos < len(chronological) - 1 else None

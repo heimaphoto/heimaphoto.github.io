@@ -22,6 +22,8 @@ Use this skill to publish a new static article on `heimaphoto.com`.
 python3 tools/publish_article.py md/example.md
 ```
 
+When a target `md/example.md` is provided, the publisher indexes all `md/*.md` files for homepage/archive/category/Gear pages, but only rewrites the target `article/example.html`. This preserves any manual edits made to older generated article HTML. A full rebuild without a target may rewrite all article pages.
+
 5. Verify the generated files:
    - `article/<slug>.html`
    - `index.html`
