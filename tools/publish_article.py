@@ -741,11 +741,15 @@ def render_gear_item(article):
 
 
 def render_gear(articles):
-    gear_articles = [
-        article
-        for article in articles
-        if article["category_slug"] == "gear" and article.get("thumbnail")
-    ]
+    gear_articles = sorted(
+        [
+            article
+            for article in articles
+            if article["category_slug"] == "gear" and article.get("thumbnail")
+        ],
+        key=lambda article: (article["date"], article["slug"]),
+        reverse=True,
+    )
     if gear_articles:
         items = "\n".join(render_gear_item(article) for article in gear_articles)
     else:
@@ -816,7 +820,11 @@ def render_gear(articles):
 
 
 def render_portfolio_entry(photo_works=None):
-    photo_works = photo_works or []
+    photo_works = sorted(
+        photo_works or [],
+        key=lambda work: (work["date"], work["slug"]),
+        reverse=True,
+    )
     if not photo_works:
         body = """<main>
   <section class="wrap page-title">
