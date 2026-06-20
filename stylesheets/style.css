@@ -318,7 +318,7 @@ a:hover { color: var(--accent); }
 }
 
 .gear-intro {
-  width: min(1040px, calc(100% - 40px));
+  width: min(var(--max), calc(100% - 40px));
   padding: 72px 0 34px;
   border-bottom: 1px solid var(--line);
 }
@@ -338,16 +338,16 @@ a:hover { color: var(--accent); }
 }
 
 .gear-stage {
-  width: min(1040px, calc(100% - 40px));
+  width: min(var(--max), calc(100% - 40px));
   padding: 46px 0 0;
 }
 
 .gear-wall {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   margin-left: auto;
-  width: calc(100% * 10 / 13);
+  width: min(100%, 800px);
 }
 
 .gear-item {
