@@ -12,7 +12,7 @@ Use this skill to publish new photo works on `heimaphoto.com`.
 This skill must follow:
 
 ```text
-skills/site-rules.md
+site-rules.md
 ```
 
 If this skill conflicts with `site-rules.md`, follow `site-rules.md`.
@@ -33,7 +33,7 @@ Series
 Both appear in `archive.html` as:
 
 ```text
-Portfolio
+摄影作品
 ```
 
 Do not create `category/portfolio.html`.
@@ -208,7 +208,7 @@ Add the new portfolio work to `archive.html`.
 Archive entry should use:
 
 ```text
-date | title | Portfolio
+date | title | 摄影作品
 ```
 
 Do not display `Photo` or `Series` in archive.
@@ -223,7 +223,7 @@ Before finishing:
 
 1. Confirm `photo/<slug>.html` exists and opens.
 2. Confirm `portfolio/index.html` includes the new work.
-3. Confirm `archive.html` includes the new work with category/type `Portfolio`.
+3. Confirm `archive.html` includes the new work with category/type `摄影作品`.
 4. Confirm no `category/portfolio.html` was created.
 5. Confirm old portfolio files were not modified.
 6. Confirm homepage manual blocks were not modified unless explicitly requested.

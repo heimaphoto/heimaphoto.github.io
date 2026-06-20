@@ -18,29 +18,33 @@ SITE_TITLE = "Heima Photo"
 DESCRIPTION = "Heima Photo：摄影、文字、器材与一些安静的好奇心。"
 CATEGORY_SLUGS = {
     "散文": "prose",
+    "生活随想": "prose",
     "摄影": "photography",
     "摄影笔记": "Photography",
     "看的艺术": "TheArtOfSeeing",
     "摄影技术": "technology",
     "器材": "gear",
     "工具": "gear",
+    "七种武器": "gear",
     "建站": "website",
     "建站记录": "site",
     "生活": "life",
 }
 CATEGORY_EN = {
     "散文": "Prose",
+    "生活随想": "Prose",
     "摄影": "Photography",
     "摄影笔记": "Photography",
     "看的艺术": "The Art Of Seeing",
     "摄影技术": "Technology",
     "器材": "Gear",
     "工具": "Gear",
+    "七种武器": "Gear",
     "建站": "Website",
     "建站记录": "Site",
     "生活": "Life",
 }
-DEFAULT_CATEGORIES = ["散文", "看的艺术", "摄影技术"]
+DEFAULT_CATEGORIES = ["生活随想", "看的艺术", "摄影技术"]
 
 
 def esc(value):
@@ -310,9 +314,9 @@ def header(active="", depth=0):
     p = "../" * depth
     items = [
         ("index.html", "首页", "index"),
+        ("portfolio/index.html", "摄影作品", "portfolio"),
+        ("gear.html", "七种武器", "gear"),
         ("archive.html", "归档", "archive"),
-        ("portfolio/index.html", "Portfolio", "portfolio"),
-        ("gear.html", "工具", "gear"),
         ("about.html", "关于", "about"),
     ]
     links = []
@@ -403,7 +407,7 @@ def render_index(articles):
         "<!-- MANUAL-RECOMMENDATIONS:START -->",
         "<!-- MANUAL-RECOMMENDATIONS:END -->",
         """<!-- MANUAL-RECOMMENDATIONS:START -->
-      <li><a href="article/48-prose.html">上海的夜晚</a><span>散文 / 摄影</span></li>
+      <li><a href="article/48-prose.html">上海的夜晚</a><span>生活随想 / 摄影</span></li>
       <li><a href="article/post/44-prose.htm">棚拍日记</a><span>旧文档案</span></li>
       <li><a href="article/post/7-prose.htm">赶集</a><span>旧文档案</span></li>
       <!-- MANUAL-RECOMMENDATIONS:END -->""",
@@ -460,7 +464,7 @@ def render_index(articles):
   <section class="portfolio-strip wrap">
     <div class="section-heading">
       <h2>精选照片</h2>
-      <a href="portfolio/index.html">进入 Portfolio →</a>
+      <a href="portfolio/index.html">进入摄影作品 →</a>
     </div>
     <div class="photo-grid">
 {photos}
@@ -503,7 +507,7 @@ def archive_entries(articles, photo_works):
                 "display_date": work.get("date_display", ""),
                 "title": work["title"],
                 "url": work["url"],
-                "label": "Portfolio",
+                "label": "摄影作品",
                 "label_url": "",
                 "kind": "portfolio",
             }
@@ -807,16 +811,16 @@ def render_gear(articles):
     body = f"""<main class="gear-page">
   <section class="wrap gear-intro">
     <p class="eyebrow">Gear</p>
-    <h1>工具</h1>
+    <h1>七种武器</h1>
     <p>Things I Use and Keep.</p>
   </section>
-  <section class="gear-stage wrap" aria-label="工具照片墙">
+  <section class="gear-stage wrap" aria-label="七种武器照片墙">
     <div class="gear-wall">
 {items}
     </div>
   </section>
 </main>"""
-    return page("工具 — Heima Photo", body, "gear", description="Heima Photo 工具页：相机、镜头、电脑、键盘与软件工具的个人长期使用记录。")
+    return page("七种武器 — Heima Photo", body, "gear", description="Heima Photo 七种武器页：相机、镜头、电脑、键盘与软件工具的个人长期使用记录。")
 
 
 def render_portfolio_entry(photo_works=None):
@@ -829,7 +833,7 @@ def render_portfolio_entry(photo_works=None):
         body = """<main>
   <section class="wrap page-title">
     <p class="eyebrow">Portfolio</p>
-    <h1>摄影作品集</h1>
+    <h1>摄影作品</h1>
     <p>这里保留旧作品集结构，作为摄影作品档案馆。</p>
   </section>
   <section class="narrow single-column-page">
@@ -853,12 +857,12 @@ def render_portfolio_entry(photo_works=None):
     body = f"""<main>
   <section class="wrap page-title">
     <p class="eyebrow">Portfolio</p>
-    <h1>摄影作品集</h1>
+    <h1>摄影作品</h1>
     <p>新的 Portfolio 用来保存近期整理出的摄影作品。旧作品集仍作为历史档案保留。</p>
+    <p class="old-portfolio-link"><a href="../portfolio.htm">旧版作品入口 / Old Portfolio</a></p>
   </section>
   <section class="wrap portfolio-page">
 {works_html}
-    <p class="old-portfolio-link"><a href="../portfolio.htm">旧版作品入口 / Old Portfolio</a></p>
   </section>
 </main>"""
     return page(f"Portfolio — {SITE_TITLE}", body, "portfolio", depth=1)

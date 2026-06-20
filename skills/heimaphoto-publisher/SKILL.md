@@ -7,7 +7,7 @@ metadata:
 
 # Heima Photo Publisher
 
-This skill must follow `skills/site-rules.md`. If this skill conflicts with `site-rules.md`, follow `site-rules.md`. New portfolio work is handled by the separate `heimaphoto-photo-publisher` skill.
+This skill must follow `site-rules.md`. If this skill conflicts with `site-rules.md`, follow `site-rules.md`. New portfolio work is handled by the separate `heimaphoto-photo-publisher` skill.
 
 Use this skill to publish a new static article on `heimaphoto.com`.
 
@@ -66,13 +66,15 @@ related:
 Known category slugs:
 
 ```yaml
-散文: prose
+生活随想: prose
 摄影/看的艺术: TheArtOfSeeing
 摄影/技术: technology
 摄影: photography
-器材: gear
+七种武器: gear
 建站: website
 生活: life
 ```
+
+Legacy aliases may still be accepted by the publisher for compatibility, including `散文`, `器材`, and `工具`, but new source files should use the current display names from `site-rules.md`.
 
 Only render optional sections when data exists. `summary` is for homepage cards only; article pages use `lead`. Homepage featured photos use a small native lightbox and are preserved by the manual block when publishing.

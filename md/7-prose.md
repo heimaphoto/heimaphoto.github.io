@@ -1,7 +1,7 @@
 ---
 title: 赶集
 date: 2014-05-03
-category: 散文
+category: 生活随想
 category_slug: prose
 summary: 小时候家里养了好几只鸡，大多是母鸡，能生蛋。有一次晚上我和其他孩子们一起去离家附近的果园玩，捉到几只乱飞乱撞的虫子，那虫飞时嗡嗡作响，翅膀合起时象铠甲般紫莹油亮，孩子们都叫它“瞎撞子”。第二天……
 thumbnail: ../img/photo/zhang-wang-temple.jpg

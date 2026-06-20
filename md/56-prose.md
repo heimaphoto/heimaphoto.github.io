@@ -1,7 +1,7 @@
 ---
 title: 雨，永定桥
 date: 2017-05-25
-category: 散文
+category: 生活随想
 category_slug: prose
 summary: 雨天，开车经过永定桥下。我把车速放缓，想找个车位停下来。雨滴打在车顶上的嗒嗒声时紧时疏，时重时轻，就象人的思绪，在这个潮湿的下雨天，随着雨刮器有节奏的摆动，一些遥远的记忆会在脑中突然跳出来，模……
 thumbnail: ../images/myphoto/yongdingqiao.jpg

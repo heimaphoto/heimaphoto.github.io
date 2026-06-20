@@ -1,7 +1,7 @@
 ---
 title: 胡桃木阅读支架
 date: 2026-06-19
-category: 工具
+category: 七种武器
 summary: 阅读效果还是不错的。就象一幅画，观看效果更好，读起来也更方便轻松。
 lead: 阅读之美
 thumbnail: ../images/gear/reading-stand-1.jpg

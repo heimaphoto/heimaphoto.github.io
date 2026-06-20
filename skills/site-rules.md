@@ -69,10 +69,11 @@ Main navigation should remain simple.
 Default visible navigation:
 
 ```text
-Home
-Portfolio
-Archive
-About
+首页
+摄影作品
+七种武器
+归档
+关于
 ```
 
 Do not add new global navigation items unless explicitly requested.
@@ -97,10 +98,12 @@ Article categories use a one-level category system.
 Current real categories on the live site:
 
 ```text
-散文
+生活随想
 看的艺术
 摄影技术
 建站记录
+摄影笔记
+七种武器
 ```
 
 These are current categories, not a permanent closed list.
@@ -152,10 +155,10 @@ date | article title | article category
 For new photo works:
 
 ```text
-date | photo title | Portfolio
+date | photo title | 摄影作品
 ```
 
-Photo works should appear in archive as `Portfolio`.
+Photo works should appear in archive as `摄影作品`.
 
 Do not split archive into separate article archive and photo archive unless explicitly requested.
 
@@ -210,7 +213,7 @@ These types may be shown on the photo detail page.
 In `archive.html`, both types should still display as:
 
 ```text
-Portfolio
+摄影作品
 ```
 
 Do not create separate archive categories for `Photo` and `Series`.
@@ -369,10 +372,41 @@ python3 tools/install_skills.py
 
 3. Do not edit only the installed copy and leave the repository copy stale.
 4. If an installed skill was changed directly during emergency work, copy the change back into `skills/` before finishing.
+5. When a task changes publishing behavior, navigation labels, category names, portfolio rules, Gear/七种武器 rules, or skill instructions, update the repository skill files and `skills/site-rules.md` first, then sync them to the installed skills directory before finishing.
+6. The install script must copy `skills/site-rules.md` into each installed Heima Photo skill directory as `site-rules.md`.
+7. After syncing, verify installed skill files and installed `site-rules.md` copies match the repository sources with `diff -rq`.
 
 ---
 
-## 14. Compatibility Rules
+## 14. Gear / 七种武器 Rules
+
+`gear.html` is the single entry page for Gear/七种武器 articles.
+
+Current display name:
+
+```text
+七种武器
+```
+
+Compatibility aliases that map to the same `gear` slug may remain in the publisher:
+
+```text
+器材
+工具
+七种武器
+```
+
+Rules:
+
+1. Gear/七种武器 articles should use `category: 七种武器`.
+2. Gear/七种武器 article archive labels should link to `gear.html`.
+3. Do not generate `category/gear.html`.
+4. The `gear.html` photo wall should include real Gear/七种武器 articles that have a `thumbnail`.
+5. Sort Gear/七种武器 photo wall items newest first.
+
+---
+
+## 15. Compatibility Rules
 
 1. Preserve existing working structure.
 2. Prefer minimal changes.
@@ -384,7 +418,7 @@ python3 tools/install_skills.py
 
 ---
 
-## 15. Current Design Direction
+## 16. Current Design Direction
 
 The new portfolio and photo pages should feel:
 

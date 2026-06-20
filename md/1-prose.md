@@ -1,7 +1,7 @@
 ---
 title: 梦中的远方
 date: 2014-03-11
-category: 散文
+category: 生活随想
 category_slug: prose
 summary: 如果我能飞翔，我想掠过那条河流，飘向远方。 那里是我的童年时光。记忆虽然有些模糊，但时常会象碎片一样突然在脑中闪现。 哦，我还记得在铁路大桥旁边的那棵槐花树，每年开花季节，一树的槐花洁白无瑕，……
 thumbnail: ../img/photo/old-house-in-changshu.jpg
