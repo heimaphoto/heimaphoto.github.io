@@ -649,7 +649,6 @@ def render_article(article, prev_article, next_article):
     body = f"""<main>
   <article class="narrow single-column-page">
     <header class="article-header">
-      <p class="eyebrow">{esc(article['category'])}</p>
       <h1>{esc(article['title'])}</h1>
       <p class="meta">{esc(' · '.join(meta_parts))}</p>
 {lead}    </header>
