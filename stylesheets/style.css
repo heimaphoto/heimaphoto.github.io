@@ -525,9 +525,9 @@ a:hover { color: var(--accent); }
 
 .article-body figure {
   margin: 2em 0;
-  padding: 10px;
-  border: 1px solid var(--line);
-  background: var(--bg);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .article-body figcaption {
@@ -545,9 +545,9 @@ a:hover { color: var(--accent); }
 
 .article-gallery img {
   margin: 18px 0;
-  border: 1px solid var(--line);
-  background: var(--bg);
-  padding: 10px;
+  border: 0;
+  background: transparent;
+  padding: 0;
 }
 
 .lightbox-enabled {
@@ -733,6 +733,7 @@ a:hover { color: var(--accent); }
 
 .photo-page {
   padding: 44px 0 76px;
+  width: min(1000px, calc(100% - 40px));
 }
 
 .photo-info {

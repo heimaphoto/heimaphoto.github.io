@@ -65,7 +65,7 @@ gear_note: A quiet daily camera.
 
 ## 文章图片尺寸建议
 
-普通文章正文图片：长边约 1600px。横图可用 1600px 宽，竖图可用 1200-1400px 高。
+普通文章正文图片：长边约 1400px。横图可用 1400px 宽，竖图可用 1200-1400px 高。
 
 文章详情页图片会自动支持点击全屏查看；小图标或不想放大的图片，可用原始 HTML 写 `<img class="no-lightbox" src="../img/icon.png" alt="">` 或 `<img data-no-lightbox src="../img/icon.png" alt="">` 排除。
 
