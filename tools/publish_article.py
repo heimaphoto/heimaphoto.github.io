@@ -341,8 +341,12 @@ def footer(depth=0):
 </footer>"""
 
 
-def page(title, body, active="", depth=0, description=DESCRIPTION):
+def page(title, body, active="", depth=0, description=DESCRIPTION, lightbox=False):
     css = "../" * depth + "stylesheets/style.css"
+    lightbox_script = ""
+    if lightbox:
+        js = "../" * depth + "js/lightbox.js"
+        lightbox_script = f'\n<script src="{js}" defer></script>'
     return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -355,7 +359,7 @@ def page(title, body, active="", depth=0, description=DESCRIPTION):
 <body>
 {header(active, depth)}
 {body}
-{footer(depth)}
+{footer(depth)}{lightbox_script}
 </body>
 </html>
 """
@@ -661,7 +665,7 @@ def render_article(article, prev_article, next_article):
     </div>
   </article>
 </main>"""
-    return page(f"{article['title']} — {SITE_TITLE}", body, depth=1, description=article["summary"])
+    return page(f"{article['title']} — {SITE_TITLE}", body, depth=1, description=article["summary"], lightbox=True)
 
 
 def render_about(categories):
@@ -919,7 +923,7 @@ def render_photo_detail(work):
 {subtitle}{meta_html}{detail}{nav}    </section>
   </article>
 </main>"""
-    return page(f"{work['title']} — {SITE_TITLE}", body, depth=1, description=work.get("description") or DESCRIPTION)
+    return page(f"{work['title']} — {SITE_TITLE}", body, depth=1, description=work.get("description") or DESCRIPTION, lightbox=True)
 
 
 def publish(target=None):

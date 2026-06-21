@@ -67,6 +67,8 @@ gear_note: A quiet daily camera.
 
 普通文章正文图片：长边约 1600px。横图可用 1600px 宽，竖图可用 1200-1400px 高。
 
+文章详情页图片会自动支持点击全屏查看；小图标或不想放大的图片，可用原始 HTML 写 `<img class="no-lightbox" src="../img/icon.png" alt="">` 或 `<img data-no-lightbox src="../img/icon.png" alt="">` 排除。
+
 Gear 缩略图建议用 1200 × 1200px，放在 `../images/gear/xxx.jpg`。这张图会用于首页文章卡片和 Gear 照片墙，主体尽量居中。
 
 JPG 导出质量 80-85 通常够用。
