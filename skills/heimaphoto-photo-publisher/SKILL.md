@@ -150,6 +150,14 @@ python3 tools/publish_photo.py photo-md/example.md
 
 The photo publisher shares archive and portfolio rendering with the article publisher so the two systems do not overwrite each other's index entries.
 
+The command must finish with the validation message:
+
+```text
+Validated photo work in photo/, portfolio/index.html and archive.html
+```
+
+If validation fails, do not finish the task. Fix the missing generated output and rerun the command until the validation passes.
+
 ---
 
 ## Photo Detail Page
@@ -221,14 +229,15 @@ Those types are only for the portfolio detail page.
 
 Before finishing:
 
-1. Confirm `photo/<slug>.html` exists and opens.
-2. Confirm `portfolio/index.html` includes the new work.
-3. Confirm `archive.html` includes the new work with category/type `摄影作品`.
-4. Confirm no `category/portfolio.html` was created.
-5. Confirm old portfolio files were not modified.
-6. Confirm homepage manual blocks were not modified unless explicitly requested.
-7. Confirm missing optional metadata does not produce empty labels.
-8. Confirm links are relative and work on GitHub Pages.
+1. Confirm `python3 tools/publish_photo.py photo-md/example.md` ended with the validation message.
+2. Confirm `photo/<slug>.html` exists and opens.
+3. Confirm `portfolio/index.html` includes the new work.
+4. Confirm `archive.html` includes the new work with category/type `摄影作品`.
+5. Confirm no `category/portfolio.html` was created.
+6. Confirm old portfolio files were not modified.
+7. Confirm homepage manual blocks were not modified unless explicitly requested.
+8. Confirm missing optional metadata does not produce empty labels.
+9. Confirm links are relative and work on GitHub Pages.
 
 ---
 
