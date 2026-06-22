@@ -164,7 +164,7 @@ Required page behavior:
 4. If the source markdown has body content after the front matter, render it as the detailed description.
 5. Include a return link to `portfolio/index.html`.
 6. Keep layout consistent with the site style.
-7. Avoid sliders, lightboxes, masonry scripts, and heavy JavaScript.
+7. Keep the existing lightweight `lightbox.js` effect on photo detail images, including click-to-enlarge and previous/next navigation for multi-image works. Avoid separate page-level slideshows, carousel components, masonry scripts, and other heavy JavaScript.
 
 Suggested metadata:
 

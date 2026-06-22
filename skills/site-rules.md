@@ -255,7 +255,7 @@ Rules:
 7. Do not render empty labels.
 8. `description` is a plain text summary and should not contain HTML.
 9. Body content after the front matter is an optional detailed description; preserve simple Markdown or simple HTML formatting on the photo detail page.
-10. Do not add lightbox, slideshow, carousel, or heavy JavaScript unless explicitly requested.
+10. Use the site's existing lightweight `lightbox.js` effect for photo detail images, including click-to-enlarge and previous/next navigation for multi-image works. Do not add separate page-level slideshows, carousel components, masonry layouts, or heavy JavaScript unless explicitly requested.
 11. For series pages, prefer vertical large images over complex gallery widgets.
 
 ---
