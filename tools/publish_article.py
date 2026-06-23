@@ -512,7 +512,7 @@ def archive_entries(articles, photo_works):
                 "title": work["title"],
                 "url": work["url"],
                 "label": "摄影作品",
-                "label_url": "",
+                "label_url": "portfolio/index.html",
                 "kind": "portfolio",
             }
         )
@@ -520,17 +520,18 @@ def archive_entries(articles, photo_works):
     return entries
 
 
-def render_category_sidebar(categories):
+def render_category_sidebar(categories, category_slugs):
     rows = []
     for cat in categories:
-        href = "gear.html" if slugify(cat) == "gear" else f"category/{slugify(cat)}.html"
+        cat_slug = category_slugs.get(cat, slugify(cat))
+        href = "gear.html" if cat_slug == "gear" else f"category/{cat_slug}.html"
         rows.append(
-            f'      <li><a href="{href}">{esc(cat)}</a><span>{esc(CATEGORY_EN.get(cat, slugify(cat)))}</span></li>'
+            f'      <li><a href="{href}">{esc(cat)}</a><span>{esc(CATEGORY_EN.get(cat, cat_slug))}</span></li>'
         )
     return "\n".join(rows)
 
 
-def render_archive(articles, categories, photo_works=None):
+def render_archive(articles, categories, category_slugs, photo_works=None):
     photo_works = photo_works or []
     sections = []
     for year, rows in grouped(archive_entries(articles, photo_works)).items():
@@ -563,7 +564,7 @@ def render_archive(articles, categories, photo_works=None):
       <section class="side-card">
         <h2>分类</h2>
         <ul class="category-list">
-{render_category_sidebar(categories)}
+{render_category_sidebar(categories, category_slugs)}
         </ul>
       </section>
     </aside>
@@ -945,9 +946,12 @@ def publish(target=None):
     for a in articles:
         if a["category"] not in categories:
             categories.append(a["category"])
+    category_slugs = {category: slugify(category) for category in categories}
+    for a in articles:
+        category_slugs[a["category"]] = a["category_slug"]
 
     (ROOT / "index.html").write_text(render_index(articles), encoding="utf-8")
-    (ROOT / "archive.html").write_text(render_archive(articles, categories, photo_works), encoding="utf-8")
+    (ROOT / "archive.html").write_text(render_archive(articles, categories, category_slugs, photo_works), encoding="utf-8")
     (ROOT / "about.html").write_text(render_about(categories), encoding="utf-8")
     (ROOT / "gear.html").write_text(render_gear(articles), encoding="utf-8")
     (ROOT / "portfolio" / "index.html").write_text(render_portfolio_entry(photo_works), encoding="utf-8")
@@ -968,13 +972,14 @@ def publish(target=None):
     for article in articles:
         by_category[article["category"]].append(article)
     for category in categories:
-        if slugify(category) == "gear":
+        category_slug = category_slugs.get(category, slugify(category))
+        if category_slug == "gear":
             continue
         if category == "看的艺术":
             html_text = render_the_art_archive()
         else:
             html_text = render_category_page(category, by_category.get(category, []))
-        (CATEGORY_DIR / f"{slugify(category)}.html").write_text(html_text, encoding="utf-8")
+        (CATEGORY_DIR / f"{category_slug}.html").write_text(html_text, encoding="utf-8")
     for work in photo_works:
         (PHOTO_DIR / f"{work['slug']}.html").write_text(render_photo_detail(work), encoding="utf-8")
     print(f"Published {len(articles)} article(s), {len(photo_works)} photo work(s).")
