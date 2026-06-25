@@ -104,6 +104,7 @@ Current real categories on the live site:
 建站记录
 摄影笔记
 七种武器
+养猫日记
 ```
 
 These are current categories, not a permanent closed list.
@@ -124,6 +125,13 @@ Important:
 
 - Do not use old or obsolete category names from previous drafts as current truth.
 - The live site and user-provided front matter are the source of truth.
+- Preserve the exact case of a user-provided `category_slug`; do not lowercase category slugs automatically.
+
+Known current stable category slugs include:
+
+```text
+养猫日记: Cat
+```
 
 ---
 
@@ -292,11 +300,14 @@ Do not modify homepage manual blocks unless explicitly requested.
 Known manual blocks:
 
 ```text
+MANUAL-HERO
 MANUAL-RECOMMENDATIONS
 MANUAL-FEATURED-PHOTOS
 ```
 
 The article publisher must preserve them.
+
+`MANUAL-RECOMMENDATIONS` is the homepage sidebar's hand-maintained link list. It may intentionally render without a visible title.
 
 The photo publisher must also avoid changing them unless the user explicitly asks to update featured homepage photos.
 
@@ -403,6 +414,7 @@ Rules:
 3. Do not generate `category/gear.html`.
 4. The `gear.html` photo wall should include real Gear/七种武器 articles that have a `thumbnail`.
 5. Sort Gear/七种武器 photo wall items newest first.
+6. When there are fewer than three desktop rows of Gear/七种武器 items, the publisher may append quiet image-free placeholder squares. New real Gear/七种武器 articles should automatically reduce the placeholder count.
 
 ---
 

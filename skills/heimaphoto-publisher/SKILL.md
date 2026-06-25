@@ -73,6 +73,7 @@ Known category slugs:
 七种武器: gear
 建站: website
 生活: life
+养猫日记: Cat
 ```
 
 Legacy aliases may still be accepted by the publisher for compatibility, including `散文`, `器材`, and `工具`, but new source files should use the current display names from `site-rules.md`.

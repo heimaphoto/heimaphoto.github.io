@@ -232,6 +232,14 @@ a:hover { color: var(--accent); }
   padding: 24px;
 }
 
+.side-card-quiet {
+  padding-top: 42px;
+}
+
+.side-card-quiet .recommend-list {
+  margin-top: 0;
+}
+
 .side-card p {
   color: var(--muted);
   margin: 14px 0 16px;
@@ -355,6 +363,12 @@ a:hover { color: var(--accent); }
   display: block;
   overflow: hidden;
   position: relative;
+}
+
+.gear-placeholder {
+  aspect-ratio: 1 / 1;
+  background: transparent;
+  border: 1px solid var(--line);
 }
 
 .gear-item img {
@@ -870,29 +884,6 @@ a:hover { color: var(--accent); }
   margin-top: 48px;
 }
 
-.about-map {
-  border-bottom: 1px solid var(--line);
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 34px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 46px 0 0;
-  padding: 30px 0;
-}
-
-.about-map h2 {
-  font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.2;
-  margin: 0 0 8px;
-}
-
-.about-map p {
-  color: var(--muted);
-  margin: 0;
-}
-
 .about-timeline {
   border-top: 1px solid var(--line);
   margin-top: 48px;
@@ -1024,11 +1015,6 @@ a:hover { color: var(--accent); }
   .side-card,
   .compact-list {
     padding: 20px;
-  }
-
-  .about-map {
-    gap: 22px;
-    grid-template-columns: 1fr;
   }
 
   .about-timeline div {

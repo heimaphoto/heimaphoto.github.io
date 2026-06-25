@@ -3,7 +3,7 @@ title: 家有蓝金小猫圆圆
 date: 2026-06-23
 category: 养猫日记
 summary: 一只蓝金小猫圆圆来到家里，又短暂离开后回到我们身边。关于童年记忆、犹豫和重新接纳它的养猫日记。
-category_slug: cat
+category_slug: Cat
 lead: 圆圆是一只蓝金小猫。经过短暂送走又接回来的纠结过程后，回过头看，很庆幸当时作了正确的决定。
 thumbnail: ../images/article/yuanyuan-1-2.jpg
 ---

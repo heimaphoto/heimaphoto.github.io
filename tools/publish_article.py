@@ -43,8 +43,11 @@ CATEGORY_EN = {
     "建站": "Website",
     "建站记录": "Site",
     "生活": "Life",
+    "养猫日记": "Cat",
 }
 DEFAULT_CATEGORIES = ["生活随想", "看的艺术", "摄影技术"]
+GEAR_WALL_COLUMNS = 4
+GEAR_PLACEHOLDER_ROWS = 3
 
 
 def esc(value):
@@ -450,14 +453,7 @@ def render_index(articles):
       </div>
     </section>
     <aside class="sidebar">
-      <section class="side-card">
-        <h2>关于这里</h2>
-        <p>一个缓慢更新的个人档案馆。</p>
-        <p>保存照片、文字与时间留下的痕迹。</p>
-        <a class="text-link" href="about.html">更多关于这里 →</a>
-      </section>
-      <section class="side-card">
-        <h2>推荐文章</h2>
+      <section class="side-card side-card-quiet">
         <ul class="recommend-list">
 {recommendations}
         </ul>
@@ -683,21 +679,6 @@ def render_about(categories):
       <p>有些网站关闭了，有些账号停止更新了，<br>而这个网站却意外地保留了下来。</p>
     </div>
 
-    <div class="about-map" aria-label="网站结构">
-      <div>
-        <h2>Portfolio</h2>
-        <p>记录照片</p>
-      </div>
-      <div>
-        <h2>Archive</h2>
-        <p>保存文章</p>
-      </div>
-      <div>
-        <h2>About</h2>
-        <p>记录网站本身</p>
-      </div>
-    </div>
-
     <div class="about-story about-story-end">
       <p>最初它只是一个放照片的地方。</p>
       <p>后来，我开始记录一些文字。</p>
@@ -748,6 +729,10 @@ def render_gear_item(article):
       </a>"""
 
 
+def render_gear_placeholder():
+    return """      <div class="gear-item gear-placeholder" aria-hidden="true"></div>"""
+
+
 def render_gear(articles):
     gear_articles = sorted(
         [
@@ -758,60 +743,11 @@ def render_gear(articles):
         key=lambda article: (article["date"], article["slug"]),
         reverse=True,
     )
-    if gear_articles:
-        items = "\n".join(render_gear_item(article) for article in gear_articles)
-    else:
-        items = """      <!-- Gear item template:
-      <a class="gear-item" href="article/example.html">
-        <img src="images/gear/example.jpg" alt="Example title">
-        <span class="gear-caption">
-          <strong>Example title</strong>
-          <em>Optional short note.</em>
-        </span>
-      </a>
-      -->
-      <a class="gear-item" href="#">
-        <img src="img/photo/coffee-time.jpg" alt="Leica M262">
-        <span class="gear-caption">
-          <strong>Leica M262</strong>
-          <em>待替换</em>
-        </span>
-      </a>
-      <a class="gear-item" href="#">
-        <img src="img/photo/recorder.jpg" alt="Voigtlander 40mm F1.4">
-        <span class="gear-caption">
-          <strong>Voigtlander 40mm F1.4</strong>
-          <em>待替换</em>
-        </span>
-      </a>
-      <a class="gear-item" href="#">
-        <img src="img/photo/Office-building.jpg" alt="MacBook Air">
-        <span class="gear-caption">
-          <strong>MacBook Air</strong>
-          <em>待替换</em>
-        </span>
-      </a>
-      <a class="gear-item" href="#">
-        <img src="img/photo/sisyphe-bookstore-cafe.jpg" alt="iPad Pro">
-        <span class="gear-caption">
-          <strong>iPad Pro</strong>
-          <em>待替换</em>
-        </span>
-      </a>
-      <a class="gear-item" href="#">
-        <img src="img/photo/recorder.jpg" alt="Mechanical Keyboard">
-        <span class="gear-caption">
-          <strong>Mechanical Keyboard</strong>
-          <em>待替换</em>
-        </span>
-      </a>
-      <a class="gear-item" href="#">
-        <img src="img/photo/Office-building.jpg" alt="Software Tools">
-        <span class="gear-caption">
-          <strong>Software Tools</strong>
-          <em>待替换</em>
-        </span>
-      </a>"""
+    min_items = GEAR_WALL_COLUMNS * GEAR_PLACEHOLDER_ROWS
+    placeholders_needed = max(0, min_items - len(gear_articles))
+    items = [render_gear_item(article) for article in gear_articles]
+    items.extend(render_gear_placeholder() for _ in range(placeholders_needed))
+    items = "\n".join(items)
     body = f"""<main class="gear-page">
   <section class="wrap gear-intro">
     <p class="eyebrow">Gear</p>
