@@ -504,6 +504,13 @@ a:hover { color: var(--accent); }
   margin: 0 0 1.25em;
 }
 
+.article-body blockquote {
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  margin: 1.6em 0;
+  padding-left: 18px;
+}
+
 .article-body a {
   color: var(--link);
   text-decoration: underline;
