@@ -41,11 +41,8 @@ AI 真是“无所不知”，它又给我出了个主意。因为我现在用 A
 
 但在作者发布的文章：[FilmLab 2026路线图](https://www.filmlabapp.com/news/filmlab-2025-review-2026-roadmap) 来看，里面提到了：“Improved support for raw images from scanners, with scanner-specific color profiles”。如果以后能推出支持底片扫描仪的配置文件，那么我想到时再测试一下。
 
-2007年在公园看到的正在拍照的一家三口（使用曲线简单调色）
-{{ image: ../images/article/70-Exploring-Scanning-of-Color-Negatives-1.jpg }}
+{{ image: ../images/article/70-Exploring-Scanning-of-Color-Negatives-1.jpg | 2007年在公园看到的正在拍照的一家三口（使用曲线简单调色） }}
 
-这张是使用 DXO Filmpack 套了张做旧风格（时光机）
-{{ image: ../images/article/70-Exploring-Scanning-of-Color-Negatives-2.jpg | 时光机风格 }}
+{{ image: ../images/article/70-Exploring-Scanning-of-Color-Negatives-2.jpg | 这张是使用 DXO Filmpack 套了张做旧风格（时光机） }}
 
-这张是去色罩后的原片（未经任何调整）
-{{ image: ../images/article/70-Exploring-Scanning-of-Color-Negatives-3.jpg | 原片 }}
+{{ image: ../images/article/70-Exploring-Scanning-of-Color-Negatives-3.jpg | 这张是去色罩后的原片（未经任何调整） }}
