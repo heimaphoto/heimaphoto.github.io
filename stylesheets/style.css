@@ -233,7 +233,7 @@ a:hover { color: var(--accent); }
 }
 
 .side-card-quiet {
-  padding-top: 42px;
+  padding-top: 24px;
 }
 
 .side-card-quiet .recommend-list {

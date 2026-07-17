@@ -454,6 +454,7 @@ def render_index(articles):
     </section>
     <aside class="sidebar">
       <section class="side-card side-card-quiet">
+        <h2>SPOTLIGHT</h2>
         <ul class="recommend-list">
 {recommendations}
         </ul>
