@@ -1,5 +1,5 @@
 ---
-slug: On-The-Way
+slug: 1-On-The-Way
 title: 在路上的夜色中
 date: 2025-12-31
 type: photo

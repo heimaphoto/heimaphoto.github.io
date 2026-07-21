@@ -1,5 +1,5 @@
 ---
-slug: Metro-SuZhou
+slug: 2-Metro-SuZhou
 title: 地铁，在苏州
 date: 2021-01-01
 date_display: Around 2021
