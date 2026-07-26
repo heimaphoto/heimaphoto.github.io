@@ -3,7 +3,7 @@ title: 一次散步的随拍
 date: 2026-07-22
 category: 摄影笔记
 summary: 我的佳能老 5D 快烂掉了，今天散步时想着拿出来拍几张，试试看还能拍吗，还有那只 Planar 50 的老镜头还能用吗？
-lead: 拍的过程中发现只要面对光源直射镜头，照片中的光源处就被晕染成一团雾蒙蒙的。我意识到这只镜头不适合拍夜景，至少不能直对光源，于是后面我尽量在画面中避开光源，这样拍了几张感觉还能用。
+lead: 一台放了很多年的 Canon EOS 5D，一支 Planar 50/1.4。原本只是一次普通散步，却重新认识了这支老镜头，也重新理解了它并不完美的成像。。
 location: 苏州常熟市泰山路世贸附近
 camera: CANON EOS 5D + Planar 50mm/f1.4
 thumbnail: ../images/article/71-snapshot-from-my-walk-3.jpg
