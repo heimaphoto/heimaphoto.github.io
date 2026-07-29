@@ -22,7 +22,7 @@ Use this skill to publish a new static article on `heimaphoto.com`.
 python3 tools/publish_article.py md/example.md
 ```
 
-When a target `md/example.md` is provided, the publisher indexes all `md/*.md` files for homepage/archive/category/Gear pages, but only rewrites the target `article/example.html`. This preserves any manual edits made to older generated article HTML. A full rebuild without a target may rewrite all article pages.
+When a target `md/example.md` is provided, the publisher indexes all `md/*.md` files for homepage/archive/category/Gear pages, but only rewrites the target `article/example.html`. The article URL always comes from the Markdown filename (not its `title`), so a filename such as `72-rx1rm2-test.md` keeps the URL `article/72-rx1rm2-test.html` even when its visible title omits `72-`. This preserves any manual edits made to older generated article HTML. A full rebuild without a target may rewrite all article pages.
 
 5. Verify the generated files:
    - `article/<slug>.html`

@@ -329,10 +329,11 @@ photo/<slug>.html
 
 Rules:
 
-1. Use stable English slugs.
-2. Use lowercase letters, numbers, and hyphens.
-3. Avoid spaces, Chinese characters, punctuation, and date prefixes unless the existing site already requires them.
-4. Do not rename existing published pages unless explicitly requested.
+1. An article URL slug is always the Markdown filename without its `.md` extension (for example, `md/72-rx1rm2-test.md` publishes to `article/72-rx1rm2-test.html`). Do not derive it from the front-matter `title`.
+2. The front-matter `title` controls only the visible title. It may omit a numeric filename prefix without changing the article URL.
+3. Use stable English slugs for new Markdown filenames.
+4. Use lowercase letters, numbers, and hyphens in new Markdown filenames.
+5. Do not rename existing published pages unless explicitly requested.
 
 ---
 
