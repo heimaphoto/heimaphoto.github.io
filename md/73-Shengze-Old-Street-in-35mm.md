@@ -1,5 +1,5 @@
 ---
-title: 摄影活动第一站--35mm镜头下的盛泽老街
+title: 外拍活动NO.006 | 35mm镜头下的盛泽老街
 date: 2026-08-04
 category: 摄影笔记
 summary: 盛夏走进苏州盛泽老街，用35mm镜头记录仍在日常生活中的河埠、巷弄、旧屋与人。
@@ -9,7 +9,7 @@ camera: Rx1RM2
 thumbnail: ../images/article/73-Shengze-Old-Street-in-35mm-01.jpg
 ---
 
-## 摄影活动第一站--35mm镜头下的盛泽老街
+## 外拍活动NO.006 | 35mm镜头下的盛泽老街
 
 > 刚过去的周六，随色友一起参加了一次外拍活动。
 >

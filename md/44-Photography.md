@@ -1,5 +1,5 @@
 ---
-title: 棚拍日记
+title: 外拍活动NO.002 | 棚拍日记
 date: 2015-08-29
 category: 摄影笔记
 category_slug: Photography
