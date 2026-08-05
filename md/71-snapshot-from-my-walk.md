@@ -4,7 +4,7 @@ date: 2026-07-22
 category: 摄影笔记
 summary: 我的佳能老 5D 快烂掉了，今天散步时想着拿出来拍几张，试试看还能拍吗，还有那只 Planar 50 的老镜头还能用吗？
 lead: 一台放了很多年的 Canon EOS 5D，一支 Planar 50/1.4。原本只是一次普通散步，却重新认识了这支老镜头，也重新理解了它并不完美的成像。。
-location: 苏州常熟市泰山路世贸附近
+location: 泰山路世贸附近.常熟.苏州
 camera: CANON EOS 5D + Planar 50mm/f1.4
 thumbnail: ../images/article/71-snapshot-from-my-walk-3.jpg
 ---

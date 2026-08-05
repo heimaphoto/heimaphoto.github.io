@@ -4,7 +4,7 @@ date: 2026-08-04
 category: 摄影笔记
 summary: 盛夏走进苏州盛泽老街，用35mm镜头记录仍在日常生活中的河埠、巷弄、旧屋与人。
 lead: 在近40℃的午后，盛泽老街没有刻意迎合游客的布置，只有临河的老屋、窄巷里的住户和缓慢流动的生活。第一次使用35mm定焦镜头扫街，在汗水里重新练习观察与等待。
-location: 苏州盛泽老街
+location: 盛泽老街.苏州
 camera: Rx1RM2
 thumbnail: ../images/article/73-Shengze-Old-Street-in-35mm-01.jpg
 ---

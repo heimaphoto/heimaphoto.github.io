@@ -4,7 +4,7 @@ date: 2026-07-29
 category: 摄影笔记
 summary: 在苏州常熟初试索尼 Rx1RM2：轻巧的机身、明亮的取景器与锋利的 35mm 镜头，让日常随拍变得轻松而可靠。
 lead: 带着 Rx1RM2 在常熟走走拍拍，试试它在暗光、虚化与层次之间展现出的锐利锋芒。
-location: 苏州常熟
+location: 常熟.苏州
 camera: Rx1RM2
 thumbnail: ../images/article/72-rx1rm2-test-7.jpg
 ---
