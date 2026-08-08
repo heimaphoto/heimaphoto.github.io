@@ -525,6 +525,11 @@ a:hover { color: var(--accent); }
   padding-left: 18px;
 }
 
+/* Keep legacy list items inside a quote from hanging into its border. */
+.article-body blockquote > li {
+  list-style-position: inside;
+}
+
 .article-body a {
   color: var(--link);
   text-decoration: underline;
