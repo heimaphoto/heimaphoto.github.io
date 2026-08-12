@@ -6,7 +6,7 @@ summary: 拍完丰士村老茶馆，顺着附近的老街巷走了一段。没�
 lead: 拍完老茶馆，顺着附近的老街巷走了一段。时间不长，却很喜欢这里慢下来的感觉——旧房子、老店铺，以及那些仍然在街边过着日子的普通人。
 location: 丰士村·海宁·嘉兴
 camera: Rx1RM2 (Sonnar T* 35mm F2)
-thumbnail: ../images/article/fengshi-old-street-01.jpg
+thumbnail: ../images/article/76-fengshi-old-street-01.jpg
 related:
   - title: 外拍活动NO.006 | 35mm镜头下的盛泽老街
     url: ../article/73-Shengze-Old-Street-in-35mm.html
