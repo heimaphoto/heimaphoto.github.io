@@ -113,6 +113,14 @@ portfolio/index.html
 archive.html
 ```
 
+When `camera`, `lens`, or `film` metadata matches an existing Gear slug, also update:
+
+```text
+md/<gear-source>.md
+article/<gear-source>.html
+gear.html
+```
+
 If needed, place images under:
 
 ```text
@@ -150,6 +158,8 @@ python3 tools/publish_photo.py photo-md/example.md
 
 The photo publisher shares archive and portfolio rendering with the article publisher so the two systems do not overwrite each other's index entries.
 
+It also shares Gear `Published Work` maintenance with the article publisher. A photo work can link back to Gear pages through `camera`, `lens`, or `film` metadata using the same exact slug rules described below.
+
 The command must finish with the validation message:
 
 ```text
@@ -182,6 +192,32 @@ Camera
 Lens
 Location
 ```
+
+## Gear Published Work Links
+
+Photo work metadata can link back to Gear pages through these fields only:
+
+```yaml
+camera:
+lens:
+film:
+```
+
+Match values case-insensitively as exact Gear slugs. Slugs should be written as lowercase kebab-case in new source files, for example `iphone-air`, `rx1rm2`, `planar-50`, or `fomapan-100`; existing mixed-case values still match after normalization. Do not use spaces, display names, Chinese names, or concatenated display names such as `iPhoneAir` for new metadata.
+
+Do not match against titles, image names, product display names, body text, `related`, `thumbnail`, `description`, or loose substrings. Gear slugs are derived from Gear article source filenames by stripping the leading numeric prefix and an optional `gear-` prefix, for example `md/78-gear-rx1rm2.md` maps to `rx1rm2`, and `md/65-gear-iphone-air.md` maps to `iphone-air`.
+
+When publishing a photo work, the publisher should update only the Gear pages referenced by that source metadata, plus any Gear page that already links to that photo work so stale links can be removed. When publishing a Gear article or doing an initialization pass through the article publisher, rebuild that Gear article's `### Published Work` entries from all existing articles and photo works.
+
+On generated photo work pages, displayed `camera`, `lens`, and `film` metadata values should link back to the matched Gear article page. Keep the displayed value from the source metadata, but wrap it with the Gear detail URL when a match exists. Leave unmatched values as plain text.
+
+`Published Work` rows are markdown links in newest-first order:
+
+```markdown
+[2026-07-01 Photo Work Title](../photo/example.html)
+```
+
+Keep existing manual content in the `Published Work` section. Do not create new Gear pages or empty links when a metadata value is blank or unmatched.
 
 ---
 
@@ -233,11 +269,12 @@ Before finishing:
 2. Confirm `photo/<slug>.html` exists and opens.
 3. Confirm `portfolio/index.html` includes the new work.
 4. Confirm `archive.html` includes the new work with category/type `摄影作品`.
-5. Confirm no `category/portfolio.html` was created.
-6. Confirm old portfolio files were not modified.
-7. Confirm homepage manual blocks were not modified unless explicitly requested.
-8. Confirm missing optional metadata does not produce empty labels.
-9. Confirm links are relative and work on GitHub Pages.
+5. If `camera`, `lens`, or `film` metadata matches Gear, confirm the affected Gear source and `article/<gear-source>.html` include the photo work under `Published Work`, and the photo detail metadata links back to the Gear article page.
+6. Confirm no `category/portfolio.html` was created.
+7. Confirm old portfolio files were not modified.
+8. Confirm homepage manual blocks were not modified unless explicitly requested.
+9. Confirm missing optional metadata does not produce empty labels.
+10. Confirm links are relative and work on GitHub Pages.
 
 ---
 

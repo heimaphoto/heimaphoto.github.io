@@ -5,7 +5,7 @@ category: 摄影笔记
 summary: 农历六月十九，观音成道纪念日。拍完丰士老街，我们顺路走进丰士庙，看见一场仍在当地日常生活中延续的民间仪式。
 lead: 拍完丰士老街，我们顺路去了丰士庙。那天正逢农历六月十九，庙里比平日热闹许多。香火、供品、纸钱和前来礼拜的人，把一个普通的午后变成了一场属于当地人的节日。
 location: 丰士村·海宁·嘉兴
-camera: RX1R II (Sonnar T* 35mm F2)
+camera: Rx1RM2
 thumbnail: ../images/article/77-Fengshi-Temple-01.jpg
 related:
   - title: 外拍活动NO.006 | 35mm镜头下的盛泽老街

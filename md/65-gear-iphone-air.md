@@ -1,5 +1,5 @@
 ---
-title:我为什么选择 iPhone Air 
+title: 我为什么选择 iPhone Air
 date: 2026-06-21
 category: 七种武器
 summary: Air 最吸引我的是超薄的造型。超瓷晶面板的屏幕比 Pro 稍大，厚度是“迄今最薄”的 5.6 毫米，轻仅165克。而且配备 Pro 级芯片。
@@ -8,7 +8,7 @@ thumbnail: ../images/gear/iphone-air-1.jpg
 gear_note: 超薄超轻超棒手感iPhone air
 ---
 
-## 我为什么选择 iPhone Air 
+## 我为什么选择 iPhone Air
 
 在2025年苹果公司的秋季发布会上，当我看到 iPhone Air 的宣传片时，就知道我的下一台手机可能就是它了。
 
@@ -31,6 +31,11 @@ Air 最吸引我的是超薄的造型。超瓷晶面板的屏幕比 Pro 稍大�
 最后再说说取消实体卡槽与首次使用C1X调制解调器。eSIM 目前支持得非常好，至少我这里从没掉过链子，跟用实体卡感觉不到区别。然后这个C1X的苹果自研5G基带，我个人体验非常好，似乎信号比以前确实有所提升。以前最怕开车出车库交停车费时因为信号不好手机转个不停，自从使用 Air 以来，似乎没遇到过这种情况。
 
 我是在2026年1月底，苹果官方降价时购入的 iPhone Air，搭配上今天新买的 PITAKA 手机壳，超薄超轻超棒的握持感让我觉得这是一次正确的选择。
+
+### Published Work
+
+[2026-07-01 红色汽车尾灯倒影中被遗弃的蓝猫](../photo/4-Abandoned-Blue-Cat.html)
+[2026-06-18 雨夜光圈](../photo/3-Rainy-Night-Aperture.html)
 
 <table border="0" align="center" cellpadding="3" cellspacing="0"><tr> <td width=50%><img src="../images/gear/iphone-air-3.jpg"></td><td width=50%><img src="../images/gear/iphone-air-4.jpg"></td></tr></table>
 

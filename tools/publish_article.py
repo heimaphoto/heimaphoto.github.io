@@ -104,6 +104,42 @@ def slugify(value):
     return "category-" + hashlib.sha1(value.encode("utf-8")).hexdigest()[:8]
 
 
+def normalize_gear_token(value):
+    if not isinstance(value, str):
+        return ""
+    return value.strip().lower()
+
+
+def item_gear_tokens(item):
+    tokens = set()
+    for field in ("camera", "lens", "film"):
+        token = normalize_gear_token(item.get(field))
+        if token:
+            tokens.add(token)
+    return tokens
+
+
+def gear_slug_from_source(path):
+    slug = re.sub(r"^\d+-", "", path.stem)
+    slug = re.sub(r"^gear-", "", slug, flags=re.I)
+    return normalize_gear_token(slug)
+
+
+def gear_articles_by_slug(articles):
+    return {
+        gear_slug_from_source(article["source"]): article
+        for article in articles
+        if article["category_slug"] == "gear" and gear_slug_from_source(article["source"])
+    }
+
+
+def render_gear_meta_value(value, gear_by_slug):
+    gear = gear_by_slug.get(normalize_gear_token(value))
+    if not gear:
+        return esc(value)
+    return f'<a href="../{gear["url"]}">{esc(value)}</a>'
+
+
 def read_front_matter(path):
     text = path.read_text(encoding="utf-8")
     if not text.startswith("---\n"):
@@ -254,6 +290,8 @@ def parse_article(path):
         "lead": data.get("lead", ""),
         "location": data.get("location", ""),
         "camera": data.get("camera", ""),
+        "lens": data.get("lens", ""),
+        "film": data.get("film", ""),
         "thumbnail": data.get("thumbnail", ""),
         "gear_note": data.get("gear_note", ""),
         "gallery": data.get("gallery", []),
@@ -303,6 +341,7 @@ def parse_photo_work(path):
         "images": images,
         "camera": data.get("camera", ""),
         "lens": data.get("lens", ""),
+        "film": data.get("film", ""),
         "location": data.get("location", ""),
         "description": data.get("description", ""),
         "detail": detail,
@@ -621,12 +660,14 @@ def render_the_art_archive():
     return page("看的艺术 — Heima Photo", body, depth=1, description="Heima Photo 看的艺术分类文章。")
 
 
-def render_article(article, prev_article, next_article):
-    meta_parts = [article["date"].strftime("%Y.%m.%d"), article["category"]]
+def render_article(article, prev_article, next_article, gear_by_slug=None):
+    gear_by_slug = gear_by_slug or {}
+    meta_parts = [esc(article["date"].strftime("%Y.%m.%d")), esc(article["category"])]
     if article.get("location"):
-        meta_parts.append(article["location"])
-    if article.get("camera"):
-        meta_parts.append(article["camera"])
+        meta_parts.append(esc(article["location"]))
+    for field in ("camera", "lens", "film"):
+        if article.get(field):
+            meta_parts.append(render_gear_meta_value(article[field], gear_by_slug))
     lead = f'      <p class="article-lead">{esc(article["lead"])}</p>\n' if article.get("lead") else ""
     gallery = ""
     if article.get("gallery"):
@@ -652,7 +693,7 @@ def render_article(article, prev_article, next_article):
   <article class="narrow single-column-page">
     <header class="article-header">
       <h1>{esc(article['title'])}</h1>
-      <p class="meta">{esc(' · '.join(meta_parts))}</p>
+      <p class="meta">{' · '.join(meta_parts)}</p>
 {lead}    </header>
     <div class="article-body">
 {article['body']}
@@ -809,15 +850,15 @@ def render_portfolio_entry(photo_works=None):
     return page(f"Portfolio — {SITE_TITLE}", body, "portfolio", depth=1)
 
 
-def render_photo_detail(work):
-    meta = [("Date", work.get("date_display") or work["date"].strftime("%Y.%m.%d"))]
-    if work.get("camera"):
-        meta.append(("Camera", work["camera"]))
-    if work.get("lens"):
-        meta.append(("Lens", work["lens"]))
+def render_photo_detail(work, gear_by_slug=None):
+    gear_by_slug = gear_by_slug or {}
+    meta = [("Date", esc(work.get("date_display") or work["date"].strftime("%Y.%m.%d")))]
+    for label, field in (("Camera", "camera"), ("Lens", "lens"), ("Film", "film")):
+        if work.get(field):
+            meta.append((label, render_gear_meta_value(work[field], gear_by_slug)))
     if work.get("location"):
-        meta.append(("Location", work["location"]))
-    rows = "\n".join(f"        <div><dt>{esc(label)}</dt><dd>{esc(value)}</dd></div>" for label, value in meta)
+        meta.append(("Location", esc(work["location"])))
+    rows = "\n".join(f"        <div><dt>{esc(label)}</dt><dd>{value}</dd></div>" for label, value in meta)
     meta_html = f"""      <dl class="photo-meta">
 {rows}
       </dl>
@@ -864,6 +905,97 @@ def render_photo_detail(work):
     return page(f"{work['title']} — {SITE_TITLE}", body, depth=1, description=work.get("description") or DESCRIPTION, lightbox=True)
 
 
+def published_work_markdown(item):
+    label = f"{item['date'].strftime('%Y-%m-%d')} {item['title']}"
+    return f"[{label}](../{item['url']})"
+
+
+def section_contains_item_link(text, item):
+    return bool(re.search(rf"\.\./{re.escape(item['url'])}\b", text))
+
+
+def strip_known_published_work_rows(section, known_urls):
+    rows = []
+    for line in section.strip("\n").splitlines():
+        match = re.search(r"\]\(\.\./([^)]+\.html)\)", line)
+        if match and match.group(1) in known_urls:
+            continue
+        rows.append(line.rstrip())
+    return "\n".join(rows).strip()
+
+
+def update_published_work_section(gear_article, rows, known_urls):
+    path = gear_article["source"]
+    text = path.read_text(encoding="utf-8")
+    pattern = re.compile(r"(?ms)^(### Published Work[^\n]*\n)(.*?)(?=^###\s+|\Z)")
+    match = pattern.search(text)
+    if not match:
+        return False
+
+    manual_content = strip_known_published_work_rows(match.group(2), known_urls)
+    parts = []
+    if rows:
+        parts.append("\n".join(rows))
+    if manual_content:
+        parts.append(manual_content)
+    section_body = "\n\n".join(parts)
+    replacement = match.group(1) + "\n"
+    if section_body:
+        replacement += section_body + "\n\n"
+    updated = text[: match.start()] + replacement + text[match.end() :]
+    if updated == text:
+        return False
+    path.write_text(updated, encoding="utf-8")
+    return True
+
+
+def update_gear_published_work(articles, photo_works, target=None):
+    known_urls = {item["url"] for item in articles + photo_works}
+    gear_articles = [article for article in articles if article["category_slug"] == "gear"]
+    content_items = [article for article in articles if article["category_slug"] != "gear"] + photo_works
+    gear_by_slug = gear_articles_by_slug(articles)
+
+    target_item = None
+    if target:
+        target_item = next(
+            (item for item in articles + photo_works if item["source"].resolve() == target),
+            None,
+        )
+
+    selected_gears = set()
+    if target_item and target_item.get("category_slug") == "gear":
+        selected_gears.add(target_item["slug"])
+    elif target_item:
+        for token in item_gear_tokens(target_item):
+            gear = gear_by_slug.get(token)
+            if gear:
+                selected_gears.add(gear["slug"])
+        for gear in gear_articles:
+            section = gear["source"].read_text(encoding="utf-8")
+            if section_contains_item_link(section, target_item):
+                selected_gears.add(gear["slug"])
+    elif target:
+        selected_gears = set()
+    else:
+        selected_gears = {gear["slug"] for gear in gear_articles}
+
+    updated_sources = set()
+    for gear in gear_articles:
+        if gear["slug"] not in selected_gears:
+            continue
+        gear_token = gear_slug_from_source(gear["source"])
+        matches = [
+            item
+            for item in content_items
+            if gear_token in item_gear_tokens(item)
+        ]
+        matches.sort(key=lambda item: (item["date"], item["slug"]), reverse=True)
+        rows = [published_work_markdown(item) for item in matches]
+        if update_published_work_section(gear, rows, known_urls):
+            updated_sources.add(gear["source"].resolve())
+    return updated_sources
+
+
 def publish(target=None):
     if target and not target.is_absolute():
         target = (ROOT / target).resolve()
@@ -875,6 +1007,9 @@ def publish(target=None):
     known_sources = [a["source"].resolve() for a in articles] + [p["source"].resolve() for p in photo_works]
     if target and target not in known_sources:
         raise SystemExit(f"没有在 md/ 或 photo-md/ 中找到 {target}")
+    updated_gear_sources = update_gear_published_work(articles, photo_works, target)
+    if updated_gear_sources:
+        articles = [parse_article(path) for path in sorted(MD_DIR.glob("*.md")) if not path.name.startswith("_")]
     articles.sort(key=lambda a: (a["date"], a["slug"]), reverse=True)
     photo_works.sort(key=lambda item: (item["date"], item["slug"]), reverse=True)
     chronological = list(reversed(articles))
@@ -886,6 +1021,7 @@ def publish(target=None):
     category_slugs = {category: slugify(category) for category in categories}
     for a in articles:
         category_slugs[a["category"]] = a["category_slug"]
+    gear_by_slug = gear_articles_by_slug(articles)
 
     (ROOT / "index.html").write_text(render_index(articles), encoding="utf-8")
     (ROOT / "archive.html").write_text(render_archive(articles, categories, category_slugs, photo_works), encoding="utf-8")
@@ -894,7 +1030,11 @@ def publish(target=None):
     (ROOT / "portfolio" / "index.html").write_text(render_portfolio_entry(photo_works), encoding="utf-8")
 
     if target:
-        articles_to_write = [article for article in articles if article["source"].resolve() == target]
+        articles_to_write = [
+            article
+            for article in articles
+            if article["source"].resolve() == target or article["source"].resolve() in updated_gear_sources
+        ]
     else:
         articles_to_write = articles
 
@@ -903,7 +1043,7 @@ def publish(target=None):
         prev_article = chronological[pos - 1] if pos > 0 else None
         next_article = chronological[pos + 1] if pos < len(chronological) - 1 else None
         (ARTICLE_DIR / f"{article['slug']}.html").write_text(
-            render_article(article, prev_article, next_article), encoding="utf-8"
+            render_article(article, prev_article, next_article, gear_by_slug), encoding="utf-8"
         )
     by_category = defaultdict(list)
     for article in articles:
@@ -918,7 +1058,7 @@ def publish(target=None):
             html_text = render_category_page(category, by_category.get(category, []))
         (CATEGORY_DIR / f"{category_slug}.html").write_text(html_text, encoding="utf-8")
     for work in photo_works:
-        (PHOTO_DIR / f"{work['slug']}.html").write_text(render_photo_detail(work), encoding="utf-8")
+        (PHOTO_DIR / f"{work['slug']}.html").write_text(render_photo_detail(work, gear_by_slug), encoding="utf-8")
     print(f"Published {len(articles)} article(s), {len(photo_works)} photo work(s).")
 
 

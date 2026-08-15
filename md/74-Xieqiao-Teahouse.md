@@ -5,7 +5,7 @@ category: 摄影笔记
 summary: 海宁丰士村老茶馆里，斑驳墙面、木门、搪瓷缸和几位喝茶聊天的老人，组成一处仍在日常使用的旧空间。
 lead: 外拍活动的第二站来到海宁丰士村老茶馆。这里没有重新布置的旧日场景，磨旧的木门、白炽灯下的茶桌，以及仍然坐在那里喝茶聊天的老人，共同组成了一处还在继续生活的旧空间。
 location: 丰士村.海宁.嘉兴
-camera: Rx1RM2 (Sonnar T* 35mm F2)
+camera: Rx1RM2
 thumbnail: ../images/article/74-Xieqiao-Teahouse-02.jpg
 related:
   - title: 外拍活动NO.006 | 35mm镜头下的盛泽老街

@@ -4,7 +4,7 @@ title: 红色汽车尾灯倒影中被遗弃的蓝猫
 date: 2026-07-01
 type: photo
 image: ../images/photo/4-Abandoned-Blue-Cat.jpg
-camera: iPhone Air
+camera: iPhone-Air
 location: Wuxi, JiangSu, China
 description: 这是一幅充满戏剧张力与感伤气息的肖像：一只被遗弃的英国短毛蓝猫，孤独地坐在地下车库粗糙的水泥路面上。整个场景被汽车尾灯散发出的浓烈、忧郁的红光所笼罩。猫咪眼神中透着哀伤与忧郁，传递出一种深深的孤独、被背叛的无助以及努力求生的气息。 
 ---
