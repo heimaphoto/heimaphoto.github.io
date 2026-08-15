@@ -196,7 +196,17 @@ def markdown_to_html(markdown, title):
     blocks = []
     paragraph = []
     quote = []
+    list_items = []
     lines = markdown.splitlines()
+
+    def render_list_items(items):
+        rows = []
+        for item in items:
+            children = ""
+            if item["children"]:
+                children = "\n<ul>\n" + render_list_items(item["children"]) + "\n</ul>"
+            rows.append(f"<li>{render_inline(item['text'])}{children}</li>")
+        return "\n".join(rows)
 
     def flush_paragraph():
         nonlocal paragraph
@@ -210,14 +220,31 @@ def markdown_to_html(markdown, title):
             blocks.append("<blockquote><p>" + "<br>\n".join(render_inline(x) for x in quote) + "</p></blockquote>")
             quote = []
 
+    def flush_list():
+        nonlocal list_items
+        if list_items:
+            blocks.append("<ul>\n" + render_list_items(list_items) + "\n</ul>")
+            list_items = []
+
     def flush():
         flush_paragraph()
         flush_quote()
+        flush_list()
 
     for line in lines:
         stripped = line.strip()
         if not stripped:
             flush()
+            continue
+        list_match = re.match(r"^(  )?-\s+(.+)$", line)
+        if list_match:
+            flush_paragraph()
+            flush_quote()
+            item = {"text": list_match.group(2).strip(), "children": []}
+            if list_match.group(1) and list_items:
+                list_items[-1]["children"].append(item)
+            else:
+                list_items.append(item)
             continue
         if stripped.startswith("<"):
             flush()
@@ -253,6 +280,7 @@ def markdown_to_html(markdown, title):
         blockquote = re.match(r"^>\s?(.*)$", stripped)
         if blockquote:
             flush_paragraph()
+            flush_list()
             quote.append(blockquote.group(1))
             continue
         heading = re.match(r"^(#{2,4})\s+(.+)$", stripped)
@@ -265,6 +293,7 @@ def markdown_to_html(markdown, title):
             blocks.append(f"<h{level}>{render_inline(text)}</h{level}>")
             continue
         flush_quote()
+        flush_list()
         paragraph.append(stripped)
     flush()
     return "\n".join(blocks)

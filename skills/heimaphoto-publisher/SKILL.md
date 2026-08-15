@@ -83,6 +83,21 @@ Legacy aliases may still be accepted by the publisher for compatibility, includi
 
 Only render optional sections when data exists. `summary` is for homepage cards only; article pages use `lead`. Homepage featured photos are preserved by the manual block when publishing; do not assume or add homepage lightbox behavior.
 
+## Markdown Body Support
+
+Article body Markdown supports simple paragraphs, headings, images, blockquotes, links, and unordered lists.
+
+Unordered list rules are intentionally small:
+
+```markdown
+- First-level item
+- First-level item
+  - Second-level item
+  - Second-level item
+```
+
+Only `- ` at the start of a line creates a first-level bullet. Two leading spaces followed by `- ` creates a second-level bullet under the previous first-level item. Lists are limited to two levels; do not rely on `*`, `+`, ordered lists, or deeper indentation.
+
 ## Gear Published Work Links
 
 Article and photo work metadata can link back to Gear pages through these fields only:

@@ -80,6 +80,8 @@ Only render optional metadata when it exists.
 
 Any body content after the front matter is an optional detailed description. Render it on the photo detail page and preserve simple Markdown or simple HTML formatting.
 
+Simple Markdown includes paragraphs, headings, images, blockquotes, links, and unordered lists. Unordered lists use `- ` at the start of a line for first-level bullets and two leading spaces followed by `- ` for second-level bullets. Lists are limited to two levels; do not rely on `*`, `+`, ordered lists, or deeper indentation.
+
 ---
 
 ## Image Handling

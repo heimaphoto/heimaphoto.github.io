@@ -7,6 +7,8 @@ summary: 在这里填写首页文章卡片使用的摘要，建议一到两句�
 # lead: 在这里填写文章页开头导言；不需要时删除这一行。
 # location: 地点；不需要时删除这一行。
 # camera: 相机或器材；不需要时删除这一行。
+# lens:
+# film:
 # thumbnail: ../img/example.jpg
 # 七种武器 / Gear 文章：
 # category: 七种武器
@@ -47,6 +49,10 @@ summary: 在这里填写首页文章卡片使用的摘要，建议一到两句�
 图片：
 
 {{ image: ../img/example-01.jpg | 图片说明可选 }}
+
+- 一级项目
+- 一级项目
+  - 二级项目
 
 ## 七种武器 / Gear 文章速记
 

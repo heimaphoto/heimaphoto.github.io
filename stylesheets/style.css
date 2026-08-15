@@ -518,6 +518,19 @@ a:hover { color: var(--accent); }
   margin: 0 0 1.25em;
 }
 
+.article-body ul {
+  margin: 0 0 1.25em 1.3em;
+  padding: 0;
+}
+
+.article-body li {
+  margin: .18em 0;
+}
+
+.article-body li ul {
+  margin: .18em 0 0 1.3em;
+}
+
 .article-body blockquote {
   border-left: 2px solid var(--accent);
   color: var(--muted);
