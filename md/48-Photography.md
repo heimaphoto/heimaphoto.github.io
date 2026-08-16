@@ -4,6 +4,7 @@ date: 2016-04-29
 category: 摄影笔记
 category_slug: Photography
 summary: 难得有一次去上海出差的机会，去之前就盘算着要拍些照片。但这次去上海，白天要工作，只有晚上才有机会出去走走。所以这次我选择带着奥林巴斯的小旁轴胶片相机，一是方便携带不占用空间，二是这种小旁轴机器……
+camera: Olympus-35SPn
 thumbnail: ../images/myphoto/shanghai-night-01.jpg
 gallery:
   - ../images/myphoto/shanghai-night-01.jpg
