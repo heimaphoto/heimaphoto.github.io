@@ -39,7 +39,7 @@ article/64-example.html
 ---
 title: 文章标题
 date: 2026-06-16
-category: 散文
+category: 生活随想
 summary: 首页文章卡片使用的摘要。
 ---
 ```
@@ -52,6 +52,9 @@ category_slug: prose
 thumbnail: ../img/example.jpg
 location: 地点
 camera: 相机或器材
+lens: 镜头
+film: 胶卷
+gear_note: Gear 照片墙中显示的简短说明
 gallery:
   - ../img/example-01.jpg
   - ../img/example-02.jpg
@@ -59,21 +62,30 @@ gallery:
 
 注意：front matter 尽量保持简单单行格式，尤其是 `summary`、`lead`。不要写成 YAML 多行块，否则脚本可能解析失败。
 
+`camera`、`lens`、`film` 若填写已发布 Gear 页的 slug（如 `rx1rm2`、`planar-50`、`fomapan-100`），文章 meta 会自动链接到对应 Gear 文章，并更新该 Gear 页的 Published Work；未匹配的值会原样显示。
+
 常用分类：
 
 ```yaml
-散文: prose
-摄影: photography
+生活随想: prose
 摄影笔记: Photography
 看的艺术: TheArtOfSeeing
 摄影技术: technology
-器材: gear
-建站: website
+七种武器: gear
 建站记录: site
-生活: life
+养猫日记: Cat
 ```
 
-如果新增了一个从未用过的分类，最好同时检查 `tools/publish_article.py` 里的 `CATEGORY_SLUGS` 和 `CATEGORY_EN`，避免生成奇怪的哈希分类页。
+旧分类名（如“散文”“器材”“工具”）仍可发布，但新文章请使用上面的现行名称。文章页 meta 中的分类会自动链接到对应分类页；其中“七种武器”会链接到 `gear.html`。
+
+如果新增分类，保持单层中文名称，并明确填写一个稳定的英文 `category_slug`，例如：
+
+```yaml
+category: 暗房笔记
+category_slug: darkroom-notes
+```
+
+不需要修改发布脚本；发布后会自动生成对应分类页、归档链接与文章页 meta 链接。`category_slug` 的大小写会原样保留。
 
 ## 3. 正文格式
 
@@ -108,7 +120,7 @@ gallery:
 python3 tools/publish_article.py md/64-example.md
 ```
 
-命令里指定一篇文章即可。脚本会重新扫描整个 `md/` 和 `photo-md/`，并重建相关页面。
+命令里指定一篇文章即可。脚本会重新扫描整个 `md/` 和 `photo-md/`，并重建索引、归档、分类、关于、Gear 与摄影作品入口页面；只重写这篇文章的详情页，以及因 Gear 关联而受影响的 Gear 文章页。
 
 `tools/` 里还有一个 `publish_photo.py`，它是给 `photo-md/` 摄影作品用的便捷入口。它内部仍然调用 `publish_article.py` 的同一套生成系统，所以原理是一样的。
 
@@ -136,8 +148,9 @@ Published 63 article(s), 2 photo work(s).
 index.html
 archive.html
 about.html
-article/*.html
 category/*.html
+article/<本次文章>.html（以及受影响的 Gear 文章页）
+gear.html
 portfolio/index.html
 photo/*.html
 ```
@@ -175,7 +188,7 @@ http://127.0.0.1:8000
 - `archive.html`
 - 对应的 `category/*.html`
 - `about.html` 里的分类链接
-- 上一篇、下一篇导航
+- 文章 meta 中的分类链接，以及文章底部的 Archive / Forum 链接
 
 预览结束后，在终端按 `Ctrl+C` 停止服务器。
 

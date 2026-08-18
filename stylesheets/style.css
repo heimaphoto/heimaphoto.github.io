@@ -498,6 +498,18 @@ a:hover { color: var(--accent); }
   margin: 14px 0 0;
 }
 
+.article-header .meta a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: color .18s ease, text-decoration-color .18s ease;
+}
+
+.article-header .meta a:hover,
+.article-header .meta a:focus-visible {
+  text-decoration-color: currentColor;
+}
+
 .article-lead {
   color: var(--muted);
   font-size: 20px;

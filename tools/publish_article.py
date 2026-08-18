@@ -140,6 +140,12 @@ def render_gear_meta_value(value, gear_by_slug):
     return f'<a href="../{gear["url"]}">{esc(value)}</a>'
 
 
+def render_category_meta_value(article):
+    """Render the article category as a link from an article-detail page."""
+    href = "../gear.html" if article["category_slug"] == "gear" else f'../category/{article["category_slug"]}.html'
+    return f'<a href="{esc(href)}">{esc(article["category"])}</a>'
+
+
 def read_front_matter(path):
     text = path.read_text(encoding="utf-8")
     if not text.startswith("---\n"):
@@ -691,7 +697,7 @@ def render_the_art_archive():
 
 def render_article(article, prev_article, next_article, gear_by_slug=None):
     gear_by_slug = gear_by_slug or {}
-    meta_parts = [esc(article["date"].strftime("%Y.%m.%d")), esc(article["category"])]
+    meta_parts = [esc(article["date"].strftime("%Y.%m.%d")), render_category_meta_value(article)]
     if article.get("location"):
         meta_parts.append(esc(article["location"]))
     for field in ("camera", "lens", "film"):

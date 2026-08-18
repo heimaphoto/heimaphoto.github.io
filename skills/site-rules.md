@@ -120,6 +120,7 @@ Rules for new article categories:
 5. Keep category display names in Chinese unless the user explicitly requests otherwise.
 6. Use a stable English `category_slug` when provided.
 7. If `category_slug` is not provided, generate a safe and stable slug according to the existing publisher behavior.
+8. On an article detail page, render the category in its meta information as a link to the corresponding category page. For the `gear` slug, link to `gear.html` instead of creating or linking to `category/gear.html`.
 
 Important:
 

@@ -81,6 +81,8 @@ Known category slugs:
 
 Legacy aliases may still be accepted by the publisher for compatibility, including `散文`, `器材`, and `工具`, but new source files should use the current display names from `site-rules.md`.
 
+On an article detail page, the category in the meta information is automatically linked using `category_slug`; `七种武器` links to `gear.html`, and every other category links to `category/<category_slug>.html`.
+
 Only render optional sections when data exists. `summary` is for homepage cards only; article pages use `lead`. Homepage featured photos are preserved by the manual block when publishing; do not assume or add homepage lightbox behavior.
 
 ## Markdown Body Support
