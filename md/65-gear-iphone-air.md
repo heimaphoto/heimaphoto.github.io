@@ -34,6 +34,7 @@ Air 最吸引我的是超薄的造型。超瓷晶面板的屏幕比 Pro 稍大�
 
 ### Published Work
 
+[2026-08-21 小猫圆圆五个月的时候](../article/83-cat-yuanyuan-2.html)
 [2026-07-01 红色汽车尾灯倒影中被遗弃的蓝猫](../photo/4-Abandoned-Blue-Cat.html)
 [2026-06-18 雨夜光圈](../photo/3-Rainy-Night-Aperture.html)
 
