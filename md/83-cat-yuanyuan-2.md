@@ -3,7 +3,7 @@ title: 小猫圆圆五个月的时候
 date: 2026-08-21
 category: 养猫日记
 category_slug: Cat
-summary: 小猫圆贺五个月大的时候拍的照片
+summary: 小猫圆圆五个月大的时候拍的照片
 lead: 
 camera: iPhone-Air
 thumbnail: ../images/article/83-cat-yuanyuan-2-1.jpg
