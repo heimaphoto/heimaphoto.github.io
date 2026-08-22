@@ -112,7 +112,7 @@ def normalize_gear_token(value):
 
 def item_gear_tokens(item):
     tokens = set()
-    for field in ("camera", "lens", "film"):
+    for field in ("camera", "lens", "film", "scan"):
         token = normalize_gear_token(item.get(field))
         if token:
             tokens.add(token)
@@ -327,6 +327,7 @@ def parse_article(path):
         "camera": data.get("camera", ""),
         "lens": data.get("lens", ""),
         "film": data.get("film", ""),
+        "scan": data.get("scan", ""),
         "thumbnail": data.get("thumbnail", ""),
         "gear_note": data.get("gear_note", ""),
         "gallery": data.get("gallery", []),
@@ -377,6 +378,7 @@ def parse_photo_work(path):
         "camera": data.get("camera", ""),
         "lens": data.get("lens", ""),
         "film": data.get("film", ""),
+        "scan": data.get("scan", ""),
         "location": data.get("location", ""),
         "description": data.get("description", ""),
         "detail": detail,
@@ -700,7 +702,7 @@ def render_article(article, prev_article, next_article, gear_by_slug=None):
     meta_parts = [esc(article["date"].strftime("%Y.%m.%d")), render_category_meta_value(article)]
     if article.get("location"):
         meta_parts.append(esc(article["location"]))
-    for field in ("camera", "lens", "film"):
+    for field in ("camera", "lens", "film", "scan"):
         if article.get(field):
             meta_parts.append(render_gear_meta_value(article[field], gear_by_slug))
     lead = f'      <p class="article-lead">{esc(article["lead"])}</p>\n' if article.get("lead") else ""
@@ -888,7 +890,7 @@ def render_portfolio_entry(photo_works=None):
 def render_photo_detail(work, gear_by_slug=None):
     gear_by_slug = gear_by_slug or {}
     meta = [("Date", esc(work.get("date_display") or work["date"].strftime("%Y.%m.%d")))]
-    for label, field in (("Camera", "camera"), ("Lens", "lens"), ("Film", "film")):
+    for label, field in (("Camera", "camera"), ("Lens", "lens"), ("Film", "film"), ("Scan", "scan")):
         if work.get(field):
             meta.append((label, render_gear_meta_value(work[field], gear_by_slug)))
     if work.get("location"):

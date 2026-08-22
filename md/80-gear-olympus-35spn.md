@@ -31,6 +31,7 @@ Olympus 35SPn 是我拥有的第一台旁轴胶片相机。
 
 ### Published Work
 
+[2026-08-22 外拍活动NO.012 | 斜桥镇老街的黑白时光](../article/85-xieqiao-old-street.html)
 [2026-08-16 外拍活动NO.010 | 斜桥火车站旧址黑白片](../article/79-Xieqiao-Railway-Station-BW.html)
 [2016-04-29 上海的夜晚](../article/48-Photography.html)
 

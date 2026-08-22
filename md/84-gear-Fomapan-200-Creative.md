@@ -22,6 +22,8 @@ gear_note: 黑白胶卷：Fomapan 200 Creative
 
 ### Published Work
 
+[2026-08-22 外拍活动NO.012 | 斜桥镇老街的黑白时光](../article/85-xieqiao-old-street.html)
+
 ### 主要参数：
 - 综述：Fomapan 200 Creative是捷克百年感光材料厂商Foma推出的中速全色黑白负片，是该系列中兼顾性价比与创作灵活性的核心型号。
 - 标称感光度：ISO 200/24°，实际可稳定覆盖EI 100到EI 800的曝光范围，无需调整冲洗时长。
