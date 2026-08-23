@@ -7,6 +7,7 @@ lead: 铁轨还在，旧车厢停在原处，曾经的车站已经成为一处�
 location: 斜桥·海宁·嘉兴
 camera: Olympus-35SPn
 film: Fomapan-200
+scan: MINOLTA-Dual-IV
 thumbnail: ../images/article/79-Xieqiao-Railway-Station-BW-1.jpg
 related:
   - title: 外拍活动NO.006 | 35mm镜头下的盛泽老街
