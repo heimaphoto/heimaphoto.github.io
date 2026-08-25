@@ -57,10 +57,14 @@ def esc(value):
 def render_inline(text):
     parts = []
     pos = 0
-    for match in re.finditer(r"\[([^\]]+)\]\(([^)\s]+)\)", text):
+    pattern = r"\[([^\]]+)\]\(([^)\s]+)\)|\*\*(.+?)\*\*"
+    for match in re.finditer(pattern, text):
         parts.append(esc(text[pos : match.start()]))
-        label, href = match.groups()
-        parts.append(f'<a href="{esc(href)}">{esc(label)}</a>')
+        label, href, strong = match.groups()
+        if strong is not None:
+            parts.append(f"<strong>{esc(strong)}</strong>")
+        else:
+            parts.append(f'<a href="{esc(href)}">{esc(label)}</a>')
         pos = match.end()
     parts.append(esc(text[pos:]))
     return "".join(parts)
