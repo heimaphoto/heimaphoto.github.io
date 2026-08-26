@@ -38,6 +38,7 @@ F1.4 全开时，它不会给人一种锋利到发硬的感觉；随着光圈收
 
 ### Published Work
 
+[2026-08-26 虞山古城楼与山前街行摄记](../article/89-Yushan-City-Wall-and-Shanqian-Street.html)
 [2026-07-22 一次散步的随拍](../article/71-snapshot-from-my-walk.html)
 
 {{ image: ../images/gear/88-gear-planar-50-1.4-2.jpg | Planar T* 50mm F1.4 }}
