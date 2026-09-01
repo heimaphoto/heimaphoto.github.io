@@ -36,6 +36,7 @@ Canon EOS 50 是一台 1990 年代的自动对焦胶片单反。
 
 ### Published Work
 
+[2026-09-02 苏州博物馆本馆胶片版](../article/96-Suzhou-Museum-Main-Branch.html)
 [2026-09-01 苏州拙政园速拍](../article/95-Humble-Administrator-Garden.html)
 
 ### 主要参数
