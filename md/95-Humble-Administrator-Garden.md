@@ -23,7 +23,7 @@ thumbnail: ../images/article/95-Humble-Administrator-Garden-2.jpg
 
 结果对出来的店扫照片并不满意，所以又用Dual4自扫了一遍。感觉层次比店扫更丰富了，但对于颜色还是没有把握。
 
-不管了先发出来，胶片的偏色对我来说是个头痛事，也许就保持这样的颜色也是一种办法。
+不管了先发出来，胶片的偏色对我来说是个头痛事，也许就保持这样的颜色也是一种选择。
 
 {{ image: ../images/article/95-Humble-Administrator-Garden-1.jpg | 这张照片有一部分因漏光而烧掉了 }}
 {{ image: ../images/article/95-Humble-Administrator-Garden-2.jpg |  }}
