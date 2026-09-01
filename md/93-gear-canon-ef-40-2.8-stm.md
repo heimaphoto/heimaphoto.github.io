@@ -32,6 +32,8 @@ EF 40mm f/2.8 STM 对我来说，就是这样一支镜头。
 
 ### Published Work
 
+[2026-09-01 苏州拙政园速拍](../article/95-Humble-Administrator-Garden.html)
+
 ### 主要参数
 
 - **卡口：** Canon EF
