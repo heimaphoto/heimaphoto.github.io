@@ -41,6 +41,11 @@
   function getCaption(image) {
     const figure = image.closest("figure");
     const figureCaption = figure ? figure.querySelector("figcaption") : null;
+    const captionZh = figureCaption ? figureCaption.querySelector(".caption-zh") : null;
+    const captionEn = figureCaption ? figureCaption.querySelector(".caption-en") : null;
+    if (captionZh && captionEn) {
+      return `${captionZh.textContent.trim()} ｜ ${captionEn.textContent.trim()}`;
+    }
     if (figureCaption && figureCaption.textContent.trim()) {
       return figureCaption.textContent.trim();
     }

@@ -110,6 +110,22 @@ category_slug: darkroom-notes
 {{ image: ../img/example-01.jpg | 图片说明可选 }}
 ```
 
+双语图片说明继续使用同一个 shortcode，在中文说明后增加英文说明：
+
+```markdown
+{{ image: ../img/example-01.jpg | 中文图片说明 | English caption }}
+```
+
+英文正文使用可重复、可插在任意位置的 English 区块。区块内继续使用现有的简单 Markdown：
+
+```markdown
+:::english
+
+English text here.
+
+:::
+```
+
 也可以写普通 HTML。以 `<` 开头的行会原样输出。
 
 ## 4. 运行发布脚本

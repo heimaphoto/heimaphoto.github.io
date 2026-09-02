@@ -3,9 +3,11 @@ title: 在这里填写文章标题
 date: 2026-06-11
 category: 生活随想
 summary: 在这里填写首页文章卡片使用的摘要，建议一到两句话。
+# summary_en: english summary。
 # 文章页中此分类会自动链接到对应的分类归档页。
 # category_slug: prose
 # lead: 在这里填写文章页开头导言；不需要时删除这一行。
+# lead_en: English lead shown directly below lead; delete when unused.
 # location: 地点；不需要时删除这一行。
 # camera: 相机或器材；不需要时删除这一行。
 # lens:
@@ -29,6 +31,18 @@ summary: 在这里填写首页文章卡片使用的摘要，建议一到两句�
 如果需要在指定位置插入图片，写：
 
 {{ image: ../img/example-01.jpg | 图片说明可选 }}
+
+双语图片说明可写为：
+
+{{ image: ../img/example-01.jpg | 中文图片说明 | English caption }}
+
+英文正文区块可以插在正文任意位置，也可以重复使用：
+
+:::english
+
+English text here.
+
+:::
 
 如果需要小标题，可以这样写：
 

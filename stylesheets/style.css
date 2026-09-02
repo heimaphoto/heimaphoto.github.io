@@ -513,7 +513,15 @@ a:hover { color: var(--accent); }
 .article-lead {
   color: var(--muted);
   font-size: 20px;
+  line-height: 1.75;
   margin: 20px 0 0;
+}
+
+.article-lead-en {
+  color: #827a6f;
+  font-size: 18px;
+  line-height: 1.75;
+  margin-top: 8px;
 }
 
 .article-body {
@@ -528,6 +536,28 @@ a:hover { color: var(--accent); }
 
 .article-body p {
   margin: 0 0 1.25em;
+}
+
+.article-en {
+  color: #625d55;
+  font-size: 17px;
+  line-height: 1.84;
+  margin: 2.35em auto;
+  max-width: 558px;
+  width: 100%;
+}
+
+.article-en > :last-child {
+  margin-bottom: 0;
+}
+
+.article-en-label {
+  color: var(--light);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: .16em;
+  line-height: 1.4;
+  margin: 0 0 .65em;
 }
 
 .article-body ul {
@@ -584,7 +614,27 @@ a:hover { color: var(--accent); }
 .article-body figcaption {
   color: var(--light);
   font-size: 13px;
+  line-height: 1.6;
   margin-top: 8px;
+}
+
+.article-body .bilingual-caption {
+  display: block;
+}
+
+.bilingual-caption .caption-zh,
+.bilingual-caption .caption-en {
+  display: inline;
+}
+
+.bilingual-caption .caption-en {
+  color: #9b9285;
+}
+
+.bilingual-caption .caption-en::before {
+  color: var(--light);
+  content: "｜";
+  margin: 0 .45em;
 }
 
 .article-gallery,
@@ -1073,6 +1123,15 @@ a:hover { color: var(--accent); }
 
   .article-nav {
     display: block;
+  }
+
+  .article-lead-en {
+    font-size: 17px;
+    margin-top: 7px;
+  }
+
+  .article-en {
+    max-width: none;
   }
 
   .article-nav a {

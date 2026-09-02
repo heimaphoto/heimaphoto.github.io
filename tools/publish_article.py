@@ -207,6 +207,7 @@ def markdown_to_html(markdown, title):
     paragraph = []
     quote = []
     list_items = []
+    english_open = False
     lines = markdown.splitlines()
 
     def render_list_items(items):
@@ -243,6 +244,18 @@ def markdown_to_html(markdown, title):
 
     for line in lines:
         stripped = line.strip()
+        if stripped == ":::english":
+            flush()
+            if english_open:
+                raise ValueError("English 区块不能嵌套")
+            blocks.append('<section class="article-en" lang="en">\n<p class="article-en-label">ENGLISH</p>')
+            english_open = True
+            continue
+        if stripped == ":::" and english_open:
+            flush()
+            blocks.append("</section>")
+            english_open = False
+            continue
         if not stripped:
             flush()
             continue
@@ -265,13 +278,27 @@ def markdown_to_html(markdown, title):
             flush()
             raw = inline_image.group(1).strip()
             if "|" in raw:
-                src, caption = [part.strip() for part in raw.split("|", 1)]
+                parts = [part.strip() for part in raw.split("|", 2)]
+                src = parts[0]
+                caption = parts[1] if len(parts) > 1 else ""
+                caption_en = parts[2] if len(parts) > 2 else ""
             else:
-                src, caption = raw, ""
-            if caption:
+                src, caption, caption_en = raw, "", ""
+            if caption and caption_en:
                 blocks.append(
-                    '<figure><img src="{src}" alt="{caption}"><figcaption>{caption}</figcaption></figure>'.format(
-                        src=esc(src), caption=esc(caption)
+                    '<figure><img src="{src}" alt="{caption}"><figcaption class="bilingual-caption">'
+                    '<span class="caption-zh">{caption}</span>'
+                    '<span class="caption-en" lang="en">{caption_en}</span>'
+                    "</figcaption></figure>".format(
+                        src=esc(src), caption=esc(caption), caption_en=esc(caption_en)
+                    )
+                )
+            elif caption or caption_en:
+                visible_caption = caption or caption_en
+                lang = ' lang="en"' if caption_en and not caption else ""
+                blocks.append(
+                    '<figure><img src="{src}" alt="{caption}"><figcaption{lang}>{caption}</figcaption></figure>'.format(
+                        src=esc(src), caption=esc(visible_caption), lang=lang
                     )
                 )
             else:
@@ -306,6 +333,8 @@ def markdown_to_html(markdown, title):
         flush_list()
         paragraph.append(stripped)
     flush()
+    if english_open:
+        raise ValueError("English 区块缺少结束标记 :::")
     return "\n".join(blocks)
 
 
@@ -327,6 +356,7 @@ def parse_article(path):
         "category_slug": data.get("category_slug", slugify(data["category"])),
         "summary": data["summary"],
         "lead": data.get("lead", ""),
+        "lead_en": data.get("lead_en", ""),
         "location": data.get("location", ""),
         "camera": data.get("camera", ""),
         "lens": data.get("lens", ""),
@@ -710,6 +740,8 @@ def render_article(article, prev_article, next_article, gear_by_slug=None):
         if article.get(field):
             meta_parts.append(render_gear_meta_value(article[field], gear_by_slug))
     lead = f'      <p class="article-lead">{esc(article["lead"])}</p>\n' if article.get("lead") else ""
+    if article.get("lead_en"):
+        lead += f'      <p class="article-lead article-lead-en" lang="en">{esc(article["lead_en"])}</p>\n'
     gallery = ""
     if article.get("gallery"):
         imgs = "\n".join(f'        <img src="{esc(src)}" alt="">' for src in article["gallery"])

@@ -458,3 +458,15 @@ commercial studio style
 ```
 
 The site should feel like a long-term personal archive, not a temporary template.
+
+---
+
+## 17. Bilingual Article Detail Rules
+
+1. Bilingual support applies only to article detail pages. Homepage cards continue to use the existing Chinese title and summary and must keep their current layout.
+2. `lead_en` is optional and renders directly below `lead`; missing English content must leave no empty space.
+3. English body content is author-positioned with `:::english` and `:::`. The publisher must preserve the exact Markdown order and must not translate, match, split, or move body content or images.
+4. The image shortcode may include a third field for an English caption: `{{ image: path | 中文说明 | English caption }}`. The existing one-caption form remains unchanged.
+5. English body styling must remain quiet and part of the same article: no cards, backgrounds, borders, shadows, or extra web fonts.
+6. Bilingual captions use Chinese-left and English-right columns on larger screens, then Chinese-above and English-below on mobile.
+7. Existing articles without bilingual fields or containers must retain their current generated structure and appearance.

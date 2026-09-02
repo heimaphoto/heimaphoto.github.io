@@ -51,6 +51,7 @@ Recommended:
 
 ```yaml
 lead:
+lead_en:
 ```
 
 Optional:
@@ -85,6 +86,8 @@ On an article detail page, the category in the meta information is automatically
 
 Only render optional sections when data exists. `summary` is for homepage cards only; article pages use `lead`. Homepage featured photos are preserved by the manual block when publishing; do not assume or add homepage lightbox behavior.
 
+`lead_en` is optional and appears directly below `lead` on article detail pages. Homepage cards continue to use only the existing Chinese `title` and `summary`; English metadata is not rendered there.
+
 ## Markdown Body Support
 
 Article body Markdown supports simple paragraphs, headings, images, blockquotes, links, and unordered lists.
@@ -99,6 +102,26 @@ Unordered list rules are intentionally small:
 ```
 
 Only `- ` at the start of a line creates a first-level bullet. Two leading spaces followed by `- ` creates a second-level bullet under the previous first-level item. Lists are limited to two levels; do not rely on `*`, `+`, ordered lists, or deeper indentation.
+
+English body content uses a position-preserving container and may appear more than once:
+
+```markdown
+:::english
+
+English text here.
+
+:::
+```
+
+The publisher renders each container as `<section class="article-en" lang="en">` at exactly that position. It must not match, translate, move, or reorder English content, Chinese content, or images.
+
+The article image shortcode accepts an optional English caption while preserving the existing syntax:
+
+```markdown
+{{ image: ../images/article/example.jpg | 中文图片说明 | English caption }}
+```
+
+One caption keeps the legacy single-caption markup. Two captions render Chinese first and English second.
 
 ## Gear Published Work Links
 
