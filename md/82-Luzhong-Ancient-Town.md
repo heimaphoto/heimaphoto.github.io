@@ -10,7 +10,7 @@ thumbnail: ../images/article/82-Luzhong-Ancient-Town-01.jpg
 related:
   - title: 外拍活动NO.006 | 35mm镜头下的盛泽老街
     url: ../article/73-Shengze-Old-Street-in-35mm.html
-  - title: 外拍活动NO.007 | 海宁丰士村老茶馆——仍在继续的旧时光
+  - title: 外拍活动NO.007 | 海宁丰士村老茶馆--仍在继续的旧时光
     url: ../article/74-Xieqiao-Teahouse.html
   - title: 外拍活动NO.008 | 海宁丰士村老街的慢时光
     url: ../article/76-fengshi-old-street.html
@@ -18,6 +18,10 @@ related:
     url: ../article/77-fengshi-temple-guanyin-birthday.html
   - title: 外拍活动NO.010 | 斜桥火车站旧址黑白片
     url: ../article/79-Xieqiao-Railway-Station-BW.html
+  - title: 外拍活动NO.012 | 斜桥镇老街的黑白时光
+    url: ../article/85-xieqiao-old-street.html
+  - title: 外拍活动NO.010 | 斜桥火车站旧址手机快拍
+    url: ../article/97-Xieqiao-Railway-Station-Quick-Snap.html
 ---
 
 ## 外拍活动NO.011 | 路仲古镇掠影
