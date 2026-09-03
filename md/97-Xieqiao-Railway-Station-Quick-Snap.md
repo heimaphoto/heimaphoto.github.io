@@ -9,7 +9,7 @@ lead: 景区管理员破例打开了平时锁着的炮楼。面对狭窄昏暗�
 lead_en: The site manager made an exception and opened the blockhouse, which is normally locked. In its narrow, dim interior, I put away my film camera and used an iPhone Air to quickly photograph the tracks, carriages, and trains passing outside—a different way of looking at the same former station.
 location: 斜桥·海宁·嘉兴
 camera: iPhone-Air
-thumbnail: ../images/article/97-Xieqiao-Railway-Station-Quick-Snap-1.jpg
+thumbnail: ../images/article/97-Xieqiao-Railway-Station-Quick-Snap-4.jpg
 related:
   - title: 外拍活动NO.006 | 35mm镜头下的盛泽老街
     url: ../article/73-Shengze-Old-Street-in-35mm.html
