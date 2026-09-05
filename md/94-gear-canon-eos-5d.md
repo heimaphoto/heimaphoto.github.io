@@ -44,6 +44,7 @@ Canon EOS 5D 发布于 2005 年。放到今天看，它的规格几乎朴素得�
 
 ### Published Work
 
+[2026-09-05 苏州博物馆本馆数码版](../article/99-Suzhou-Museum-Main-Branch-digital.html)
 [2026-07-22 一次散步的随拍](../article/71-snapshot-from-my-walk.html)
 
 ### 主要参数

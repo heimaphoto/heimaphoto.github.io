@@ -30,6 +30,7 @@ Canon EF 50mm f/1.8 STM 是一支很容易被低估的镜头。
 
 ### Published Work
 
+[2026-09-05 苏州博物馆本馆数码版](../article/99-Suzhou-Museum-Main-Branch-digital.html)
 [2017-02-25 CANON EF 50mmF/1.8STM定焦试镜](../article/50-Photography.html)
 
 ### 主要参数

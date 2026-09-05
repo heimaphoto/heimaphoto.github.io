@@ -12,6 +12,9 @@ camera: CANON-EOS-50
 lens: CANON-EF-40-2.8-STM
 film: LUCKY-C-200
 thumbnail: ../images/article/96-Suzhou-Museum-Main-Branch-1.jpg
+related:
+  - title: 苏州博物馆本馆数码版
+    url: ../article/99-Suzhou-Museum-Main-Branch-digital.html
 ---
 
 ## 苏州博物馆本馆胶片版
