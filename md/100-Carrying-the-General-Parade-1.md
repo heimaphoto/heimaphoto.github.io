@@ -1,0 +1,80 @@
+---
+title: 外拍活动NO.013 | 苏州东山荷花节抬猛将之上篇
+date: 2026-09-07
+category: 摄影笔记
+summary: 农历六月二十四，苏州东山各村抬着猛将神，从乡间出发，经水路前往葑山寺。一场从凌晨开始的水乡民俗巡游开始了。
+summary_en: On the 24th day of the sixth lunar month, villagers in Dongshan carry their General Gods through the countryside and travel by boat to Fengshan Temple in a folk procession that begins before dawn.
+lead: 凌晨四点，村庄里已经锣鼓喧天。猛将被请出佛堂，穿过村巷，再登船前往葑山寺——这是我第一次跟随东山荷花节的抬猛将队伍。
+lead_en: By four in the morning, the village was already alive with gongs and drums. The General God was carried out of the shrine, through the village lanes, and onto a boat bound for Fengshan Temple—my first time following Dongshan’s traditional Carrying the General procession.
+location: 东山·苏州
+camera: Rx1RM2
+thumbnail: ../images/article/100-Carrying-the-General-Parade-1-07.jpg
+---
+
+## 外拍活动NO.013 | 苏州东山荷花节抬猛将之上篇
+
+在苏州东山农村乡间，至今仍然盛行着荷花节抬猛将的风俗。每逢农历六月二十四这一天，十里荷塘不仅迎来了赏荷的雅客，更迎来了一场震撼人心的水乡民俗狂欢。
+
+相传，这一天是猛将神“回外婆家”（即葑山寺）探亲的日子。所以这一天东山各村（我查了下居然有大约72个村之多）都会自发参与到“抬猛将”的活动中。当地村民对猛将的信仰十分虔诚，几乎每个村都有自己的猛将堂，而且家庭中也会供奉。
+
+除了神话，这一习俗的形成与明代江南的抗倭历史紧密相关。相传倭寇侵扰太湖流域时，东山乡民为了抵御外敌，想出了一个妙计。借着农历六月荷花盛开、举办“荷花节”的名义，乡民们将各村供奉的猛将神像全部抬往葑山寺集结。村民们借此机会擂鼓摇旗、声势浩大地举行巡游，甚至布设疑兵。倭寇见状，误以为是朝廷大军赶到，仓皇逃窜。
+
+:::english
+
+In the rural villages of Dongshan, Suzhou, the tradition of “Carrying the General” remains very much alive. Every year on the 24th day of the sixth lunar month, the lotus ponds draw visitors coming to see the flowers, while the villages prepare for a much more exuberant celebration.
+
+According to local tradition, this is the day when the General God returns to his “maternal family” at Fengshan Temple. Villages across Dongshan take part in the procession, many with their own shrine dedicated to the General God, while some families also keep and worship the deity at home.
+
+The custom is also associated with the history of resisting Japanese pirates in the Jiangnan region during the Ming dynasty. Local legend tells that villagers used the Lotus Festival as a pretext to gather the General Gods from different villages at Fengshan Temple. With drums beating, banners flying and large processions moving through the countryside, they created the appearance of a formidable force. The raiders, believing imperial troops had arrived, reportedly fled.
+
+:::
+
+当我第一次听色友们讲述这个活动并看到拍摄的照片时，就觉得很震撼，在我印象中，如此浩大的民俗活动从未听闻。所以今年我想无论如何都要去跟拍一次。
+
+因为活动完全由当地村民自发形成，为了不影响上班，村民们很早就开始准备了。我和几位色友提前一天晚上住进了当地快捷酒店。手机闹铃设置在凌晨3点左右。当我们冒着夜色赶到村里时，没想到现场已是人声鼎沸。
+
+我看了下拍摄的第一张照片，时间是凌晨四点零九分。
+
+:::english
+
+When I first heard some photographer friends talk about the festival and saw their photographs, I was struck by its scale. I had never even heard of such a large folk celebration, and decided that this year I had to photograph it for myself.
+
+Because the event is organized spontaneously by local villagers, preparations begin extremely early so that people can still get on with their working day. A few photographer friends and I stayed at a nearby budget hotel the night before and set our alarms for around three in the morning. Yet when we arrived in the village in the darkness, the place was already bustling with people.
+
+I checked the time of my first photograph later: **4:09 a.m.**
+
+:::
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-01.jpg | 女人们敲锣打鼓，男人们围着猛将准备抬起来 | Women beat gongs and drums while the men gather around the General God, preparing to lift him. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-02.jpg | 男人们穿着统一颜色衣服将猛将小心抬往佛堂外 | Dressed in matching colors, the men carefully carry the General God out of the shrine. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-03.jpg | 抬出佛堂后，并不能直接就走，还要在广场上绕几个圈 | After leaving the shrine, the procession does not depart immediately; the carriers first circle the square several times. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-04.jpg | 继续在广场上绕圈，猛将神拿着宝剑，嘴里叼着香烟 | The circling continues in the square. The General God holds a sword, with a cigarette in his mouth. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-05.jpg | 猛将出佛堂后在村巷里巡行，有村民会放鞭炮或想方设法让猛将在自家门口多停留片刻，而猛将所到之处皆是福运。 | The General God is carried through the village lanes. Some residents set off firecrackers or try to keep the procession at their doorway a little longer, believing that wherever the General goes, good fortune follows. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-06.jpg | 很多家庭门口都摆好了供奉，祈求风调雨顺。 | Offerings are prepared outside many homes, with prayers for favorable weather and a good year. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-07.jpg | 猛将神亲切活泼，抬轿人也都兴高采烈。 | The General God appears lively and approachable, and the carriers are in equally high spirits. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-08.jpg | 当猛将到达河道码头时，村民们早就穿着各种欢庆服饰整装待发。 | By the time the General God reaches the riverside pier, villagers in festive clothing are already assembled and ready to depart. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-09.jpg | 这是一艘男人们组成的龙舟。 | A dragon boat crewed by men from the village. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-10.jpg | 村民们将精心装饰过的猛将神像请上由两条小船并排架起木板组成的“连体船”。伴随着震天的鞭炮声和激昂的号子声，浩浩荡荡的船队沿着河道向着葑山寺（即猛将的外婆家）进发。 | Villagers place the elaborately decorated General God on a platform built across two small boats. Amid deafening firecrackers and rhythmic chants, the long procession of boats sets off along the river toward Fengshan Temple, the General’s “maternal home.” }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-11.jpg | 我跟着上了一条欢庆队伍的船，看着前面连绵的船队，此时天色渐亮。 | I boarded one of the festival boats and watched the long procession stretching ahead as the sky gradually began to brighten. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-12.jpg | 天色渐亮，船队经过河道岸边大片的荷塘。 | As daylight grows, the procession passes broad lotus ponds along the riverbank. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-13.jpg | 快到葑山寺的桥下时，船队慢了下来。 | As the boats approach the bridge near Fengshan Temple, the procession begins to slow. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-14.jpg | 桥上站满了人。 | The bridge is packed with spectators. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-15.jpg | 欢庆乐队已经准备好，到时大家一起来比一比，闹一闹。 | The festival bands are already in place, ready to play, compete and make as much noise as they can. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-16.jpg | 船太多了，既然上不了岸，咱就在船上敲起来。 | With too many boats to reach the shore, some musicians simply start playing where they are. }}
+
+{{ image: ../images/article/100-Carrying-the-General-Parade-1-17.jpg | 猛将主船要保证上岸，其它船只一律避让，可惜我上的船被挤在河道边缘上不了岸，葑山寺的欢庆场景只能遥望一下了。 | The main boat carrying the General God must be allowed to reach the shore, so all the others make way. Unfortunately, the boat I was on was pushed to the edge of the river and could not land, leaving me to watch the celebrations at Fengshan Temple from a distance. }}
