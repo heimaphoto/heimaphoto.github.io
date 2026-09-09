@@ -10,7 +10,7 @@ location: 东山·苏州
 camera: Rx1RM2
 thumbnail: ../images/article/101-Carrying-the-General-Parade-2-21.jpg
 related:
-  - title: 外拍活动NO.014 | 苏州东山荷花节抬猛将之上篇
+  - title: 外拍活动NO.013 | 苏州东山荷花节抬猛将之上篇
     url: ../article/100-Carrying-the-General-Parade-1.html
 ---
 
