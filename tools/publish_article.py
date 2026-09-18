@@ -114,13 +114,33 @@ def normalize_gear_token(value):
     return value.strip().lower()
 
 
-def item_gear_tokens(item):
-    tokens = set()
-    for field in ("camera", "lens", "film", "scan"):
-        token = normalize_gear_token(item.get(field))
+def parse_gear_reference(value):
+    """Return the Gear slug token and optional Published Work subgroup title."""
+    if not isinstance(value, str):
+        return "", ""
+    gear, separator, subgroup = value.partition(":::")
+    gear = gear.strip()
+    subgroup = subgroup.strip()
+    # An empty right side keeps the normal Gear association, without a heading.
+    return normalize_gear_token(gear), subgroup if separator and subgroup else ""
+
+
+def item_gear_references(item):
+    """Map exact Gear tokens to their optional, source-display subgroup titles."""
+    references = {}
+    for field in ("camera", "lens", "film"):
+        token, subgroup = parse_gear_reference(item.get(field))
         if token:
-            tokens.add(token)
-    return tokens
+            references.setdefault(token, subgroup)
+    # Keep the existing scan support unchanged; it does not use subgroups.
+    token = normalize_gear_token(item.get("scan"))
+    if token:
+        references.setdefault(token, "")
+    return references
+
+
+def item_gear_tokens(item):
+    return set(item_gear_references(item))
 
 
 def gear_slug_from_source(path):
@@ -138,7 +158,8 @@ def gear_articles_by_slug(articles):
 
 
 def render_gear_meta_value(value, gear_by_slug):
-    gear = gear_by_slug.get(normalize_gear_token(value))
+    token, _ = parse_gear_reference(value)
+    gear = gear_by_slug.get(token)
     if not gear:
         return esc(value)
     return f'<a href="../{gear["url"]}">{esc(value)}</a>'
@@ -323,7 +344,7 @@ def markdown_to_html(markdown, title):
         heading = re.match(r"^(#{2,4})\s+(.+)$", stripped)
         if heading:
             flush()
-            level = min(len(heading.group(1)), 3)
+            level = min(len(heading.group(1)), 4)
             text = heading.group(2).strip()
             if not blocks and text == title:
                 continue
@@ -1005,10 +1026,17 @@ def update_published_work_section(gear_article, rows, known_urls):
     if not match:
         return False
 
-    manual_content = strip_known_published_work_rows(match.group(2), known_urls)
+    existing_body = match.group(2)
+    auto_pattern = re.compile(
+        r"(?ms)^<!-- AUTO-PUBLISHED-WORK:START -->\n.*?^<!-- AUTO-PUBLISHED-WORK:END -->\n?"
+    )
+    if auto_pattern.search(existing_body):
+        manual_content = auto_pattern.sub("", existing_body).strip()
+    else:
+        manual_content = strip_known_published_work_rows(existing_body, known_urls)
     parts = []
     if rows:
-        parts.append("\n".join(rows))
+        parts.append("<!-- AUTO-PUBLISHED-WORK:START -->\n" + "\n".join(rows) + "\n<!-- AUTO-PUBLISHED-WORK:END -->")
     if manual_content:
         parts.append(manual_content)
     section_body = "\n\n".join(parts)
@@ -1062,8 +1090,26 @@ def update_gear_published_work(articles, photo_works, target=None):
             for item in content_items
             if gear_token in item_gear_tokens(item)
         ]
-        matches.sort(key=lambda item: (item["date"], item["slug"]), reverse=True)
-        rows = [published_work_markdown(item) for item in matches]
+        top_level = []
+        subgroups = {}
+        for item in matches:
+            subgroup = item_gear_references(item).get(gear_token, "")
+            if not subgroup:
+                top_level.append(item)
+                continue
+            subgroup_key = subgroup.casefold()
+            if subgroup_key not in subgroups:
+                subgroups[subgroup_key] = {"title": subgroup, "items": []}
+            subgroups[subgroup_key]["items"].append(item)
+
+        top_level.sort(key=lambda item: (item["date"], item["slug"]), reverse=True)
+        rows = [published_work_markdown(item) for item in top_level]
+        for subgroup in subgroups.values():
+            subgroup["items"].sort(key=lambda item: (item["date"], item["slug"]), reverse=True)
+            if rows:
+                rows.append("")
+            rows.append(f"#### {subgroup['title']}")
+            rows.extend(published_work_markdown(item) for item in subgroup["items"])
         if update_published_work_section(gear, rows, known_urls):
             updated_sources.add(gear["source"].resolve())
     return updated_sources

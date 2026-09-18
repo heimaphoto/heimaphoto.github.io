@@ -432,7 +432,27 @@ Rules:
 
 ---
 
-## 16. Current Design Direction
+## 16. Gear Published Work Subgroups
+
+Gear links continue to use only `camera`, `lens`, and `film` metadata. Each value normally contains the exact Gear slug:
+
+```yaml
+film: kodak
+```
+
+This directly associates the work with the Kodak Gear page. A value may optionally add a display-only subgroup after `:::`:
+
+```yaml
+film: kodak ::: Gold 200
+```
+
+This means `Kodak -> Gold 200`. Trim both sides of `:::`, use only the left side for the existing case-insensitive exact Gear-slug match, and retain the full original value as the detail-page display text. If the right side is empty, treat it as an ordinary Gear association without a subgroup.
+
+On the matching Gear page, ordinary works remain directly below `### Published Work`; subgroup works are placed below a `#### Gold 200` heading. Merge subgroup names case-insensitively, retain the first display spelling, and keep each subgroup's article and photo-work links newest first. Keep the existing link format and all manual Published Work content. Do not create `Other`, `Unclassified`, new metadata fields, URL/category hierarchy, or data storage.
+
+---
+
+## 17. Current Design Direction
 
 The new portfolio and photo pages should feel:
 

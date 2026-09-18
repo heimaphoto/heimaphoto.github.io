@@ -5,7 +5,7 @@ category: 摄影笔记
 summary: 雨天在路上，公路一直向前延伸。路、人和陌生的风景，都被雨水写成朦胧的诗。
 summary_en: On a rainy day, the road keeps stretching ahead. Roads, people, and unfamiliar scenes are rewritten by the rain into a hazy poem.
 camera: iPhone-Air
-film: DAZZ-CAM
+film: DAZZ-CAM ::: S Classic
 thumbnail: ../images/article/104-On-the-Road-in-the-Rain-1.jpg
 ---
 

@@ -207,11 +207,20 @@ film:
 
 Match values case-insensitively as exact Gear slugs. Slugs should be written as lowercase kebab-case in new source files, for example `iphone-air`, `rx1rm2`, `planar-50`, or `fomapan-100`; existing mixed-case values still match after normalization. Do not use spaces, display names, Chinese names, or concatenated display names such as `iPhoneAir` for new metadata.
 
+An optional `:::` suffix creates a display-only subgroup on that Gear page:
+
+```yaml
+film: kodak
+film: kodak ::: Gold 200
+```
+
+The first value directly associates the work with Kodak. The second means `Kodak -> Gold 200`: trim both sides, match only `kodak` as the Gear slug, and keep the full source value as the linked metadata display text. An empty suffix is an ordinary Gear association. Ordinary works remain at the top of `### Published Work`; subgroup works appear under `#### Gold 200`. Group names merge case-insensitively while preserving the first display spelling; rows within each group remain newest first.
+
 Do not match against titles, image names, product display names, body text, `related`, `thumbnail`, `description`, or loose substrings. Gear slugs are derived from Gear article source filenames by stripping the leading numeric prefix and an optional `gear-` prefix, for example `md/78-gear-rx1rm2.md` maps to `rx1rm2`, and `md/65-gear-iphone-air.md` maps to `iphone-air`.
 
 When publishing a photo work, the publisher should update only the Gear pages referenced by that source metadata, plus any Gear page that already links to that photo work so stale links can be removed. When publishing a Gear article or doing an initialization pass through the article publisher, rebuild that Gear article's `### Published Work` entries from all existing articles and photo works.
 
-On generated photo work pages, displayed `camera`, `lens`, and `film` metadata values should link back to the matched Gear article page. Keep the displayed value from the source metadata, but wrap it with the Gear detail URL when a match exists. Leave unmatched values as plain text.
+On generated photo work pages, displayed `camera`, `lens`, and `film` metadata values should link back to the matched Gear article page. Keep the displayed value from the source metadata, including any `::: Sub Gear` suffix, but wrap it with the Gear detail URL when a match exists. Leave unmatched values as plain text.
 
 `Published Work` rows are markdown links in newest-first order:
 
