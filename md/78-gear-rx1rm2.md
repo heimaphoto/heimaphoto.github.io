@@ -21,6 +21,8 @@ RX1R II 是一台非常轻便的全画幅定焦相机。配了带凸起的皮套
 
 ### Published Work
 
+<!-- AUTO-PUBLISHED-WORK:START -->
+[2026-09-26 秋日阴天，乡村随拍](../article/108-countryside-walk.html)
 [2026-09-16 外拍活动NO.015 | 苏州东山荷花节抬猛将之下篇](../article/103-Carrying-the-General-Parade-3.html)
 [2026-09-12 寻找地藏香｜常熟老街夜拍记](../article/102-Searching-for-Dizang-Incense.html)
 [2026-09-09 外拍活动NO.014 | 苏州东山荷花节抬猛将之中篇](../article/101-Carrying-the-General-Parade-2.html)
@@ -31,6 +33,7 @@ RX1R II 是一台非常轻便的全画幅定焦相机。配了带凸起的皮套
 [2026-08-07 外拍活动NO.007 | 海宁丰士村老茶馆--仍在继续的旧时光](../article/74-Xieqiao-Teahouse.html)
 [2026-08-04 外拍活动NO.006 | 35mm镜头下的盛泽老街](../article/73-Shengze-Old-Street-in-35mm.html)
 [2026-07-29 初试锋芒-Rx1RM2](../article/72-rx1rm2-test.html)
+<!-- AUTO-PUBLISHED-WORK:END -->
 
 ### 相机综述：  
 约4240万有效像素 35mm全画幅Exmor R CMOS背照式传感器/BIONZ X 处理器/蔡司Sonnar T* 35mm F2镜头/增强型混合自动对焦399个相位检测对焦点/光学可调节低通滤镜功能/内置可弹出XGA OLED电子取景器/3.0英寸可翻折液晶屏
