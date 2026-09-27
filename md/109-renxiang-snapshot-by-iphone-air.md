@@ -9,7 +9,7 @@ category_slug: Photography
 lead: 接着上一篇的行程，我走到仁巷时，相机电池已经耗尽。于是，这趟随性出发的拍摄改用手机继续。
 lead_en: Continuing from the previous photo walk, I reached Renxiang just as my camera battery ran out. I carried on shooting with my phone instead.
 location: 仁巷·苏州
-camera: Rx1RM2
+camera: iPhone-Air
 thumbnail: ../images/article/109-renxiang-snapshot-by-iphone-air-4.jpg
 related:
   - title: 秋日阴天，乡村随拍

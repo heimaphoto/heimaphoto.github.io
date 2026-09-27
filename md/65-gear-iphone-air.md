@@ -35,6 +35,7 @@ Air 最吸引我的是超薄的造型。超瓷晶面板的屏幕比 Pro 稍大�
 ### Published Work
 
 <!-- AUTO-PUBLISHED-WORK:START -->
+[2026-09-27 仁巷乡村手机随拍](../article/109-renxiang-snapshot-by-iphone-air.html)
 [2026-09-22 圆圆七个月的时候](../article/107-cat-yuanyuan-3.html)
 [2026-09-18 雨天在路上](../article/104-On-the-Road-in-the-Rain.html)
 [2026-09-03 外拍活动NO.010 | 斜桥火车站旧址手机快拍](../article/97-Xieqiao-Railway-Station-Quick-Snap.html)
