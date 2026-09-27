@@ -10,6 +10,9 @@ lead_en: Sometimes, all it takes is a passing drive and a spontaneous walk to di
 location: 南河港 & 仁巷·苏州。
 camera: Rx1RM2
 thumbnail: ../images/article/108-countryside-walk-05.jpg
+related:
+  - title: 仁巷乡村手机随拍
+    url: ../article/109-renxiang-snapshot-by-iphone-air.html
 ---
 
 ## 秋日阴天，乡村随拍
