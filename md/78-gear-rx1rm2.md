@@ -22,6 +22,7 @@ RX1R II 是一台非常轻便的全画幅定焦相机。配了带凸起的皮套
 ### Published Work
 
 <!-- AUTO-PUBLISHED-WORK:START -->
+[2026-10-06 外拍活动NO.017 | 芦墟古镇·数码版](../article/111-Luxu-Ancient-Town-Digital.html)
 [2026-09-29 外拍活动NO.016 | 水场-一杯咖啡的休闲时光](../article/110-shuichang-coffee.html)
 [2026-09-26 秋日阴天，乡村随拍](../article/108-countryside-walk.html)
 [2026-09-16 外拍活动NO.015 | 苏州东山荷花节抬猛将之下篇](../article/103-Carrying-the-General-Parade-3.html)
