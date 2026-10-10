@@ -1,10 +1,10 @@
 ---
 title: G’MIC：寻找一条更自由的人像磨皮工作流
-date: 2026-10-09
+date: 2026-10-10
 category: 摄影技术
 summary: 从安装独立版 G’MIC-Qt，到测试 Easy Skin Retouch，再到利用 Affinity Photo 的图层蒙版控制磨皮范围，记录一次寻找自然人像修饰方案的实际探索。
 summary_en: From installing standalone G’MIC-Qt to testing Easy Skin Retouch and using Affinity Photo masks for local control, this article documents my exploration of a more flexible portrait-retouching workflow.
-category_slug: Technology
+category_slug: technology
 lead: 人像磨皮一直不是我特别感兴趣的后期环节，但它又是人像摄影中难以完全绕开的工作。最近，我尝试了开源图像处理项目 G’MIC，并测试了其中的 Easy Skin Retouch 滤镜。真正让我感兴趣的，不只是它能够柔化皮肤，而是将它与 Affinity Photo 的图层蒙版结合后，我可以更自由地决定效果出现在哪里，以及应该保留多少原始细节。
 lead_en: Skin retouching has never been my favorite part of post-processing, yet it is difficult to avoid entirely in portrait photography. Recently, I explored G’MIC, an open-source image-processing project, and tested its Easy Skin Retouch filter. What interested me most was not simply its ability to soften skin, but the flexibility I gained by combining it with layer masks in Affinity Photo, allowing me to control where the effect appears and how much of the original detail remains.
 thumbnail: ../images/article/112-gmic-qt-1.jpg
@@ -14,9 +14,9 @@ thumbnail: ../images/article/112-gmic-qt-1.jpg
 
 ### 01 为什么寻找另一种磨皮方式
 
-在我的 adobe 时代，曾经拍过一些人像照片。人像后期经常会涉及磨皮。虽然我一直对磨皮本身兴趣不大，但从商业拍摄的要求，或者满足拍摄对象的期待来看，这确实是一项值得掌握的技能。我记得当年是使用 Noise Ninja 来完成这项任务的。
+在我的 Adobe 时代，曾经拍过一些人像照片。人像后期经常会涉及磨皮。虽然我一直对磨皮本身兴趣不大，但从商业拍摄的要求，或者满足拍摄对象的期待来看，这确实是一项值得掌握的技能。我记得当年是使用 Noise Ninja 来处理这类问题的。
 
-近期我想重新拾起这门技艺。因为人像几乎是我们绕不开的摄影题材。但因为我早已脱离 adobe 阵营，选择一款合适的软件成为需要考虑的问题。
+近期我想重新拾起这门技艺。因为人像几乎是我们绕不开的摄影题材。但因为我早已脱离 Adobe 阵营，选择一款合适的软件成为需要考虑的问题。
 
 在人像后期中，磨皮一直是一个需要谨慎处理的环节。我希望改善皮肤的瑕疵和不均匀感，但不想让人物失去真实的皮肤质感。毛孔、细小纹理，以及眼睛、眉毛和嘴唇的清晰度，都应该尽可能保留下来。
 
@@ -26,7 +26,15 @@ thumbnail: ../images/article/112-gmic-qt-1.jpg
 
 :::english
 
-English text here.
+During my Adobe years, I took some portraits. Portrait retouching often involves skin smoothing. Although I have never been especially interested in skin retouching, it is a useful skill to have, whether a commercial assignment requires it or the subject asks for it. I remember using Noise Ninja for this kind of work back then.
+
+Recently, I wanted to pick up the skill again. Portraits are a subject we can hardly avoid in photography. But since I left the Adobe ecosystem long ago, choosing suitable software became part of the problem.
+
+Skin retouching calls for care. I want to improve blemishes and unevenness without making people lose their natural skin texture. Pores, fine texture, and the definition of the eyes, eyebrows, and lips should be preserved as much as possible.
+
+I had considered learning frequency separation with Affinity Photo's native filters, but it seemed complicated and never quite convincing (perhaps I simply had not made the process complicated enough :D). So I looked for another possibility: could I find a tool for skin retouching that still gave me enough control over the process?
+
+After discussing and researching the options with AI, I came across an open-source project called G’MIC. Yes, I tend to look for open-source and free tools first. If one is available, why not give it a try?
 
 :::
 
@@ -46,31 +54,51 @@ G’MIC 是一个开源的图像处理项目，提供了大量图像处理算法
 
 :::english
 
-English text here.
+G’MIC is an open-source image-processing project that offers a large collection of algorithms and filters. It can be used from the command line and also provides a graphical interface called G’MIC-Qt.
+
+What caught my attention was the number of filters and the range of ways to process images.
+
+In the G’MIC-Qt 4.0.5 installation I used, there were 645 available filters across categories such as color, detail, repair, texture, and black-and-white processing.
+
+Of course, having many filters does not mean that every one of them belongs in an everyday photography workflow.
+
+The important thing for me was not to study every filter, but to find a few tools that could fit into the workflow I already use.
+
+This time, I started with portrait skin retouching.
 
 :::
 
 ### 03 安装独立版 G’MIC-Qt
 
-最初，我尝试在 Affinity Photo 中使用 G’MIC 插件，但实际测试发现，该插件在 affinity 中暂时无法打开 16bit 图像。但根据资料显示，其实 Gmic 本身是支持 16bit 的，我决定尝试独立版 G’MIC-Qt，希望找到一条更适合自己工作流的方案。
+最初，我尝试在 Affinity Photo 中使用 G’MIC 插件，但实际测试发现，该插件在 Affinity Photo 中暂时无法打开 16-bit 图像。根据相关资料，G’MIC 本身支持 16-bit 图像，因此我决定尝试独立版 G’MIC-Qt，希望找到一条更适合自己工作流的方案。
 
-因为我是 Mac 电脑，所以下面仅列出在 MacOS 系统（我目前的MacOS版本是27.0.1）中的安装步骤。（如果安装中下载有问题，可以切换科学上网）
+因为我使用的是 Mac，所以下面仅列出 macOS 系统中的安装步骤（我目前使用的 macOS 版本是 27.0.1）。如果下载或更新过程中遇到网络问题，可以尝试更换网络环境或使用可用的网络代理。
 
-1. 首先是安装 MacPorts （这是一种软件管理程序，与 HomeBrew 类似）。在 [MacPorts 官网](https://www.macports.org/install.php) 下载安装包，下载后直接双击安装，很简单，点击下一步或同意等安装结束。
-2. 安装后，打开终端输入： `port version` 
-    - 如果返回： version: 2.12.6 这样的，就说明已安装成功。
-    - 然后在终端输入： `sudo port selfupdate` (让 MacPorts更新软件目录)
-    - 更新完成后，在终端输入： `port search gmic` (返回结果中应该包含有类似 gmic-qt 这样的)
-    - 如果看到有 gmic-qt ，就直接安装，在终端输入：`sudo port install gmic-qt` (这一步会安装一大堆依赖，会花费一点时间)
-    - 安装结束后，在终端中输入：`gmic_qt` (启动命令是 gmic_qt，中间使用下划线，而不是连字符。)
+- 首先安装 MacPorts（一种与 Homebrew 类似的软件包管理工具）。在 [MacPorts 官网](https://www.macports.org/install.php) 下载对应的安装包，打开后按照提示完成安装即可。
+- 安装后，打开终端并输入 port version。
+  - 如果返回类似 Version: 2.12.6 的信息，就说明安装成功。
+  - 然后输入 sudo port selfupdate，更新 MacPorts 的软件目录。
+  - 更新完成后，输入 port search gmic，返回结果中应该包含类似 gmic-qt 的条目。
+  - 如果看到 gmic-qt，就输入 sudo port install gmic-qt 进行安装。这一步还会安装许多依赖项，因此可能需要一些时间。
+  - 安装结束后，在终端中输入 gmic_qt 启动程序。注意，命令中间使用下划线，而不是连字符。
 
 :::english
 
-English text here.
+At first, I tried using the G’MIC plug-in in Affinity Photo. In my tests, however, the plug-in would not open 16-bit images in Affinity. The documentation indicated that G’MIC itself supports 16-bit images, so I decided to try the standalone G’MIC-Qt and look for a workflow that suited me better.
+
+I use a Mac, so the steps below are for macOS only (my current version is 27.0.1). If you run into network issues during installation or updates, try a different network connection or a suitable proxy.
+
+- First, install MacPorts, a package manager similar to Homebrew. Download the installer from the [MacPorts website](https://www.macports.org/install.php), open it, and follow the prompts to finish installation.
+- After installation, open Terminal and enter port version.
+  - If it returns something like Version: 2.12.6, MacPorts is installed successfully.
+  - Then enter sudo port selfupdate to update the MacPorts package index.
+  - When the update finishes, enter port search gmic. The results should include something like gmic-qt.
+  - If you see gmic-qt, install it with sudo port install gmic-qt. This will install many dependencies and may take a while.
+  - When installation is complete, enter gmic_qt in Terminal to launch it. The command uses an underscore, not a hyphen.
 
 :::
 
-{{ image: ../img/example-01.jpg | 中文图片说明 | English caption }}
+{{ image: ../images/article/112-gmic-qt-1.jpg | 这就是 G'MIC 的主界面 | This is the main G’MIC interface. }}
 
 ### 04 一个实际问题：如何处理 TIFF
 
@@ -84,7 +112,13 @@ English text here.
 
 :::english
 
-English text here.
+The filters themselves were not the only problem I needed to solve during this exploration.
+
+I usually develop RAW files and make basic adjustments in DxO PhotoLab, then move them into Affinity Photo for further editing. The format and bit depth of the intermediate file therefore matter too.
+
+At first, I tried importing TIFF files directly into the standalone G’MIC-Qt, but could not get it to work, either through the file chooser or by passing the file path to the program. After some trial and error, I found that PNG was a more convenient intermediate format with the standalone version I was using. PNG supports 16-bit RGB and can therefore carry high-bit-depth images, though it is still important to check the export settings and the bit depth of the processed result.
+
+I exported the photo from Affinity Photo as a 16-bit PNG, then processed it in G’MIC-Qt.
 
 :::
 
@@ -108,13 +142,15 @@ English text here.
 
 - Edge Sensitivity: 7 （边缘敏感度）
 - Iterations: 1 (迭代次数)
-- Low Bias: 0.7 （低频偏置）
-- Very Fine: 0.7 （非常细的细节）
-- Fine 2: 0.7 （细节层级2）
+- Low Bias: 0.7 （低偏置）
+- Very Fine: 0.7 （极细节）
+- Fine 2: 0.7 （细节层级 2）
 - Medium 3: 0.6 （中等细节层级）
-- Coarse 4: 0.5 （粗细节层级）
-- Very Coarse 5: 0.5 （非常粗的细节层级）
-- Reduce Redness: 0.5 （降低红色）
+- Coarse 4: 0.5 （粗尺度细节）
+- Very Coarse 5: 0.5 （极粗尺度细节）
+- Reduce Redness: 0.5 （降低泛红）
+
+注：Low Bias 暂按字面译为“低偏置”；目前尚未找到足够可靠的资料来确认该参数的具体算法含义。
 
 以上参数是我针对当前测试照片进行几轮调整后得到的暂定设置，并不是适用于所有人像的通用预设。不同照片的皮肤状态、光线和输出尺寸都可能影响最终效果。
 
@@ -122,11 +158,41 @@ English text here.
 
 :::english
 
-English text here.
+Typing “skin” into the filter search box quickly brings up one called Easy Skin Retouch.
+
+It offers controls for basic smoothing, detail strength, and reducing redness.
+
+Unlike a simple blur, it lets you adjust detail at different scales. That means we do not have to rely on a single strength setting to determine how smooth the entire face becomes.
+
+For my first test, I used the default settings.
+
+The effect was clear: details on the forehead and cheeks became softer, and some fine skin texture was smoothed out, while the eyes, eyebrows, and lips remained mostly sharp.
+
+But the default effect will not suit every photograph.
+
+I then began adjusting the settings one by one.
+
+After several rounds, I arrived at a set of settings that I am temporarily happy with:
+
+- Edge Sensitivity: 7
+- Iterations: 1
+- Low Bias: 0.7
+- Very Fine: 0.7
+- Fine 2: 0.7
+- Medium 3: 0.6
+- Coarse 4: 0.5
+- Very Coarse 5: 0.5
+- Reduce Redness: 0.5
+
+Note: “Low Bias” is translated here literally as “低偏置”; I have not found sufficiently reliable documentation to confirm the parameter’s precise algorithmic meaning.
+
+These are provisional settings I arrived at after several rounds of adjustment on the test photo. They are not a universal preset for every portrait. Skin, lighting, and output size can all affect the final result.
+
+For me, the filter’s greatest value is the range of controls it provides. By comparing results, I can gradually find an appropriate look instead of relying on a single strength slider.
 
 :::
 
-{{ image: ../img/example-01.jpg | 中文图片说明 | English caption }}
+{{ image: ../images/article/112-gmic-qt-2.jpg | 使用 G’MIC Easy Skin Retouch 处理前后的效果对比。对于较明显的皮肤瑕疵，可以再使用修复工具进行局部处理。 | Before-and-after comparison using G’MIC Easy Skin Retouch. More prominent blemishes can be treated separately with a healing tool. }}
 
 ### 06 真正有用的部分：把磨皮交给图层蒙版
 
@@ -136,10 +202,10 @@ English text here.
 
 具体做法很简单：
 
-1. 保留一份原始照片。
-2. 将 G’MIC 处理后的照片作为另一层。
-3. 将两张照片对齐，确保尺寸和位置一致。
-4. 利用图层蒙版控制两张照片的显示范围。
+- 保留一份原始照片。
+- 将 G’MIC 处理后的照片作为另一层。
+- 将两张照片对齐，确保尺寸和位置一致。
+- 利用图层蒙版控制两张照片的显示范围。
 
 我更喜欢将 G’MIC 处理后的照片放在底层，原始照片放在上层。
 
@@ -159,11 +225,36 @@ G’MIC 负责生成处理结果，Affinity Photo 负责决定效果的作用范
 
 :::english
 
-English text here.
+After testing the filter, I thought of a way to work that better suits my habits.
+
+Instead of asking G’MIC to retouch the entire photo in one go, I can let it generate a smoothed version, then return to Affinity Photo to decide exactly where the effect should appear.
+
+The process is simple:
+
+- Keep a copy of the original photo.
+- Place the G’MIC-processed photo on a separate layer.
+- Align the two photos, making sure their dimensions and positions match.
+- Use a layer mask to control which parts of each photo are visible.
+
+I prefer to put the G’MIC-processed photo on the bottom layer and the original photo above it.
+
+Then I only need to add a white mask to the original layer and paint with a black brush over the skin areas I want to retouch. This reveals the G’MIC result below.
+
+Black areas reveal the smoothed layer below, white areas preserve the original layer above, and gray blends the two.
+
+The advantage is that skin smoothing and local control become two separate steps.
+
+G’MIC generates the processed result; Affinity Photo determines where it is applied.
+
+If the cheeks need a little softening, I can work only on the cheeks. If the eyes, eyebrows, lips, or hair need to retain their original detail, I can leave them untouched.
+
+Even if I later find the smoothing too strong, I do not need to process the whole photo again. I can adjust the mask and layer opacity instead.
+
+For me, this approach is more appealing than looking for a plug-in that automatically does everything.
 
 :::
 
-{{ image: ../img/example-01.jpg | 中文图片说明 | English caption }}
+{{ image: ../images/article/112-gmic-qt-3.jpg | 使用图层可以进行更精细的磨皮控制 | Layers allow finer control over skin retouching. }}
 
 ### 07 磨皮之后，还需要锐化吗？
 
@@ -183,24 +274,35 @@ English text here.
 
 :::english
 
-English text here.
+After retouching the skin, the other details in the photo still need attention.
+
+I use a filter in Nik Collection called Nik Sharpener Output, which is designed for sharpening the final output.
+
+So I prefer to place it at the very end of the editing workflow.
+
+It is worth remembering that sharpening does not mean applying a stronger effect to the whole image. If the skin has already been smoothed, excessive sharpening may emphasize its texture and grain again.
+
+My approach is to finish the skin retouching first, then check the final output and, if needed, use a mask to control where sharpening is applied.
+
+If the photo needs to be resized, I also wait until the final dimensions are set before applying output sharpening.
+
+In this way, smoothing manages skin texture, while sharpening serves the clarity needs of the final output. Each has a different job.
 
 :::
-
-{{ image: ../img/example-01.jpg | 中文图片说明 | English caption }}
 
 ### 08 一套仍在完善的工作流
 
 经过这次测试，我初步形成了这样一条处理流程：
 
-DxO PhotoLab → G’MIC-Qt → Affinity Photo → Nik Sharpener Output
+DxO PhotoLab → Affinity Photo → G’MIC-Qt → Affinity Photo → Nik Sharpener Output
 
 其中：
 
-* DxO PhotoLab 负责 RAW 解码、基础调整和必要的降噪。
-* G’MIC-Qt 负责生成皮肤修饰结果。
-* Affinity Photo 负责利用图层、蒙版和不透明度进行局部控制。
-* Nik Sharpener Output 负责最终输出锐化。
+- DxO PhotoLab 负责 RAW 解码、基础调整和必要的降噪。
+- Affinity Photo（第一次进入）负责导出 16-bit PNG 中间文件。
+- G’MIC-Qt 负责生成皮肤修饰结果。
+- Affinity Photo（第二次进入）负责利用图层、蒙版和不透明度进行局部控制。
+- Nik Sharpener Output 负责最终输出锐化。
 
 中间文件使用 16-bit PNG，以便在独立版 G’MIC-Qt 与 Affinity Photo 之间传递照片。
 
@@ -212,7 +314,23 @@ DxO PhotoLab → G’MIC-Qt → Affinity Photo → Nik Sharpener Output
 
 :::english
 
-English text here.
+After these tests, I have formed a preliminary workflow:
+
+DxO PhotoLab → Affinity Photo → G’MIC-Qt → Affinity Photo → Nik Sharpener Output
+
+- DxO PhotoLab handles RAW development, basic adjustments, and any necessary noise reduction.
+- Affinity Photo is used to export an intermediate 16-bit PNG.
+- G’MIC-Qt generates the skin-retouched result.
+- Affinity Photo is then used for local control with layers, masks, and opacity.
+- Nik Sharpener Output applies sharpening for the final output.
+
+I use a 16-bit PNG to transfer the image between Affinity Photo and the standalone version of G’MIC-Qt.
+
+Of course, not every photo needs every step. For a photo that does not need portrait retouching, my existing workflow is still sufficient.
+
+So far, I have focused on testing Easy Skin Retouch. I have not yet systematically explored the other G’MIC filters or made a thorough comparison across different portraits and output sizes.
+
+This is therefore an exploration that has produced a practical result, rather than a final conclusion.
 
 :::
 
@@ -232,8 +350,24 @@ G’MIC 不一定能完全替代专门的人像磨皮插件，也不需要承担
 
 这大概就是这次探索中，我最满意的收获。
 
+备注：本文使用来自 Unsplash 的人像照片作为后期测试素材，仅用于展示磨皮工具与图层蒙版的处理过程。
+
 :::english
 
-English text here.
+I enjoy this kind of exploration.
+
+An unfamiliar open-source tool, after installation, testing, and repeated comparisons, has become a new option in my photography workflow.
+
+G’MIC may not fully replace a dedicated portrait-retouching plug-in, nor does it need to handle every editing task. But it offers a broad range of processing tools, while Affinity Photo gives me flexible local control over their effects.
+
+Together, they mean I no longer have to treat skin retouching as a step that must be completed all at once.
+
+I can generate an effect first, then decide where to use it, how much to apply, and how to blend it with the original.
+
+The tool does the processing; the photographer makes the judgment.
+
+That is probably what I value most from this exploration.
+
+Note: The portrait used in this article for retouching tests was sourced from Unsplash. It is included solely to demonstrate the skin-retouching tools and layer-mask workflow.
 
 :::
