@@ -32,3 +32,8 @@ Even as digital photography surges around us, I still keep a corner of my heart 
 
 ### Published Work
 
+<!-- AUTO-PUBLISHED-WORK:START -->
+#### Gold 200
+[2026-10-14 外拍活动NO.017 | 芦墟古镇·胶片版](../article/114-Luxu-Ancient-Town-film.html)
+<!-- AUTO-PUBLISHED-WORK:END -->
+
