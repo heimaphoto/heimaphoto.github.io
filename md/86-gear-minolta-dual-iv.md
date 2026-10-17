@@ -27,8 +27,10 @@ related:
 
 ### Published Work
 
+<!-- AUTO-PUBLISHED-WORK:START -->
 [2026-08-22 外拍活动NO.012 | 斜桥镇老街的黑白时光](../article/85-xieqiao-old-street.html)
 [2026-08-16 外拍活动NO.010 | 斜桥火车站旧址黑白片](../article/79-Xieqiao-Railway-Station-BW.html)
+<!-- AUTO-PUBLISHED-WORK:END -->
 
 ### 主要参数：
 - Brand: Konica Minolta

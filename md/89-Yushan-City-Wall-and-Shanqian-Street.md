@@ -7,7 +7,7 @@ lead: 山前街并不长，却有着两种截然不同的面貌。一边是仍�
 location: 阜成门-虞山城墙-山前街·常熟
 camera: CONTAX-RTS
 lens: Planar-50-1.4
-film: LUCKY-SHD-400
+film: BW-Film ::: LUCKY SHD 400
 thumbnail: ../images/article/89-Yushan-City-Wall-and-Shanqian-Street-06.jpg
 ---
 

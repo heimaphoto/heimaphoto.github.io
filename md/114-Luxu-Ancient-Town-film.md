@@ -10,7 +10,7 @@ lead_en: For this visit to Luxu Ancient Town, I brought along my Canon EOS 50 to
 location: 芦墟镇·苏州
 camera: CANON-EOS-50
 lens: CANON-EF-40-2.8-STM
-film: Kodak ::: Gold 200
+film: COLOR-Film ::: Kodak Gold 200
 thumbnail: ../images/article/114-Luxu-Ancient-Town-film-06.jpg
 related:
   - title: 外拍活动NO.017 | 芦墟古镇·数码版

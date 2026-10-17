@@ -28,7 +28,9 @@ CONTAX RTS 于 1970 年代中期推出，是 Contax/Yashica 与 Carl Zeiss 合�
 
 ### Published Work
 
+<!-- AUTO-PUBLISHED-WORK:START -->
 [2026-08-26 虞山古城楼与山前街行摄记](../article/89-Yushan-City-Wall-and-Shanqian-Street.html)
+<!-- AUTO-PUBLISHED-WORK:END -->
 
 ### 主要参数
 

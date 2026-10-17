@@ -6,7 +6,7 @@ summary: 从斜桥火车站旧址走到附近的斜桥镇老街，这是我第�
 lead: 从斜桥火车站旧址出发，走进附近的老街，用一卷福马黑白胶卷记录斜桥的旧屋、石桥和日常光影。
 location: 斜桥·海宁·嘉兴
 camera: Olympus-35SPn
-film: Fomapan-200-Creative
+film: BW-Film ::: Fomapan 200 Creative
 scan: MINOLTA-Dual-IV
 thumbnail: ../images/article/85-xieqiao-old-street-1.jpg
 related:

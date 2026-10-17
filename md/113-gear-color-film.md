@@ -1,16 +1,25 @@
 ---
-title: 柯达胶卷
+title: 彩色胶卷
 date: 2026-10-12
 summary: 我最喜欢用柯达胶卷拍摄彩色照片。多年积攒的底片里，有一大半来自柯达；每次翻看，它们总会带我回到那些美好的记忆里。数码摄影浪潮之中，我对胶片的热爱仍在心底，而胶卷，我似乎还没玩够。
 summary_en: Kodak film is my favorite choice for color photography. More than half the negatives I have collected over the years are Kodak, and looking through them always brings back happy memories. Even amid the digital photography boom, my love for film remains—and I still feel I have more to explore.
+lead: 这里放我使用过的彩色胶卷。
+lead_en: This is where I keep notes on the color films I have used.
 category: 七种武器
-thumbnail: ../images/gear/113-gear-kodak.jpg
-gear_note: 我最喜欢用柯达胶卷拍摄彩色照片。
+thumbnail: ../images/gear/113-gear-color-film.jpg
+gear_note: 我使用的彩色胶卷。
 ---
 
-## 柯达胶卷
+{{ image: ../images/gear/113-gear-color-film.jpg }}
 
-{{ image: ../images/gear/113-gear-kodak.jpg }}
+### Published Work
+
+<!-- AUTO-PUBLISHED-WORK:START -->
+#### Kodak Gold 200
+[2026-10-14 外拍活动NO.017 | 芦墟古镇·胶片版](../article/114-Luxu-Ancient-Town-film.html)
+<!-- AUTO-PUBLISHED-WORK:END -->
+
+## 关于柯达胶卷
 
 我最喜欢用柯达胶卷拍摄彩色照片。
 
@@ -29,11 +38,4 @@ Over the years, I have used quite a few kinds of Kodak film, including slide fil
 Even as digital photography surges around us, I still keep a corner of my heart filled with a love for film. I guess I'm not done with film just yet.
 
 :::
-
-### Published Work
-
-<!-- AUTO-PUBLISHED-WORK:START -->
-#### Gold 200
-[2026-10-14 外拍活动NO.017 | 芦墟古镇·胶片版](../article/114-Luxu-Ancient-Town-film.html)
-<!-- AUTO-PUBLISHED-WORK:END -->
 
