@@ -33,6 +33,7 @@ EF 40mm f/2.8 STM 对我来说，就是这样一支镜头。
 ### Published Work
 
 <!-- AUTO-PUBLISHED-WORK:START -->
+[2026-10-18 荡口系列001：繁花](../article/115-dangkou-Blossoms.html)
 [2026-10-14 外拍活动NO.017 | 芦墟古镇·胶片版](../article/114-Luxu-Ancient-Town-film.html)
 [2026-09-02 苏州博物馆本馆胶片版](../article/96-Suzhou-Museum-Main-Branch.html)
 [2026-09-01 苏州拙政园速拍](../article/95-Humble-Administrator-Garden.html)
