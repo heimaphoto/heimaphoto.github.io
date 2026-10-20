@@ -35,9 +35,9 @@ I arrived in Jinze in the late afternoon. Compared with Luxu, which I had visite
 
 :::
 
-{{ image: ../images/article/116-Jinze-Ancient-Town-01.jpg | 河边的船与一位路人 | A boat by the water and a passerby }}
+{{ image: ../images/article/116-Jinze-Ancient-Town-01.jpg | 河边的船 | A boat by the water }}
 {{ image: ../images/article/116-Jinze-Ancient-Town-02.jpg | 店铺门口的石雕 | Stone sculptures at the entrance to a shop }}
-{{ image: ../images/article/116-Jinze-Ancient-Town-03.jpg | 金泽理发店 | A neighborhood barbershop in Jinze }}
+{{ image: ../images/article/116-Jinze-Ancient-Town-03.jpg | 理发店 | A neighborhood barbershop }}
 {{ image: ../images/article/116-Jinze-Ancient-Town-04.jpg | 买菜归来 | Returning home with groceries }}
 {{ image: ../images/article/116-Jinze-Ancient-Town-05.jpg | 小桥、民居与交错的电线 | A small bridge, local homes, and a web of overhead wires }}
 {{ image: ../images/article/116-Jinze-Ancient-Town-06.jpg | 被我惊醒的猫 | A cat woken from its nap by my arrival }}
