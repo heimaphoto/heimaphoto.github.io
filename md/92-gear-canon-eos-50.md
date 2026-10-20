@@ -37,6 +37,7 @@ Canon EOS 50 是一台 1990 年代的自动对焦胶片单反。
 ### Published Work
 
 <!-- AUTO-PUBLISHED-WORK:START -->
+[2026-10-20 外拍活动NO.018 | 金泽古镇](../article/116-Jinze-Ancient-Town.html)
 [2026-10-18 荡口系列001：繁花](../article/115-dangkou-Blossoms.html)
 [2026-10-14 外拍活动NO.017 | 芦墟古镇·胶片版](../article/114-Luxu-Ancient-Town-film.html)
 [2026-09-02 苏州博物馆本馆胶片版](../article/96-Suzhou-Museum-Main-Branch.html)

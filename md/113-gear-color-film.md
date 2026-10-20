@@ -16,6 +16,7 @@ gear_note: 我使用的彩色胶卷。
 
 <!-- AUTO-PUBLISHED-WORK:START -->
 #### Kodak Gold 200
+[2026-10-20 外拍活动NO.018 | 金泽古镇](../article/116-Jinze-Ancient-Town.html)
 [2026-10-18 荡口系列001：繁花](../article/115-dangkou-Blossoms.html)
 [2026-10-14 外拍活动NO.017 | 芦墟古镇·胶片版](../article/114-Luxu-Ancient-Town-film.html)
 <!-- AUTO-PUBLISHED-WORK:END -->
