@@ -481,6 +481,9 @@ def page(title, body, active="", depth=0, description=DESCRIPTION, lightbox=Fals
     if lightbox:
         js = "../" * depth + "js/lightbox.js"
         lightbox_script = f'\n<script src="{js}" defer></script>'
+    analytics_script = """<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "700cc8d414ac47d0ad427d81051c40c3"}'></script>
+<!-- End Cloudflare Web Analytics -->"""
     return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -494,6 +497,7 @@ def page(title, body, active="", depth=0, description=DESCRIPTION, lightbox=Fals
 {header(active, depth)}
 {body}
 {footer(depth)}{lightbox_script}
+{analytics_script}
 </body>
 </html>
 """
