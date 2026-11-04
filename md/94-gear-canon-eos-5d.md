@@ -45,6 +45,7 @@ Canon EOS 5D 发布于 2005 年。放到今天看，它的规格几乎朴素得�
 ### Published Work
 
 <!-- AUTO-PUBLISHED-WORK:START -->
+[2026-11-04 仓街夜景人像时尚篇](../article/119-cangjie-night-portrait.html)
 [2026-10-28 荡口系列002](../article/118-dangkou-002.html)
 [2026-09-05 苏州博物馆本馆数码版](../article/99-Suzhou-Museum-Main-Branch-digital.html)
 [2026-07-22 一次散步的随拍](../article/71-snapshot-from-my-walk.html)
