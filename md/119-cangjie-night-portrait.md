@@ -27,8 +27,6 @@ thumbnail: ../images/article/119-cangjie-night-portrait-09.jpg
 
 也有不少摄影师习惯使用 M 手动闪光模式。它需要根据 ISO、光圈、拍摄距离和闪光功率来控制曝光，刚开始确实需要一些计算和测试。但在拍摄距离与布光条件相对固定时，手动模式更容易获得稳定、可重复的输出。这也是我以后想进一步尝试的方式。
 
-如果你也使用闪光灯，欢迎留言聊聊自己的使用习惯，以及在什么情况下会选择 TTL 或 M 模式。
-
 仓街的夜景很美。这次拍摄还让我重新感受到佳能标头拍人像的乐趣。相比 RX1R2，单反的光学取景更直接，50mm 焦距也更容易获得我喜欢的虚化效果。还有单反特有的快门“咔嚓”声，确实很带感。反过来，这时全静默的 RX1R2 倒像个哑巴一样，让我有点不习惯。当然，它的主战场还是街拍。
 
 :::english
@@ -44,8 +42,6 @@ The flash has a guide number of around 18. To give it more room to work, I set t
 I used TTL for this session. Its main advantage is convenience: the flash automatically adjusts its output based on the camera's metering information. But TTL does not guarantee perfectly consistent exposure every time. The balance of bright and dark areas in the frame, changes in the subject or background, and reflective surfaces can all affect the metering result. Flash exposure compensation is still useful when corrections are needed.
 
 Some photographers prefer Manual flash mode. It takes a little calculation and testing at first, since exposure depends on ISO, aperture, shooting distance, and flash power. But when the distance and lighting setup remain relatively consistent, Manual mode makes it easier to achieve predictable, repeatable results. It is something I would like to explore next.
-
-If you use flash, feel free to share your own approach—and when you choose TTL over Manual, or the other way around.
 
 Cangjie Street looks beautiful at night. This session also reminded me how much I enjoy using a Canon prime lens for portraits. Compared with the RX1R2, the DSLR's optical viewfinder feels more direct, while the 50mm focal length gives me the background blur I like. And there is something satisfying about the distinct *click* of a DSLR's shutter. By comparison, the completely silent RX1R2 felt almost mute, and I found myself missing that sound. Of course, its natural home is still street photography.
 
