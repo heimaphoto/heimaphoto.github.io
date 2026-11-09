@@ -359,6 +359,18 @@ def markdown_to_html(markdown, title):
     return "\n".join(blocks)
 
 
+def ensure_async_image_decoding(markup):
+    """Apply the site-wide decoding default to rendered image elements."""
+    def update(match):
+        tag = match.group(0)
+        attr = re.compile(r'\s+decoding\s*=\s*(["\'])(.*?)\1', re.I | re.S)
+        if attr.search(tag):
+            return attr.sub(' decoding="async"', tag, count=1)
+        return tag[:-1] + ' decoding="async">'
+
+    return re.sub(r'<img\b[^>]*>', update, markup, flags=re.I | re.S)
+
+
 def parse_article(path):
     data, body = read_front_matter(path)
     for field in ("title", "date", "category", "summary"):
@@ -1146,11 +1158,11 @@ def publish(target=None):
         category_slugs[a["category"]] = a["category_slug"]
     gear_by_slug = gear_articles_by_slug(articles)
 
-    (ROOT / "index.html").write_text(render_index(articles), encoding="utf-8")
-    (ROOT / "archive.html").write_text(render_archive(articles, categories, category_slugs, photo_works), encoding="utf-8")
-    (ROOT / "about.html").write_text(render_about(categories), encoding="utf-8")
-    (ROOT / "gear.html").write_text(render_gear(articles), encoding="utf-8")
-    (ROOT / "portfolio" / "index.html").write_text(render_portfolio_entry(photo_works), encoding="utf-8")
+    (ROOT / "index.html").write_text(ensure_async_image_decoding(render_index(articles)), encoding="utf-8")
+    (ROOT / "archive.html").write_text(ensure_async_image_decoding(render_archive(articles, categories, category_slugs, photo_works)), encoding="utf-8")
+    (ROOT / "about.html").write_text(ensure_async_image_decoding(render_about(categories)), encoding="utf-8")
+    (ROOT / "gear.html").write_text(ensure_async_image_decoding(render_gear(articles)), encoding="utf-8")
+    (ROOT / "portfolio" / "index.html").write_text(ensure_async_image_decoding(render_portfolio_entry(photo_works)), encoding="utf-8")
 
     if target:
         articles_to_write = [
@@ -1166,7 +1178,7 @@ def publish(target=None):
         prev_article = chronological[pos - 1] if pos > 0 else None
         next_article = chronological[pos + 1] if pos < len(chronological) - 1 else None
         (ARTICLE_DIR / f"{article['slug']}.html").write_text(
-            render_article(article, prev_article, next_article, gear_by_slug), encoding="utf-8"
+            ensure_async_image_decoding(render_article(article, prev_article, next_article, gear_by_slug)), encoding="utf-8"
         )
     by_category = defaultdict(list)
     for article in articles:
@@ -1179,9 +1191,9 @@ def publish(target=None):
             html_text = render_the_art_archive()
         else:
             html_text = render_category_page(category, by_category.get(category, []))
-        (CATEGORY_DIR / f"{category_slug}.html").write_text(html_text, encoding="utf-8")
+        (CATEGORY_DIR / f"{category_slug}.html").write_text(ensure_async_image_decoding(html_text), encoding="utf-8")
     for work in photo_works:
-        (PHOTO_DIR / f"{work['slug']}.html").write_text(render_photo_detail(work, gear_by_slug), encoding="utf-8")
+        (PHOTO_DIR / f"{work['slug']}.html").write_text(ensure_async_image_decoding(render_photo_detail(work, gear_by_slug)), encoding="utf-8")
     print(f"Published {len(articles)} article(s), {len(photo_works)} photo work(s).")
 
 
