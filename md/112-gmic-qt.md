@@ -371,3 +371,46 @@ That is probably what I value most from this exploration.
 Note: The portrait used in this article for retouching tests was sourced from Unsplash. It is included solely to demonstrate the skin-retouching tools and layer-mask workflow.
 
 :::
+
+### 20261121补充
+
+这个 gmic_qt 实在难用。今天我安装了宿主软件 GIMP 2.1 ，让 gmic-qt 作为插件运行，这样既解决了 16bit 的问题，又解决了 TIFF 格式问题。
+
+安装过程如下：
+
+#### 安装GIMP
+
+比如 V2.10 的地址是 [https://download.gimp.org/gimp/v2.10/macos/](https://download.gimp.org/gimp/v2.10/macos/)
+（注：名字里带 -1 的是官方针对 macOS 打包小瑕疵二次修正后的最终版，比不带 -1 的更稳。）
+
+#### 安装 gmic-gimp
+
+> sudo port selfupdate
+> sudo port install gmic-gimp
+
+安装完成后，运行下面这行命令查看插件到底被装到了哪个文件夹（通常在 /opt/local/lib/gimp/ 下的某个 plug-ins 目录里:
+
+> port contents gmic-gimp | grep plug-ins
+
+验证方式： 终端输出了包含 gmic_gimp_qt 的完整路径，记下它所在的 plug-ins 文件夹路径。
+
+比如我的终端输出是：/opt/local/lib/gimp/2.0/plug-ins/gmic_gimp_qt/gmic_gimp_qt
+
+那么插件文件夹路径就是：/opt/local/lib/gimp/2.0/plug-ins
+
+#### 将 gmic-gimp 插件添加进 GIMP 
+
+打开刚才装好的 GIMP，进入顶部菜单 GIMP -> 设置（Settings / Preferences） -> 文件夹（Folders） -> 插件（Plug-ins）。点击“新建文件夹”图标，把上一步查到的 plug-ins 目录路径粘贴进去（例如 /opt/local/lib/gimp/2.0/plug-ins），点确定保存，然后彻底退出并重启 GIMP。
+验证方式： 重启后随便打开一张 16-bit TIFF 照片，点击顶部菜单栏 滤镜（Filters），最底部出现 G'MIC-Qt... 且能正常点开弹出滤镜窗口。
+
+WARNING: 版本匹配提醒：
+
+目前 GIMP 官网下载的是最新版本是 3.x 系列，而 MacPorts 仓库当前编译的 gmic-gimp 仍针对 GIMP 2.10 或特定子版本，挂载后可能会出现插件不加载或闪退的情况，所以去 GIMP 官网历史归档页（[https://download.gimp.org/gimp/v2.10/macos/](https://download.gimp.org/gimp/v2.10/macos/)）下载稳定版 GIMP 2.10.38 配合使用是最稳妥的。
+
+#### 卸载 gmic-qt
+
+> sudo port uninstall gmic-qt
+> sudo port uninstall inactive
+
+WARNING: 切勿动 gmic-lib @4.0.8_0+x11(active)
+清理时注意看终端提示，如果遇到任何询问是否连带卸载 gmic-lib @4.0.8_0+x11 的提示，千万选否——它是 gmic-gimp 运行滤镜的底层核心库。
